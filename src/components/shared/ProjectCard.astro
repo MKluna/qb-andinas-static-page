@@ -1,0 +1,54 @@
+---
+export interface Props {
+    imageSrc: string;
+    category: string;
+    title: string;
+    description: string;
+}
+
+const { imageSrc, category, title, description } = Astro.props as Props;
+---
+
+<div class="cursor-pointer group">
+    <div
+        class="relative overflow-hidden transition-all bg-gray-100 rounded-md dark:bg-gray-800 hover:scale-105 aspect-square"
+    >
+        <picture>
+            <source
+                type="image/avif"
+                src={imageSrc}
+                sizes="(max-width: 640px) 90vw, 480px"
+            />
+            <source
+                type="image/webp"
+                src={imageSrc}
+                sizes="(max-width: 640px) 90vw, 480px"
+            />
+            <img
+                alt="Thumbnail"
+                src={imageSrc}
+                loading="lazy"
+                decoding="async"
+                class="w-full h-full rounded-md"
+            />
+        </picture>
+    </div>
+    <span
+        class="inline-block mt-5 text-xs font-medium tracking-wider uppercase text-pink-600"
+        >{category}</span
+    >
+    <h2
+        class="mt-2 text-lg font-semibold tracking-normal text-brand-primary dark:text-white"
+    >
+        <span
+            class="bg-gradient-to-r from-blue-200 to-blue-100 dark:from-purple-800 dark:to-purple-900 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px]"
+        >
+            {title}
+        </span>
+    </h2>
+    <div
+        class="flex items-center mt-3 space-x-3 text-gray-500 dark:text-gray-400"
+    >
+        <span class="text-sm">{description}</span>
+    </div>
+</div>

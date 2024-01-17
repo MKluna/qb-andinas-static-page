@@ -1,0 +1,57 @@
+<button
+    type="button"
+    data-te-ripple-init
+    data-te-ripple-color="light"
+    class="fixed bottom-5 right-5 hidden rounded-full bg-gradient-to-br from-indigo-600 from-20% via-primary via-30% to-green-600 p-2.5 text-sm font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-[#4b665e] hover:shadow-lg focus:bg-[#059669] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#4b665e] active:shadow-lg"
+    id="btn-back-to-top"
+>
+    <!-- Icono de flecha hacia arriba -->
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="inline-block animate-bounce"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+        stroke="currentColor"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+    >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <polyline points="6 15 12 9 18 15"></polyline>
+    </svg>
+</button>
+
+<script type="module">
+    const mybutton = document.getElementById("btn-back-to-top");
+
+    let isVisible = false;
+
+    const scrollFunction = () => {
+        const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const pageHeight = document.documentElement.scrollHeight;
+
+        const shouldBeVisible =
+            scrollPosition > pageHeight * 0.5 - windowHeight * 0.5;
+
+        if (shouldBeVisible !== isVisible) {
+            isVisible = shouldBeVisible;
+            mybutton.classList.toggle("hidden", !isVisible);
+        }
+    };
+
+    const backToTop = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
+    mybutton.addEventListener("click", backToTop);
+    window.addEventListener("scroll", scrollFunction);
+</script>
+
+<style>
+    #btn-back-to-top {
+        z-index: 999;
+    }
+</style>

@@ -1,0 +1,70 @@
+---
+import { MockSocialDB } from "../../utils/database/Social-Mock-DB";
+import Container from "../shared/Container.astro";
+---
+
+<div class="mt-16"></div>
+<footer
+    class="relative bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900 pt-28 rounded-t-3xl"
+>
+    <div class="container mx-auto">
+        <div class="flex flex-wrap">
+            <div class="w-full md:w-4/12">
+                <h4
+                    class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-inherit mb-2 !font-semibold !text-primary"
+                >
+                    Q.B. Andina S.A.
+                </h4>
+                <!-- <div class="mb-6 sm:mb-0 sm:flex">
+                    <p class="text-md text-gray-600 mb-2 font-sans">
+                        Administración central CABA: Tronador 873 Ciudad
+                        Autónoma de Buenos Aires CP 1427, Argentina
+                    </p>
+                    <p
+                        class="sm:ml-4 sm:pl-4 sm:border-l sm:border-slate-200 text-md mb-2 font-sans text-gray-600"
+                    >
+                        +54 11 4551-0020/2449 info@qbandina.com.ar Comercial:
+                        <span style="white-space: nowrap;"
+                            >+54 11 5716-4184</span
+                        >
+                        <br />
+                        Lunes a viernes 8 a 17hs
+                    </p>
+                </div> -->
+                <div class="min-h-max flex items-center gap-4 text-heading-3 mt-8">
+                    <a href={MockSocialDB.facebook} class="transition hover:text-heading-1 hover:scale-110">
+                        <i class="fi fi-brands-facebook text-2xl"></i>
+                        <span class="sr-only">social link</span>
+                    </a>
+                
+                    <a href={MockSocialDB.linkedin} class="transition hover:text-heading-1 hover:scale-110">
+                        <i class="fi fi-brands-linkedin text-2xl"></i>
+                        <span class="sr-only">social link</span>
+                    </a>
+                
+                    <a href={MockSocialDB.instagram} class="transition hover:text-heading-1 hover:scale-110">
+                        <i class="fi fi-brands-instagram text-2xl"></i>
+                        <span class="sr-only">social link</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+        <div class="text-sm text-gray-500 dark:text-gray-400">
+            &copy; <span id="year"></span> Q.B. Andinas. Todos los derechos
+            reservados
+            <div class="text-xs">
+                Proudly made by MK-Luna
+            </div>
+        </div>
+    </div>
+    <div class="bg-gradient-to-tl from-box-bg py-2 relative">
+        <Container>
+            <div
+                class="flex justify-between items-center gap-6 md:text-lg text-heading-3"
+            >
+                
+            </div>
+        </Container>
+    </div>
+</footer>

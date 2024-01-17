@@ -1,0 +1,189 @@
+---
+import { MockSectionDB } from "../../utils/database/Section-Mock-DB";
+import Container from "../shared/Container.astro";
+---
+
+<section id="news" class="pb-20">
+    <Container>
+        <div
+            class="w-full relative py-8 md:py-10 px-6 md:px-8 rounded-2xl bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900"
+        >
+            <div class="absolute right-0 top-0 h-full w-full flex justify-end">
+                <div
+                    class="w-28 h-28 overflow-hidden flex rounded-xl relative blur-2xl"
+                >
+                    <span
+                        class="absolute w-16 h-16 -top-1 -right-1 bg-green-500 rounded-md rotate-45"
+                    ></span>
+                    <span
+                        class="absolute w-16 h-16 -bottom-1 -right-1 bg-[#FCDC58] rounded-md rotate-45"
+                    ></span>
+                    <span
+                        class="absolute w-16 h-16 -bottom-1 -left-1 bg-primary rounded-md rotate-45"
+                    ></span>
+                </div>
+            </div>
+
+            <div class="absolute left-0 bottom-0 h-full w-full flex items-end">
+                <div
+                    class="w-28 h-28 overflow-hidden flex rounded-xl relative blur-2xl"
+                >
+                    <span
+                        class="absolute w-16 h-16 -top-1 -right-1 bg-green-500 rounded-md rotate-45"
+                    ></span>
+                    <span
+                        class="absolute w-16 h-16 -bottom-1 -right-1 bg-[#FCDC58] rounded-md rotate-45"
+                    ></span>
+                    <span
+                        class="absolute w-16 h-16 -bottom-1 -left-1 bg-primary rounded-md rotate-45"
+                    ></span>
+                </div>
+            </div>
+            <div>
+                <div
+                    class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8"
+                >
+                    <h1
+                        class="text-2xl/tight sm:text-3xl/tight md:text-4xl/tight font-bold text-heading-1 text-center"
+                    >
+                        {MockSectionDB.principalText}
+                        <span
+                            class="text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 from-20% via-primary via-30% to-green-600"
+                            >{MockSectionDB.principalColorText}</span
+                        >
+                    </h1>
+                    <br />
+                    <br />
+
+                    <div
+                        id="carouselExampleSlidesOnly"
+                        class="relative"
+                        data-te-carousel-init
+                        data-te-ride="carousel"
+                    >
+                        <!--Carousel items-->
+                        <div
+                            class="relative w-full overflow-hidden after:clear-both after:block after:content-['']"
+                        >
+                            <!--First item-->
+                            {
+                                (
+                                    <div
+                                        class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+                                        data-te-carousel-item
+                                        data-te-carousel-active
+                                    >
+                                        <article class="flex flex-col shadow-gray-800/25 transition hover:shadow-xl sm:flex-row transition">
+                                            <div class="basis-48 overflow-hidden sm:basis-56">
+                                                <div class="relative aspect-square h-full w-full">
+                                                    <img
+                                                        src={
+                                                            MockSectionDB
+                                                                .news[0]
+                                                                .imageSrc
+                                                        }
+                                                        alt={
+                                                            MockSectionDB
+                                                                .news[0]
+                                                                .imageAlt
+                                                        }
+                                                        class="h-full w-full object-cover transition duration-500 hover:scale-105"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <>
+                                                <div class="py-2 sm:rotate-180 sm:px-2 sm:py-0 sm:[writing-mode:vertical-lr]">
+                                                    <div class="flex items-center justify-between gap-4 text-xs font-bold uppercase">
+                                                        <time
+                                                            class="text-xs text-pink-600"
+                                                            datetime="2023-05-18T00:00:00.000Z"
+                                                        >
+                                                            {
+                                                                MockSectionDB
+                                                                    .news[0]
+                                                                    .fecha
+                                                            }
+                                                        </time>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-1 flex-col justify-between">
+                                                    <div class="px-4 pb-2 pt-4 sm:p-6">
+                                                        <h3 class="line-clamp-1 text-sm font-bold uppercase sm:line-clamp-2 sm:text-base dark:text-white">
+                                                            {
+                                                                MockSectionDB
+                                                                    .news[0]
+                                                                    .title
+                                                            }
+                                                        </h3>
+                                                        <p class="mt-3 line-clamp-2 text-xs/relaxed text-gray-500 dark:text-gray-400 sm:line-clamp-3 sm:text-sm/relaxed">
+                                                            {
+                                                                MockSectionDB
+                                                                    .news[0]
+                                                                    .description
+                                                            }
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </>
+                                        </article>
+                                    </div>
+                                )
+                            }
+                            <!--Other items-->
+                            {
+                                MockSectionDB.news.slice(1).map((updates) => (
+                                    <div
+                                        class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+                                        data-te-carousel-item
+                                    >
+                                        <article class="flex flex-col shadow-gray-800/25 transition hover:shadow-xl sm:flex-row transition duration-500 hover:scale-105">
+                                            <div class="basis-48 overflow-hidden sm:basis-56">
+                                                <div class="relative aspect-square h-full w-full">
+                                                    <img
+                                                        src={updates.imageSrc}
+                                                        alt={updates.imageAlt}
+                                                        class="h-full w-full object-cover transition duration-500 hover:scale-105"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <>
+                                                <div class="py-2 sm:rotate-180 sm:px-2 sm:py-0 sm:[writing-mode:vertical-lr]">
+                                                    <div class="flex items-center justify-between gap-4 text-xs font-bold uppercase">
+                                                        <time
+                                                            class="text-xs text-pink-600"
+                                                            datetime="2023-05-18T00:00:00.000Z"
+                                                        >
+                                                            {updates.fecha}
+                                                        </time>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-1 flex-col justify-between">
+                                                    <div class="px-4 pb-2 pt-4 sm:p-6">
+                                                        <h3 class="line-clamp-1 text-sm font-bold uppercase sm:line-clamp-2 sm:text-base dark:text-white">
+                                                            {updates.title}
+                                                        </h3>
+                                                        <p class="mt-3 line-clamp-2 text-xs/relaxed text-gray-500 dark:text-gray-400 sm:line-clamp-3 sm:text-sm/relaxed">
+                                                            {
+                                                                updates.description
+                                                            }
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </>
+                                        </article>
+                                    </div>
+                                ))
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </Container>
+</section>
+
+<script>
+    import { Carousel, initTE } from "tw-elements";
+
+    initTE({ Carousel });
+</script>
