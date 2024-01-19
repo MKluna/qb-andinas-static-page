@@ -11,7 +11,7 @@ import Title from "../shared/Title.astro";
     </div>
     <Container className="flex flex-col midmd:flex-row gap-10 lg:gap-12">
         <div class="grid gap-10 mt-10 lg:gap-10 md:grid-cols-2 xl:grid-cols-3">
-            {MockProjectDB.projects.map((project, index) => <ProjectCard {...project} />)}
+            {MockProjectDB.projects.map((project) => <ProjectCard {...project} />)}
         </div>
     </Container>
 </section>
