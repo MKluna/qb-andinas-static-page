@@ -1,39 +1,39 @@
-name: Deploy to GitHub Pages
+name: Deploy Astro to GitHub Pages
 'on':
   push:
     branches:
       - main
-concurrency:
-  group: '${{ github.ref }}'
-  cancel-in-progress: true
+  workflow_dispatch: null
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 jobs:
-  node-setup:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/node-cache
-        id: cache-node-modules
+      - name: Check out your repository using git
+        uses: actions/checkout@v2
+      - name: Use Node.js 18
+        uses: actions/setup-node@v2
         with:
-          node-version: lts/*
-      - run: npm i
-        if: steps.cache-node-modules.outputs.cache-hit != 'true'
-  generate-website:
-    name: Generate website
-    needs: node-setup
+          node-version: '18'
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Build Astro
+        run: npm run build --if-present
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./dist
+  deploy:
+    environment:
+      name: github-pages
+      url: '${{ steps.deployment.outputs.page_url }}'
     runs-on: ubuntu-latest
+    needs: build
     steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/node-cache
-        id: cache-node-modules
-        with:
-          node-version: lts/*
-      - name: Generate website
-        id: build_website
-        if: steps.cache-node-modules.outcome == 'success'
-        run: npm run build
-      - name: "\U0001F680 Deploy to GitHub Pages"
-        if: steps.build_website.outcome == 'success'
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: '${{ secrets.GITHUB_TOKEN }}'
-          publish_dir: ./dist
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
