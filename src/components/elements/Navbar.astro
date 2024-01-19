@@ -37,7 +37,21 @@ const navItems = [
             <div class="min-w-max inline-flex relative">
                 <a href="/" class="relative flex items-center gap-3">
                     <div class="flex flex-shrink-0 items-center">
-                        <img alt="Your Logo" decoding="async" src="./logo.png" loading="lazy" class="h-8 w-auto">
+                        <!-- Utiliza clases dinámicas basadas en el modo de tema para cambiar la imagen del logo -->
+                        <img
+                            alt="Your Logo"
+                            decoding="async"
+                            src="./logo.png"
+                            loading="lazy"
+                            class="h-8 w-auto dark:hidden" 
+                        >
+                        <img
+                            alt="Your Transparent Logo"
+                            decoding="async"
+                            src="./transparent-logo.png"
+                            loading="lazy"
+                            class="h-8 w-auto dark:flex hidden"
+                        >
                     </div>
                 </a>
             </div>
