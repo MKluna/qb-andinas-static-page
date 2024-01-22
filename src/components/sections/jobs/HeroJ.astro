@@ -1,6 +1,7 @@
 ---
 import Container from "../../shared/Container.astro";
 import Paragraph from "../../shared/Paragraph.astro";
+import {MockJobLinksDB} from "../../../utils/database/Jobs-Public-Links/Job-Public-Links-DB"
 ---
 
 <section class="relative pt-32 lg:pt-36">
@@ -40,7 +41,7 @@ import Paragraph from "../../shared/Paragraph.astro";
     dark:text-white"
         >
             <img
-                src="./jobs.jpg"
+                src={MockJobLinksDB.JobsHeroJHref}
                 alt="jobs-heroj"
                 width="2350"
                 height="2359"
