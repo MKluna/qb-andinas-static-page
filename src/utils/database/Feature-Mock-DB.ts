@@ -30,6 +30,6 @@ export const MockFeatureDB = {
             category: "Actualización de legislación vigente",
         },
     ],
-    imgUrl: "./feature/banner.jpg",
+    imgUrl: "/qb-andinas-static-page/./feature/banner.jpg",
     imgAlt: "banner-img"
 };
