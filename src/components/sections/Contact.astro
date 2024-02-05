@@ -6,11 +6,11 @@ import Paragraph from "../shared/Paragraph.astro";
 ---
 
 <section id="contact" class="pb-20 pt-32 lg:pt-36">
-    <Container className="flex flex-col midmd:flex-row gap-10 lg:gap-12">
-        <div class="flex-1 flex midmd:w-7/12 lg:w-1/2 flex-col">
+    <Container className="flex flex-col midmd:flex-row gap-10 lg:gap-12 text-center">
+        <div class="mx-auto text-center max-w-xl md:max-w-2xl relative rounded-2xl bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900 md:px-8">
             <h1
                 class="text-center text-3xl/tight sm:text-4xl/tight md:text-5xl/tight
-                font-bold text-heading-1"
+                font-bold text-heading-1 mt-10"
             >
                 {MockContactDB.title}
             </h1>
@@ -72,7 +72,7 @@ import Paragraph from "../shared/Paragraph.astro";
             <h1 class="text-center text-xl sm:text-2xl md:text-3xl font-bold text-heading-1">
                 Visítanos en nuestras redes
             </h1>            
-            <div class="min-h-max flex items-center justify-center gap-4 text-heading-3 mt-8">
+            <div class="min-h-max flex items-center justify-center gap-4 text-heading-3 mt-8 mb-10">
                 <a href={MockSocialDB.facebook} class="animate__animated animate__fadeInLeft animate-on-scroll" style="animation-delay: 0.5s;">
                   <i class="fi fi-brands-facebook text-5xl"></i>
                 </a>
@@ -85,19 +85,6 @@ import Paragraph from "../shared/Paragraph.astro";
                   <i class="fi fi-brands-instagram text-5xl"></i>
                 </a>
               </div>
-        </div>
-        <div
-            class="max-w-md mx-auto midmd:max-w-none lg:mx-0 lg:pr-10 xl:pr-2 flex-1 flex w-11/12 midmd:w-5/12 lg:w-1/2 midmd:h-auto"
-        >
-        <iframe
-        src={MockContactDB.mapSrc}
-        title="map"
-        scrolling="no"
-        frameborder="0"
-        width="100%"
-        class="rounded-md shadow-lg h-auto"
-        loading="lazy"
-        />
         </div>
     </Container>
 </section>
@@ -116,7 +103,7 @@ import Paragraph from "../shared/Paragraph.astro";
             }
           });
         },
-        { threshold: 0.5 } // Ajusta el umbral según sea necesario
+        { threshold: 0.5 }
       );
   
       const elements = document.querySelectorAll('.animate-on-scroll');
@@ -125,4 +112,4 @@ import Paragraph from "../shared/Paragraph.astro";
         observer.observe(element);
       });
     });
-  </script>
+</script>

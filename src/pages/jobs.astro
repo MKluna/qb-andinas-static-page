@@ -1,11 +1,11 @@
 ---
-import LayoutJ from "../layouts/jobs-components/LayaoutJ.astro";
 import HeroJ from "../components/sections/jobs/HeroJ.astro";
 import Container from "../components/shared/Container.astro";
 import { MockJobDB } from "../utils/database/Job-Mock-DB";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<LayoutJ title="Welcome to QB">
+<Layout title="Welcome to QB">
   <main class="flex flex-col gap-y-20 md:gap-y-32 overflow-hidden">
     <HeroJ />
     <section class="pb-20">
@@ -81,4 +81,4 @@ import { MockJobDB } from "../utils/database/Job-Mock-DB";
       </Container>
     </section>
   </main>
-</LayoutJ>
+</LayaoutJobs>

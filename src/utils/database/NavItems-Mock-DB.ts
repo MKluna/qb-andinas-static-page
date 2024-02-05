@@ -1,28 +1,28 @@
 export const MockNavItemDB = [
     {
-        href: "#",
+        href: "/",
         text: "Inicio"
     },
     {
-        href: "#nuestra-info",
-        text: "Nosotros"
+        href: "/qb-andinas-static-page/aboutus",
+        text: "Consultoria"
     },
     {
-        href: "#projects",
+        href: "/qb-andinas-static-page/project",
         text: "Proyectos"
     },
     {
-        href: "#news",
-        text: "Novedades"
+        href: "/qb-andinas-static-page/services",
+        text: "Servicios"
     },
     {
-        href: "#contact",
+        href: "/qb-andinas-static-page/jobs",
+        text: "Puestos"
+    },
+    {
+        href: "/qb-andinas-static-page/#contact",
         text: "Contacto"
     },
-    {
-        href: "/qb-andinas-static-page/jobs", // cambiar aqui para ruta local cuando no este alojado en github
-        text: "Puestos"
-    }
 ]
 
 export const MockJobNavItemDB = [{
