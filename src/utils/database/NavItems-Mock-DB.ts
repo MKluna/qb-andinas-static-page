@@ -1,6 +1,6 @@
 export const MockNavItemDB = [
     {
-        href: "/",
+        href: "/qb-andinas-static-page/",
         text: "Inicio"
     },
     {
