@@ -43,6 +43,7 @@ module.exports = {
 	},
 	plugins: [
 		require('flowbite/plugin'),
-		require("tw-elements/dist/plugin.cjs")
+		require("tw-elements/dist/plugin.cjs"),
+		require('tailwindcss-animated')
 	],
 }
