@@ -54,6 +54,21 @@ import Title from "../shared/Title.astro";
     </Container>
 </section>
 
+<style>
+    .test-animation {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+            opacity 0.5s ease,
+            transform 0.5s ease;
+    }
+
+    .test-animation.animated {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
+
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const observer = new IntersectionObserver(
@@ -87,17 +102,3 @@ import Title from "../shared/Title.astro";
         });
     });
 </script>
-
-<style>
-    .test-animation {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.test-animation.animated {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-</style>
