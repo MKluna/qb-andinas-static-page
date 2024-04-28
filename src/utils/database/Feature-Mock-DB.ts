@@ -1,3 +1,5 @@
+const URL = import.meta.env.BASE_URL;
+
 export const MockFeatureDB = {
     title: "Asesoramiento y control de seguridad e higiene",
     paragraph: "Tenemos un amplio conocimiento de la naturaleza de las actividades de servicio y contamos con un plantel de profesionales dedicados al análisis y reducción de riesgos, así como la capacitación, el control y el seguimiento de las acciones diarias de los operadores.",
@@ -30,6 +32,6 @@ export const MockFeatureDB = {
             category: "Actualización de legislación vigente",
         },
     ],
-    imgUrl: "/qb-andinas-static-page/./feature/banner.jpg",
+    imgUrl: URL + "feature/banner.jpg",
     imgAlt: "banner-img"
 };

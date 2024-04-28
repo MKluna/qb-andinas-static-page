@@ -1,115 +1,105 @@
 ---
-import { MockContactDB } from "../../utils/database/Contact-Mock-DB";
-import { MockSocialDB } from "../../utils/database/Social-Mock-DB";
 import Container from "../shared/Container.astro";
-import Paragraph from "../shared/Paragraph.astro";
+import FormMensaje from "../forms/FormMensaje.astro";
+import FormVentas from "../forms/FormVentas.astro";
+import FormMetrogas from "../forms/FormMetrogas.astro";
+import FormTrabaja from "../forms/FormTrabaja.astro";
+import FormReclamos from "../forms/FormReclamos.astro";
 ---
 
 <section id="contact" class="pb-20 pt-32 lg:pt-36">
-    <Container className="flex flex-col midmd:flex-row gap-10 lg:gap-12 text-center">
-        <div class="mx-auto text-center max-w-xl md:max-w-2xl relative rounded-2xl bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900 md:px-8">
-            <h1
-                class="text-center text-3xl/tight sm:text-4xl/tight md:text-5xl/tight
-                font-bold text-heading-1 mt-10"
-            >
-                {MockContactDB.title}
-            </h1>
-            <Paragraph className="mt-8 text-center">
-                {MockContactDB.paragraph}
-            </Paragraph>
-            {
-                MockContactDB.contacts.map((updates) => (
-                    <>
-                        <hr class="h-px my-8 bg-[#4A1D96] border-0 dark:bg-[#F8B4D9]" />
-                        <div class="mt-2 space-y-4 text-heading-3 font-medium">
-                            <div class="m-2.5 inline-flex items-center">
-                                <div class="relative overflow-hidden transition-all text-center">
-                                    <div class="basis-1/4">
-                                        <div class="m-2.5 inline-flex items-center">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                fill="none"
-                                                viewBox="0 0 24 24"
-                                                stroke-width="1.5"
-                                                stroke="currentColor"
-                                                class="w-6 h-6"
-                                            >
-                                                <path
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
-                                                />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <div class="basis-1/4">
-                                        <p>
-                                            <a
-                                                href=`mailto:${updates.mail}`
-                                                class="text-blue-500 hover:underline"
-                                            >
-                                                {updates.mail}
-                                            </a>
-                                        </p>
-                                    </div>
-                                    <h2 class="mt-2 text-lg font-semibold tracking-normal text-brand-primary dark:text-white">
-                                        <span class="bg-gradient-to-r from-green-200 to-green-100 dark:from-purple-800 dark:to-purple-900 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px]">
-                                            {updates.title}
-                                        </span>
-                                    </h2>
-                                    <div class="flex items-center mt-3 space-x-3 text-gray-500 dark:text-gray-400">
-                                        <span class="text-sm">
-                                            {updates.description}
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </>
-                ))
-            }
-            <hr class="h-px my-8 bg-[#4A1D96] border-0 dark:bg-[#F8B4D9]" />
-            <h1 class="text-center text-xl sm:text-2xl md:text-3xl font-bold text-heading-1">
-                Visítanos en nuestras redes
-            </h1>            
-            <div class="min-h-max flex items-center justify-center gap-4 text-heading-3 mt-8 mb-10">
-                <a href={MockSocialDB.facebook} class="animate__animated animate__fadeInLeft animate-on-scroll" style="animation-delay: 0.5s;">
-                  <i class="fi fi-brands-facebook text-5xl"></i>
-                </a>
-              
-                <a href={MockSocialDB.linkedin} class="animate__animated animate__fadeInLeft animate-on-scroll" style="animation-delay: 1s;">
-                  <i class="fi fi-brands-linkedin text-5xl"></i>
-                </a>
-              
-                <a href={MockSocialDB.instagram} class="animate__animated animate__fadeInLeft animate-on-scroll" style="animation-delay: 1.5s;">
-                  <i class="fi fi-brands-instagram text-5xl"></i>
-                </a>
-              </div>
+    <Container
+        className="flex flex-col midmd:flex-row gap-10 lg:gap-12 text-center"
+    >
+        <div
+            class="mx-auto text-center max-w-xl md:max-w-2xl relative rounded-2xl bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900 md:px-8"
+        >
+            <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+                <h2
+                    class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white"
+                >
+                    Contáctate con nosotros
+                </h2>
+                <p
+                    class="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl"
+                >
+                    ¿Tienes un problema técnico? ¿Necesitas más información
+                    sobre nuestro plan de negocio? Háganoslo saber.
+                </p>
+
+                <ul class="my-4 space-y-3">
+                    <li>
+                        <FormMensaje />
+                    </li>
+                    <li>
+                        <FormVentas />
+                    </li>
+                    <li>
+                        <FormMetrogas />
+                    </li>
+                    <li>
+                        <FormTrabaja />
+                    </li>
+                    <li>
+                        <FormReclamos />
+                    </li>
+                </ul>
+            </div>
         </div>
     </Container>
 </section>
 
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            const { target } = entry;
-  
-            if (entry.isIntersecting) {
-              target.classList.add('animate__animated', 'animate__fadeInLeft');
-            } else {
-              target.classList.remove('animate__animated', 'animate__fadeInLeft');
+    document.addEventListener("astro:page-load", () => {
+        
+        function initializeModal(buttonOpenId: string, buttonCloseId: string, buttonCloseXId: string, modalId: string) {
+            const buttonOpenModal = document.getElementById(buttonOpenId) as HTMLElement;
+            const buttonCloseModal = document.getElementById(buttonCloseId) as HTMLElement;
+            const buttonCloseModalX = document.getElementById(buttonCloseXId) as HTMLElement;
+            const modal = document.getElementById(modalId) as HTMLElement;
+            const body = document.body as HTMLElement;
+            const btnToTop = document.getElementById("btn-back-to-top") as HTMLElement;
+
+            buttonOpenModal.addEventListener("click", function () {
+                showModal();
+            });
+
+            buttonCloseModal.addEventListener("click", function () {
+                closeModal();
+            });
+
+            buttonCloseModalX.addEventListener("click", function () {
+                closeModal();
+            });
+
+            modal.addEventListener("click", function (event) {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+
+            function showModal() {
+                body.style.margin = "0";
+                body.style.height = "100%";
+                body.style.overflow = "hidden";
+
+                btnToTop.style.zIndex = "0";
             }
-          });
-        },
-        { threshold: 0.5 }
-      );
-  
-      const elements = document.querySelectorAll('.animate-on-scroll');
-  
-      elements.forEach((element) => {
-        observer.observe(element);
-      });
+
+            function closeModal() {
+                body.style.margin = "";
+                body.style.height = "";
+                body.style.overflow = "";
+
+                btnToTop.style.zIndex = "999";
+            }
+        }
+
+        initializeModal("openModalMensaje", "closeModalMensaje", "closeModalXMensaje", "crud-modal-mensaje");
+        initializeModal("openModalVentas", "closeModalVentas", "closeModalXVentas", "crud-modal-ventas");
+        initializeModal("openModalMetro", "closeModalMetro", "closeModalXMetro", "crud-modal-metro");
+        initializeModal("openModalTrabajo", "closeModalTrabajo", "closeModalXTrabajo", "crud-modal-trabajo");
+        initializeModal("openModalReclamos", "closeModalReclamos", "closeModalXReclamos", "crud-modal-reclamos");
     });
 </script>
+

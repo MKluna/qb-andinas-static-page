@@ -1,3 +1,5 @@
+const URL = import.meta.env.BASE_URL;
+
 export const MockServicesLinksDB = {
-    ServicesHeroJHref: "/qb-andinas-static-page/services/services.webp" // Cambiar aca cuando no se aloje en GithubPage /qb-andinas-static-page/.
+    ServicesHeroJHref: URL + "services/services.webp"
 }

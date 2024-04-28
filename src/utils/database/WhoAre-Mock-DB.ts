@@ -1,3 +1,5 @@
+const URL = import.meta.env.BASE_URL;
+
 export const MockWhoAreDB = {
     title: '¿A qué nos dedicamos?',
     principalText: 'Desde hace décadas trabajamos en licitaciones para diferentes entidades gubernamentales y empresas de servicios de luz, agua, gas, televisión y fibra óptica. Con la experiencia adquirida y un enfoque direccionado al perfeccionamiento constante, hace años brindamos también servicio de asesoría y formación a otras PyMES.',
@@ -19,3 +21,5 @@ export const MockWhoAreDB = {
         },
     ]
 };
+
+export const MockImgWhoARe = { href: URL };

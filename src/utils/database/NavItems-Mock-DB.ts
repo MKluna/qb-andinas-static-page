@@ -1,31 +1,47 @@
+const URL = import.meta.env.BASE_URL;
+
+
+export const MockNavImgLink = {
+    href: URL
+}
+
 export const MockNavItemDB = [
     {
-        href: "/qb-andinas-static-page/",
+        href: URL,
         text: "Inicio"
     },
     {
-        href: "/qb-andinas-static-page/aboutus",
+        href: URL + "aboutus",
         text: "Consultoria"
     },
     {
-        href: "/qb-andinas-static-page/project",
+        href: URL + "project",
         text: "Proyectos"
     },
     {
-        href: "/qb-andinas-static-page/services",
+        href: URL + "services",
         text: "Servicios"
     },
     {
-        href: "/qb-andinas-static-page/jobs",
+        href: URL + "jobs",
         text: "Puestos"
     },
     {
-        href: "/qb-andinas-static-page/#contact",
+        href: URL + "#contact",
         text: "Contacto"
     },
 ]
 
 export const MockJobNavItemDB = [{
-    href: "/qb-andinas-static-page", // cambiar aqui para ruta local cuando no este alojado en github || NAVBAR - JOB
+    href: URL,
     text: "Inicio"
 }]
+
+export const MockImgNavLink = [
+    {
+        href: URL + "logo.png"
+    },
+    {
+        href: URL + "transparent-logo.png"
+    }
+]

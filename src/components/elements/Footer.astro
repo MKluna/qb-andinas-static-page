@@ -15,62 +15,84 @@ import Container from "../shared/Container.astro";
                 >
                     Q.B. Andina S.A.
                 </h4>
-                <!-- <div class="mb-6 sm:mb-0 sm:flex">
-                    <p class="text-md text-gray-600 mb-2 font-sans">
-                        Administración central CABA: Tronador 873 Ciudad
-                        Autónoma de Buenos Aires CP 1427, Argentina
-                    </p>
-                    <p
-                        class="sm:ml-4 sm:pl-4 sm:border-l sm:border-slate-200 text-md mb-2 font-sans text-gray-600"
+                <div
+                    class="min-h-max flex items-center gap-4 text-heading-3 mt-8"
+                >
+                    <a
+                        href={MockSocialDB.facebook}
+                        class="transition hover:text-heading-1 hover:scale-110"
                     >
-                        +54 11 4551-0020/2449 info@qbandina.com.ar Comercial:
-                        <span style="white-space: nowrap;"
-                            >+54 11 5716-4184</span
-                        >
-                        <br />
-                        Lunes a viernes 8 a 17hs
-                    </p>
-                </div> -->
-                <div class="min-h-max flex items-center gap-4 text-heading-3 mt-8">
-                    <a href={MockSocialDB.facebook} class="transition hover:text-heading-1 hover:scale-110">
                         <i class="fi fi-brands-facebook text-2xl"></i>
-                        <span class="sr-only">social link</span>
                     </a>
-                
-                    <a href={MockSocialDB.linkedin} class="transition hover:text-heading-1 hover:scale-110">
+
+                    <a
+                        href={MockSocialDB.linkedin}
+                        class="transition hover:text-heading-1 hover:scale-110"
+                    >
                         <i class="fi fi-brands-linkedin text-2xl"></i>
-                        <span class="sr-only">social link</span>
                     </a>
-                
-                    <a href={MockSocialDB.instagram} class="transition hover:text-heading-1 hover:scale-110">
+
+                    <a
+                        href={MockSocialDB.instagram}
+                        class="transition hover:text-heading-1 hover:scale-110"
+                    >
                         <i class="fi fi-brands-instagram text-2xl"></i>
-                        <span class="sr-only">social link</span>
+                    </a>
+
+                    <a
+                        href={MockSocialDB.whatsapp}
+                        class="transition hover:text-heading-1 hover:scale-110"
+                    >
+                        <i class="fi fi-brands-whatsapp text-2xl"></i>
                     </a>
                 </div>
-                
             </div>
         </div>
-        <br>
-        <hr class="w-48 h-1 mx-auto my-4 bg-gray-500 border-0 rounded md:my-10 dark:bg-black-400">
+        <br />
+        <hr
+            class="w-48 h-1 mx-auto my-4 bg-gray-500 border-0 rounded md:my-10 dark:bg-black-400"
+        />
 
-        <div class="border-b flex flex-col lg:flex-row items-center lg:items-center">
+        <div
+            class="border-b flex flex-col lg:flex-row items-center lg:items-center"
+        >
             <div class="flex-grow text-center lg:text-left mb-4 lg:mb-0">
                 <div class="text-sm text-gray-500 dark:text-gray-400">
-                    &copy; <span id="year"></span> Q.B. Andinas. Todos los derechos reservados
+                    &copy; <span id="year"></span> Q.B. Andinas. Todos los derechos
+                    reservados
                 </div>
             </div>
-            <div class="flex flex-col lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-4">
-                <a href="#" class="text-sm text-blue-500 hover:underline cursor" onclick="aDireccionGeneral()">
+            <div
+                class="flex flex-col lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-4"
+            >
+                <a
+                    href="#"
+                    class="text-sm text-blue-500 hover:underline cursor"
+                    onclick="aDireccionGeneral()"
+                >
                     Dirección General de Defensa y Protección al Consumidor
                 </a>
-                <a href="#!/politica-de-privacidad" class="text-sm text-blue-500 hover:underline cursor">
+                <a
+                    href="#!/politica-de-privacidad"
+                    class="text-sm text-blue-500 hover:underline cursor"
+                >
                     Política de privacidad
                 </a>
-                <a href="#" class="text-sm text-blue-500 hover:underline cursor" onclick="aEnacom()">
+                <a
+                    href="#"
+                    class="text-sm text-blue-500 hover:underline cursor"
+                    onclick="aEnacom()"
+                >
                     Enacom
                 </a>
-                <a href="#" class="text-sm text-blue-500 hover:underline cursor" onclick="aDefensaConsumidores()">
-                    Defensa de las y los Consumidores. Para reclamos <u>ingrese aquí</u>
+                <a
+                    href="#"
+                    class="text-sm text-blue-500 hover:underline cursor"
+                    onclick="aDefensaConsumidores()"
+                >
+                    Defensa de las y los Consumidores. Para reclamos <u
+                        >ingrese aquí</u
+                    >
                 </a>
             </div>
         </div>

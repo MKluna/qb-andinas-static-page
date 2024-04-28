@@ -2,7 +2,7 @@
     type="button"
     data-te-ripple-init
     data-te-ripple-color="light"
-    class="fixed bottom-5 right-5 hidden rounded-full bg-gradient-to-br from-indigo-600 from-20% via-primary via-30% to-green-600 p-2.5 text-sm font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-[#4b665e] hover:shadow-lg focus:bg-[#059669] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#4b665e] active:shadow-lg"
+    class="fixed bottom-5 right-5 rounded-full bg-gradient-to-br from-indigo-600 from-20% via-primary via-30% to-green-600 p-2.5 text-sm font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-[#4b665e] hover:shadow-lg focus:bg-[#059669] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#4b665e] active:shadow-lg"
     id="btn-back-to-top"
 >
     <!-- Icono de flecha hacia arriba -->
@@ -23,35 +23,46 @@
     </svg>
 </button>
 
-<script type="module">
-    const mybutton = document.getElementById("btn-back-to-top");
+<script>
+    const scrollView = () => {
+        const mybutton = document.getElementById(
+            "btn-back-to-top",
+        ) as HTMLElement;
+        document.addEventListener("scroll", () => {
+            if (window.scrollY > 200) {
+                mybutton.style.opacity = "1";
+                mybutton.classList.add(
+                    "animate-fade-left",
+                    "animate-once",
+                    "animate-ease-in",
+                );
+            } else {
+                mybutton.style.opacity = "0";
+                mybutton.classList.remove(
+                    "animate-fade-left",
+                    "animate-once",
+                    "animate-ease-in",
+                );
+            }
+        });
 
-    let isVisible = false;
-
-    const scrollFunction = () => {
-        const scrollPosition = window.scrollY;
-        const windowHeight = window.innerHeight;
-        const pageHeight = document.documentElement.scrollHeight;
-
-        const shouldBeVisible =
-            scrollPosition > pageHeight * 0.5 - windowHeight * 0.5;
-
-        if (shouldBeVisible !== isVisible) {
-            isVisible = shouldBeVisible;
-            mybutton.classList.toggle("hidden", !isVisible);
-        }
+        mybutton.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
+        });
     };
 
-    const backToTop = () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    };
-
-    mybutton.addEventListener("click", backToTop);
-    window.addEventListener("scroll", scrollFunction);
+    // Se ejecuta en la navegación inicial
+    scrollView();
+    // Se ejecuta en las transiciones de vista de navegación
+    document.addEventListener("astro:after-swap", scrollView);
 </script>
 
 <style>
     #btn-back-to-top {
         z-index: 999;
+        opacity: 0;
     }
 </style>
