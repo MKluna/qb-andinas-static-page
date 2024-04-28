@@ -1,9 +1,5 @@
 const URL = import.meta.env.BASE_URL;
 
-console.log("REVISANDO URL - " + URL);
-
-
-
 export const MockNavImgLink = {
     href: URL
 }
