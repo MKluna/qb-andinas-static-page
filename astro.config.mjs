@@ -12,12 +12,12 @@ let BASE_URL = LOCALHOST_URL;
 
 
 if (isBuild) {
-  BASE_URL = LIVE_URL;
+  BASE_URL = LIVE_URL + "/";
 }
 
 export default defineConfig({
   server: { port: SERVER_PORT },
   site: BASE_URL,
-  base: isBuild ? '/qb-andinas-static-pageAAAAAAAAAAAAAAAAAAAAAAAAAA/' : '/',
+  base: isBuild ? '/qb-andinas-static-page/' : '/',
   integrations: [tailwind()]
 });
