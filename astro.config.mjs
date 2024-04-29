@@ -14,5 +14,6 @@ export default defineConfig({
   server: { port: SERVER_PORT },
   site: BASE_URL,
   base: BASE_PATH,
+  trailingSlash: "always",
   integrations: [tailwind()]
 });
