@@ -6,7 +6,38 @@ import { MockHeroDB } from "../../utils/database/Hero-Mock-DB";
 
 <section>
     <Container className={"flex flex-col lg:flex-row gap-10 lg:gap-12"}>
-        <div class="absolute w-full lg:w-1/2 inset-y-0 lg:right-0">
+        <div
+            class="relative mx-auto h-64 w-full rounded-md sm:h-80 sm:rounded-lg md:h-96 md:rounded-xl xl:rounded-3xl lg:h-[28rem] xl:h-[34rem] overflow-hidden"
+        >
+            <img
+                src={MockHeroDB.srcHeroImage}
+                alt={MockHeroDB.altHeroImage}
+                class="h-full w-full object-cover"
+                width="1920"
+                height="1280"
+                loading="lazy"
+                decoding="async"
+            />
+            <div
+                class="absolute inset-0 flex flex-col justify-center gap-y-6 overflow-hidden max-xl:bg-black/25 max-md:bg-black/30 max-sm:bg-black/30 xl:bg-gradient-to-r xl:from-black/60 xl:via-black/10 xl:to-black/0 items-center text-center lg:text-left lg:py-7 xl:py-8
+            lg:items-start lg:max-w-none max-w-3xl mx-auto lg:mx-0 lg:flex-1 lg:w-1/2"
+            >
+                <h1
+                    class="ml-4 text-2xl/tight sm:text-3xl/tight md:text-4xl/tight xl:text-5xl/tight font-bold text-heading-1 animate__animated animate__fadeInDown"
+                >
+                <!-- class="text-transparent bg-clip-text bg-gradient-to-br from-indigo-50 from-20% via-primary via-30% to-indigo-50" -->
+                    <span
+                        class="text-transparent bg-clip-text bg-gradient-to-br from-indigo-50 to-indigo-50"
+                        >{MockHeroDB.principalColorText}</span
+                    >
+                </h1>
+                <Paragraph className="ml-4 font-bold text-white text-left animate__animated animate__fadeInLeft"
+                    >{MockHeroDB.paragraphText}</Paragraph
+                >
+            </div>
+        </div>
+
+        <!-- <div class="absolute w-full lg:w-1/2 inset-y-0 lg:right-0">
             <span
                 class="absolute -left-6 md:left-4 top-24 lg:top-28 w-24 h-24 rotate-90 skew-x-12 rounded-3xl bg-green-400 blur-xl opacity-60 lg:opacity-95 lg:block hidden"
             ></span>
@@ -47,6 +78,6 @@ import { MockHeroDB } from "../../utils/database/Hero-Mock-DB";
                 height="2359"
                 class="lg:absolute lg:w-full lg:h-full rounded-3xl object-cover lg:max-h-none max-h-96"
             />
-        </div>
+        </div> -->
     </Container>
 </section>

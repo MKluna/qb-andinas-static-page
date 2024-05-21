@@ -1,8 +1,8 @@
 const URL = import.meta.env.BASE_URL;
 
 export const MockFeatureDB = {
-    title: "Asesoramiento y control de seguridad e higiene",
-    paragraph: "Tenemos un amplio conocimiento de la naturaleza de las actividades de servicio y contamos con un plantel de profesionales dedicados al análisis y reducción de riesgos, así como la capacitación, el control y el seguimiento de las acciones diarias de los operadores.",
+    title: "Venta de insumos",
+    paragraph: "Ofrecemos una amplia gama de productos, trabajando con las mejores marcas del mercado. Insumos de limpieza. Insumos de electricidad. Insumos eléctricos. Insumos de ferretería.",
     featuresChek: [
         {
             category: "Control de cumplimiento de decreto 351/79 y Ley 19587/72",

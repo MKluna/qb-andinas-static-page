@@ -1,0 +1,296 @@
+---
+import HeroS from "../components/sections/services/HeroS.astro";
+import Container from "../components/shared/Container.astro";
+import Title from "../components/shared/Title.astro";
+import Layout from "../layouts/Layout.astro";
+import { MockServicesDescriptionDB } from "../utils/database/Jobs-Public-Links/Services-Description-DB";
+import { EXPERIENCE_MOCK_IMG } from "../utils/database/experience-mock-DB";
+---
+
+<Layout title="experience">
+    <main class="flex flex-col gap-y-20 md:gap-y-32 overflow-hidden">
+        <Container className={"flex flex-col lg:flex-row gap-32 lg:gap-32"}>
+            <div class="absolute right-0 top-0 h-full w-full flex justify-end">
+                <div
+                    class="w-28 h-28 overflow-hidden flex rounded-xl relative blur-2xl"
+                >
+                    <span
+                        class="absolute w-16 h-16 -top-1 -right-1 bg-green-500 rounded-md rotate-45"
+                    ></span>
+                    <span
+                        class="absolute w-16 h-16 -bottom-1 -right-1 bg-[#FCDC58] rounded-md rotate-45"
+                    ></span>
+                    <span
+                        class="absolute w-16 h-16 -bottom-1 -left-1 bg-primary rounded-md rotate-45"
+                    ></span>
+                </div>
+            </div>
+            <div class="absolute left-0 bottom-0 h-full w-full flex items-end">
+                <div
+                    class="w-28 h-28 overflow-hidden flex rounded-xl relative blur-2xl"
+                >
+                    <span
+                        class="absolute w-16 h-16 -top-1 -right-1 bg-green-500 rounded-md rotate-45"
+                    ></span>
+                    <span
+                        class="absolute w-16 h-16 -bottom-1 -right-1 bg-[#FCDC58] rounded-md rotate-45"
+                    ></span>
+                    <span
+                        class="absolute w-16 h-16 -bottom-1 -left-1 bg-primary rounded-md rotate-45"
+                    ></span>
+                </div>
+            </div>
+            <section class="relative pt-32 lg:pt-36">
+                <section
+                    class="relative animate-fade-left animate-once animate-delay-[400ms] animate-ease-in animate-normal animate-fill-backwards mb-10"
+                    id="nuestros-proyectos"
+                >
+                    <div class="text-center max-w-3xl mx-auto mb-24">
+                        <Title>Proyectos</Title>
+                    </div>
+                    <div
+                        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-2"
+                    >
+                        {
+                            EXPERIENCE_MOCK_IMG.map((itm) => (
+                                <div>
+                                    <img
+                                        class="h-auto max-w-full rounded-lg"
+                                        src={itm.url}
+                                        alt=""
+                                    />
+                                </div>
+                            ))
+                        }
+                    </div>
+                </section>
+                <section class="relative mb-10">
+                    <div class="text-center max-w-3xl mx-auto mb-24 mt-24">
+                        <div
+                            class="w-full p-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700"
+                        >
+                            <h5
+                                class="mb-2 text-3xl font-bold text-gray-900 dark:text-white"
+                            >
+                                Nuestros años en el mercado y proyectos nos
+                                respaldan.
+                            </h5>
+
+                            <blockquote
+                                class="text-xl italic font-semibold text-gray-900 dark:text-white"
+                            >
+                                <svg
+                                    class="w-8 h-8 text-gray-400 dark:text-gray-600 mb-4"
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="currentColor"
+                                    viewBox="0 0 18 14"
+                                >
+                                    <path
+                                        d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z"
+                                    ></path>
+                                </svg>
+                                <p>
+                                    "Durante décadas, hemos trabajado en
+                                    licitaciones para diversas entidades
+                                    gubernamentales y empresas de servicios,
+                                    incluyendo luz, agua, gas, televisión y
+                                    fibra óptica. Gracias a nuestros 40 años de
+                                    experiencia, contamos con el conocimiento,
+                                    el equipo y la capacidad necesaria para
+                                    satisfacer una amplia gama de necesidades de
+                                    servicios empresariales."
+                                </p>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div
+                        class="grid mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2 bg-white dark:bg-gray-800"
+                    >
+                        <figure
+                            class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700"
+                        >
+                            <blockquote
+                                class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400"
+                            >
+                                <h3
+                                    class="text-lg font-semibold text-gray-900 dark:text-white"
+                                >
+                                    EDENOR
+                                </h3>
+                                <p class="my-4 text-xl">
+                                    - Lectura de medidores<br />
+                                    - Lectura y distribución de facturas<br />
+                                    - Proyecto y documentación técnica<br />
+                                    - Investigación y localización de conexiones
+                                    de energía clandestinas<br />
+                                    - Inspecciones de suministro<br />
+                                    - Investigación y localización de conexiones
+                                    de energía clandestinas
+                                </p>
+                            </blockquote>
+                        </figure>
+                        <figure
+                            class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700"
+                        >
+                            <blockquote
+                                class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400"
+                            >
+                                <h3
+                                    class="text-lg font-semibold text-gray-900 dark:text-white"
+                                >
+                                    EDESUR
+                                </h3>
+                                <p class="my-4 text-xl">
+                                    - Corte y reposición de suministro<br />
+                                    - Lectura T1/T2/T3 (reclamos y verificaciones)<br
+                                    />
+                                    - Servicio de normalización de medidores<br
+                                    />
+                                    - Servicio de recaudación<br />
+                                    - Reparto de facturas<br />
+                                    - Colocación y retiros de medidores y acometidas<br
+                                    />
+                                    - Control de inventario
+                                </p>
+                            </blockquote>
+                        </figure>
+                        <figure
+                            class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700"
+                        >
+                            <blockquote
+                                class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400"
+                            >
+                                <h3
+                                    class="text-lg font-semibold text-gray-900 dark:text-white"
+                                >
+                                    METROGAS
+                                </h3>
+                                <p class="my-4 text-xl">
+                                    - Lectura y distribución<br />
+                                    - Corte y rehabilitación<br />
+                                    - Rehabilitaciones de suministro, verificaciones,
+                                    instalación, sustitución, colocación y retiro
+                                    de medidores
+                                </p>
+                            </blockquote>
+                        </figure>
+                        <figure
+                            class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700"
+                        >
+                            <blockquote
+                                class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400"
+                            >
+                                <h3
+                                    class="text-lg font-semibold text-gray-900 dark:text-white"
+                                >
+                                    GOBIERNO DE LA CIUDAD DE BUENOS AIRES
+                                </h3>
+                                <p class="my-4 text-xl">
+                                    - Servicio de reenergización de cámaras de
+                                    seguridad en la vía pública
+                                </p>
+                            </blockquote>
+                        </figure>
+                        <figure
+                            class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700"
+                        >
+                            <blockquote
+                                class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400"
+                            >
+                                <h3
+                                    class="text-lg font-semibold text-gray-900 dark:text-white"
+                                >
+                                    AYSA
+                                </h3>
+                                <p class="my-4 text-xl">
+                                    - Lectura de medidores
+                                </p>
+                            </blockquote>
+                        </figure>
+                        <figure
+                            class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700"
+                        >
+                            <blockquote
+                                class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400"
+                            >
+                                <h3
+                                    class="text-lg font-semibold text-gray-900 dark:text-white"
+                                >
+                                    CAMUZZI GAS PAMPEANA S.A
+                                </h3>
+                                <p class="my-4 text-xl">
+                                    - Distribución de facturas<br />
+                                    - Avisos de deuda<br />
+                                    - Corte y rehabilitación<br />
+                                    - Lectura de medidores
+                                </p>
+                            </blockquote>
+                        </figure>
+                        <figure
+                            class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700"
+                        >
+                            <blockquote
+                                class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400"
+                            >
+                                <h3
+                                    class="text-lg font-semibold text-gray-900 dark:text-white"
+                                >
+                                    GAS NATURAL FENOSA
+                                </h3>
+                                <p class="my-4 text-xl">
+                                    - Auditoría de calidad de instalaciones
+                                    internas y tareas de actualización<br />
+                                    - Auditorías de empresas contratistas<br />
+                                    - Soporte técnico y administrativo<br />
+                                    - Soporte administrativo de base de datos<br
+                                    />
+                                    - Lectura de registradores de presión y caudal
+                                </p>
+                            </blockquote>
+                        </figure>
+                        <figure
+                            class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700"
+                        >
+                            <blockquote
+                                class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400"
+                            >
+                                <h3
+                                    class="text-lg font-semibold text-gray-900 dark:text-white"
+                                >
+                                    MERCADOLIBRE
+                                </h3>
+                                <p class="my-4 text-xl">
+                                    - Logística para el servicio de última milla
+                                </p>
+                            </blockquote>
+                        </figure>
+                        <figure
+                            class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700 md:col-span-2"
+                        >
+                            <blockquote
+                                class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400"
+                            >
+                                <h3
+                                    class="text-lg font-semibold text-gray-900 dark:text-white"
+                                >
+                                    COMPRA VENTA DE INSUMOS
+                                </h3>
+                                <p class="my-4 text-xl">
+                                    - Municipalidad de San Miguel<br />
+                                    - Municipalidad de Quilmes<br />
+                                    - Municipalidad de Berazategui<br />
+                                    - Municipalidad de Lanús<br />
+                                    - Dirección de Vialidad<br />
+                                    - Banco Central de la República Argentina<br
+                                    />
+                                    - Consejo de la Magistratura
+                                </p>
+                            </blockquote>
+                        </figure>
+                    </div>
+                </section>
+            </section>
+        </Container>
+    </main>
+</Layout>

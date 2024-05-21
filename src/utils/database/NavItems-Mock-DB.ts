@@ -7,24 +7,24 @@ export const MockNavImgLink = {
 export const MockNavItemDB = [
     {
         href: URL,
-        text: "Inicio"
-    },
-    {
-        href: URL + "aboutus",
-        text: "Consultoria"
-    },
-    {
-        href: URL + "project",
-        text: "Proyectos"
+        text: "Empresa"
     },
     {
         href: URL + "services",
         text: "Servicios"
     },
     {
-        href: URL + "jobs",
-        text: "Puestos"
+        href: URL + "consulting",
+        text: "Consultoría"
     },
+    {
+        href: URL + "experience",
+        text: "Experiencia"
+    },
+    // {
+    //     href: URL + "jobs",
+    //     text: "Puestos"
+    // },
     {
         href: URL + "#contact",
         text: "Contacto"
