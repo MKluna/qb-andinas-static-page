@@ -82,6 +82,8 @@ import FormReclamos from "../forms/FormReclamos.astro";
             buttonCloseXId: string,
             modalId: string,
         ) {
+            console.log("Initializing modal with IDs:", buttonOpenId, buttonCloseId, buttonCloseXId, modalId);
+
             const buttonOpenModal = document.getElementById(
                 buttonOpenId,
             ) as HTMLElement;
@@ -98,24 +100,29 @@ import FormReclamos from "../forms/FormReclamos.astro";
             ) as HTMLElement;
 
             buttonOpenModal.addEventListener("click", function () {
+                console.log("Opening modal...");
                 showModal();
             });
 
             buttonCloseModal.addEventListener("click", function () {
+                console.log("Closing modal...");
                 closeModal();
             });
 
             buttonCloseModalX.addEventListener("click", function () {
+                console.log("Closing modal with X button...");
                 closeModal();
             });
 
             modal.addEventListener("click", function (event) {
                 if (event.target === modal) {
+                    console.log("Clicking outside modal...");
                     closeModal();
                 }
             });
 
             function showModal() {
+                console.log("Showing modal...");
                 body.style.margin = "0";
                 body.style.height = "100%";
                 body.style.overflow = "hidden";
@@ -124,6 +131,7 @@ import FormReclamos from "../forms/FormReclamos.astro";
             }
 
             function closeModal() {
+                console.log("Closing modal...");
                 body.style.margin = "";
                 body.style.height = "";
                 body.style.overflow = "";
@@ -172,10 +180,13 @@ import FormReclamos from "../forms/FormReclamos.astro";
     const toast = document.getElementById("toast-bottom-left") as HTMLElement;
 
     showToastButton.addEventListener("click", function () {
+        console.log("Showing toast...");
         toast.classList.remove("hidden");
 
         setTimeout(function () {
+            console.log("Hiding toast...");
             toast.classList.add("hidden");
         }, 3000);
     });
 </script>
+
