@@ -8,12 +8,12 @@ const SCRIPT = process.env.npm_lifecycle_event || "";
 const isBuild = SCRIPT.includes("astro build");
 
 let BASE_URL = isBuild ? LIVE_URL : LOCALHOST_URL;
-let BASE_PATH = isBuild ? '/qb-andinas-static-page' : '/';
+let BASE_PATH = isBuild ? '/qb-andinas-static-page/' : '/';
 
 export default defineConfig({
   server: { port: SERVER_PORT },
   site: BASE_URL,
   base: BASE_PATH,
-  // trailingSlash: "always",
+  trailingSlash: "always",
   integrations: [tailwind()]
 });
