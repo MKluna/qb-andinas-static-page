@@ -75,7 +75,8 @@ import FormReclamos from "../forms/FormReclamos.astro";
 </section>
 
 <script>
-   function initializeModal(
+    document.addEventListener("astro:page-load", () => {
+        function initializeModal(
             buttonOpenId: string,
             buttonCloseId: string,
             buttonCloseXId: string,
@@ -169,6 +170,7 @@ import FormReclamos from "../forms/FormReclamos.astro";
             "closeModalXReclamos",
             "crud-modal-reclamos",
         );
+    });
 </script>
 
 <script>
