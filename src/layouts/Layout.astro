@@ -20,10 +20,7 @@ const { title } = Astro.props;
     <meta name="description" content="Q.B. ANDINAS" />
     <title>QB - Andina - {title}</title>
     <ViewTransitions />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"
     ></script>
@@ -99,109 +96,6 @@ const { title } = Astro.props;
     <Navbar />
     <slot />
     <Footer />
-    <script>
-      document.addEventListener("astro:page-load", () => {
-        function initializeModal(
-          buttonOpenId: string,
-          buttonCloseId: string,
-          buttonCloseXId: string,
-          modalId: string,
-        ) {
-          const buttonOpenModal = document.getElementById(
-            buttonOpenId,
-          ) as HTMLElement;
-          const buttonCloseModal = document.getElementById(
-            buttonCloseId,
-          ) as HTMLElement;
-          const buttonCloseModalX = document.getElementById(
-            buttonCloseXId,
-          ) as HTMLElement;
-          const modal = document.getElementById(modalId) as HTMLElement;
-          const body = document.body as HTMLElement;
-          const btnToTop = document.getElementById(
-            "btn-back-to-top",
-          ) as HTMLElement;
-
-          buttonOpenModal.addEventListener("click", function () {
-            showModal();
-          });
-
-          buttonCloseModal.addEventListener("click", function () {
-            closeModal();
-          });
-
-          buttonCloseModalX.addEventListener("click", function () {
-            closeModal();
-          });
-
-          modal.addEventListener("click", function (event) {
-            if (event.target === modal) {
-              closeModal();
-            }
-          });
-
-          function showModal() {
-            body.style.margin = "0";
-            body.style.height = "100%";
-            body.style.overflow = "hidden";
-
-            btnToTop.style.zIndex = "0";
-          }
-
-          function closeModal() {
-            body.style.margin = "";
-            body.style.height = "";
-            body.style.overflow = "";
-
-            btnToTop.style.zIndex = "999";
-          }
-        }
-
-        initializeModal(
-          "openModalMensaje",
-          "closeModalMensaje",
-          "closeModalXMensaje",
-          "crud-modal-mensaje",
-        );
-        initializeModal(
-          "openModalVentas",
-          "closeModalVentas",
-          "closeModalXVentas",
-          "crud-modal-ventas",
-        );
-        initializeModal(
-          "openModalMetro",
-          "closeModalMetro",
-          "closeModalXMetro",
-          "crud-modal-metro",
-        );
-        initializeModal(
-          "openModalTrabajo",
-          "closeModalTrabajo",
-          "closeModalXTrabajo",
-          "crud-modal-trabajo",
-        );
-        initializeModal(
-          "openModalReclamos",
-          "closeModalReclamos",
-          "closeModalXReclamos",
-          "crud-modal-reclamos",
-        );
-      });
-    </script>
-    <script>
-      const showToastButton = document.getElementById(
-        "showToastButton",
-      ) as HTMLElement;
-      const toast = document.getElementById("toast-bottom-left") as HTMLElement;
-      showToastButton.addEventListener("click", function () {
-        toast.classList.remove("hidden");
-
-        setTimeout(function () {
-          toast.classList.add("hidden");
-        }, 3000);
-      });
-    </script>
     <script>
       const switchTheme = document.querySelector(
         "[data-switch-theme]",
