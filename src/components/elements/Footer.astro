@@ -4,105 +4,82 @@ import Container from "../shared/Container.astro";
 ---
 
 <div class="mt-32"></div>
-<footer
-    class="relative bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900 pt-28 rounded-t-3xl"
->
+<footer class="relative bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900 pt-28 rounded-t-3xl">
     <div class="container mx-auto">
-        <div class="flex flex-wrap">
-            <div class="w-full md:w-4/12">
-                <h4
-                    class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-inherit mb-2 !font-semibold !text-primary"
-                >
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+                <h4 class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-inherit mb-2 !font-semibold !text-primary">
                     Q.B. Andina S.A.
                 </h4>
-                <div
-                    class="min-h-max flex items-center gap-4 text-heading-3 mt-8"
-                >
-                    <a
-                        href={MockSocialDB.facebook}
-                        class="transition hover:text-heading-1 hover:scale-110"
-                    >
+                <div class="min-h-max flex items-center gap-4 text-heading-3 mt-8">
+                    <a href={MockSocialDB.facebook} class="transition hover:text-heading-1 hover:scale-110">
                         <i class="fi fi-brands-facebook text-4xl"></i>
                     </a>
-
-                    <a
-                        href={MockSocialDB.linkedin}
-                        class="transition hover:text-heading-1 hover:scale-110"
-                    >
+                    <a href={MockSocialDB.linkedin} class="transition hover:text-heading-1 hover:scale-110">
                         <i class="fi fi-brands-linkedin text-4xl"></i>
                     </a>
-
-                    <a
-                        href={MockSocialDB.instagram}
-                        class="transition hover:text-heading-1 hover:scale-110"
-                    >
+                    <a href={MockSocialDB.instagram} class="transition hover:text-heading-1 hover:scale-110">
                         <i class="fi fi-brands-instagram text-4xl"></i>
                     </a>
-
-                    <a
-                        href={MockSocialDB.whatsapp}
-                        class="transition hover:text-heading-1 hover:scale-110"
-                    >
+                    <a href={MockSocialDB.whatsapp} class="transition hover:text-heading-1 hover:scale-110">
                         <i class="fi fi-brands-whatsapp text-4xl"></i>
                     </a>
                 </div>
             </div>
+            <div class="md:text-right">
+                <h4 class="block antialiased tracking-normal font-sans text-xl font-semibold leading-snug text-inherit mb-2 !font-semibold !text-primary">
+                    Casa Central
+                </h4>
+                <p class="text-gray-500 dark:text-gray-400">
+                    Tronador 873 CABA<br>
+                    Tel. 4551-0020
+                </p>
+            </div>
         </div>
         <br />
-        <hr
-            class="w-48 h-1 mx-auto my-4 bg-gray-500 border-0 rounded md:my-10 dark:bg-black-400"
-        />
-
-        <div
-            class="border-b flex flex-col lg:flex-row items-center lg:items-center"
-        >
+        <hr class="w-48 h-1 mx-auto my-4 bg-gray-500 border-0 rounded md:my-10 dark:bg-black-400" />
+        <div class="border-b flex flex-col lg:flex-row items-center lg:items-center">
             <div class="flex-grow text-center lg:text-left mb-4 lg:mb-0">
                 <div class="text-sm text-gray-500 dark:text-gray-400">
-                    &copy; <span id="year"></span> Q.B. Andinas. Todos los derechos
-                    reservados
+                    &copy; <span id="year"></span> Q.B. Andinas. Todos los derechos reservados
                 </div>
             </div>
-            <div
-                class="flex flex-col lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-4"
-            >
-                <a
-                    href="#"
-                    class="text-sm text-blue-500 hover:underline cursor"
-                    onclick="aDireccionGeneral()"
-                >
+            <div class="flex flex-col lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-4">
+                <a href="#" class="text-sm text-blue-500 hover:underline cursor-pointer" onclick="aDireccionGeneral()">
                     Dirección General de Defensa y Protección al Consumidor
                 </a>
-                <a
-                    href="#!/politica-de-privacidad"
-                    class="text-sm text-blue-500 hover:underline cursor"
-                >
+                <a href="#!/politica-de-privacidad" class="text-sm text-blue-500 hover:underline cursor-pointer">
                     Política de privacidad
                 </a>
-                <a
-                    href="#"
-                    class="text-sm text-blue-500 hover:underline cursor"
-                    onclick="aEnacom()"
-                >
+                <a href="#" class="text-sm text-blue-500 hover:underline cursor-pointer" onclick="aEnacom()">
                     Enacom
                 </a>
-                <a
-                    href="#"
-                    class="text-sm text-blue-500 hover:underline cursor"
-                    onclick="aDefensaConsumidores()"
-                >
-                    Defensa de las y los Consumidores. Para reclamos <u
-                        >ingrese aquí</u
-                    >
+                <a href="#" class="text-sm text-blue-500 hover:underline cursor-pointer" onclick="aDefensaConsumidores()">
+                    Defensa de las y los Consumidores. Para reclamos <u>ingrese aquí</u>
                 </a>
             </div>
         </div>
     </div>
     <div class="bg-gradient-to-tl from-box-bg py-2 relative">
         <Container>
-            <div
-                class="flex justify-between items-center gap-6 md:text-lg text-heading-3"
-            >
+            <div class="flex justify-between items-center gap-6 md:text-lg text-heading-3">
             </div>
         </Container>
     </div>
 </footer>
+
+<script>
+    document.addEventListener("astro:page-load", () => {
+        const yearSpan = document.getElementById("year");
+        const currentYear = new Date().getFullYear().toString();
+        if (yearSpan) {
+            yearSpan.textContent = currentYear;
+        }
+
+        function aDireccionGeneral() {}
+
+        function aEnacom() {}
+
+        function aDefensaConsumidores() {}
+    });
+</script>

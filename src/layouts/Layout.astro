@@ -3,6 +3,7 @@ import { ViewTransitions, slide } from "astro:transitions";
 import Footer from "../components/elements/Footer.astro";
 import Navbar from "../components/elements/Navbar.astro";
 import ToTop from "../components/elements/ToTop.astro";
+import { FAV_ICON_IMG } from "../mock/public-img";
 
 export interface Props {
   title: string;
@@ -16,9 +17,9 @@ const { title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href={FAV_ICON_IMG} />
     <meta name="description" content="Q.B. ANDINAS" />
-    <title>QB - Andina - {title}</title>
+    <title>QB Andina - {title}</title>
     <ViewTransitions />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"

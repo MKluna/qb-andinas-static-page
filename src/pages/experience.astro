@@ -1,13 +1,11 @@
 ---
-import HeroS from "../components/sections/services/HeroS.astro";
 import Container from "../components/shared/Container.astro";
 import Title from "../components/shared/Title.astro";
 import Layout from "../layouts/Layout.astro";
-import { MockServicesDescriptionDB } from "../utils/database/Jobs-Public-Links/Services-Description-DB";
-import { EXPERIENCE_MOCK_IMG } from "../utils/database/experience-mock-DB";
+import { EXPERIENCE_IMG } from "../mock/public-img";
 ---
 
-<Layout title="experience">
+<Layout title="Experencia">
     <main class="flex flex-col gap-y-20 md:gap-y-32 overflow-hidden">
         <Container className={"flex flex-col lg:flex-row gap-32 lg:gap-32"}>
             <div class="absolute right-0 top-0 h-full w-full flex justify-end">
@@ -52,12 +50,13 @@ import { EXPERIENCE_MOCK_IMG } from "../utils/database/experience-mock-DB";
                         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-2"
                     >
                         {
-                            EXPERIENCE_MOCK_IMG.map((itm) => (
-                                <div>
+                            EXPERIENCE_IMG.map((itm) => (
+                                <div class="relative w-full h-80">
                                     <img
-                                        class="h-auto max-w-full rounded-lg"
+                                        class="absolute inset-0 h-full w-full object-cover rounded-lg"
                                         src={itm.url}
-                                        alt=""
+                                        alt="generic-alt"
+                                        loading="lazy"
                                     />
                                 </div>
                             ))
@@ -77,7 +76,7 @@ import { EXPERIENCE_MOCK_IMG } from "../utils/database/experience-mock-DB";
                             </h5>
 
                             <blockquote
-                                class="text-xl italic font-semibold text-gray-900 dark:text-white"
+                                class="text-xl italic font-semibold text-gray-900 dark:text-white text-center md:text-justify"
                             >
                                 <svg
                                     class="w-8 h-8 text-gray-400 dark:text-gray-600 mb-4"
@@ -104,21 +103,20 @@ import { EXPERIENCE_MOCK_IMG } from "../utils/database/experience-mock-DB";
                             </blockquote>
                         </div>
                     </div>
-                    <div
-                        class="grid mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2 bg-white dark:bg-gray-800"
-                    >
-                        <figure
-                            class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700"
-                        >
-                            <blockquote
-                                class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400"
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Primer div -->
+                        <div class="rounded-full flex flex-col h-[400px]">
+                            <div
+                                class="relative py-8 md:py-10 px-6 md:px-8 bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900 md:text-left mt-4 text-center flex flex-col justify-center items-center h-full"
                             >
                                 <h3
-                                    class="text-lg font-semibold text-gray-900 dark:text-white"
+                                    class="text-lg font-semibold text-gray-900 dark:text-white mb-4"
                                 >
                                     EDENOR
                                 </h3>
-                                <p class="my-4 text-xl">
+                                <p
+                                    class="text-xl text-gray-900 dark:text-gray-200 flex-grow flex-shrink"
+                                >
                                     - Lectura de medidores<br />
                                     - Lectura y distribución de facturas<br />
                                     - Proyecto y documentación técnica<br />
@@ -128,20 +126,113 @@ import { EXPERIENCE_MOCK_IMG } from "../utils/database/experience-mock-DB";
                                     - Investigación y localización de conexiones
                                     de energía clandestinas
                                 </p>
-                            </blockquote>
-                        </figure>
-                        <figure
-                            class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700"
-                        >
-                            <blockquote
-                                class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400"
+                            </div>
+                        </div>
+                        <!-- Segundo div -->
+                        <div class="rounded-full flex flex-col h-[400px]">
+                            <div
+                                class="relative py-8 md:py-10 px-6 md:px-8 bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900 md:text-left mt-4 text-center flex flex-col justify-center items-center h-full"
                             >
                                 <h3
-                                    class="text-lg font-semibold text-gray-900 dark:text-white"
+                                    class="text-lg font-semibold text-gray-900 dark:text-white mb-4"
+                                >
+                                    METROGAS
+                                </h3>
+                                <p
+                                    class="text-xl text-gray-900 dark:text-gray-200 flex-grow flex-shrink"
+                                >
+                                    - Lectura y distribución<br />
+                                    - Corte y rehabilitación<br />
+                                    - Rehabilitaciones de suministro, verificaciones,
+                                    instalación, sustitución, colocación y retiro
+                                    de medidores
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Tercer div -->
+
+                        <div class="rounded-full flex flex-col h-[400px]">
+                            <div
+                                class="relative py-8 md:py-10 px-6 md:px-8 bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900 md:text-left mt-4 text-center flex flex-col justify-center items-center h-full"
+                            >
+                                <h3
+                                    class="text-lg font-semibold text-gray-900 dark:text-white mb-4"
+                                >
+                                    CAMUZZI GAS PAMPEANA S.A
+                                </h3>
+                                <p
+                                    class="text-xl text-gray-900 dark:text-gray-200 flex-grow flex-shrink"
+                                >
+                                    - Distribución efectiva de facturas.<br />
+                                    - Envío de avisos sobre deudas pendientes.<br
+                                    />
+                                    - Procesamiento rápido de solicitudes de corte
+                                    y rehabilitación de servicios.<br />
+                                    - Registro preciso de lecturas de medidores para
+                                    un control adecuado del consumo.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="rounded-full flex flex-col h-[400px]">
+                            <div
+                                class="relative py-8 md:py-10 px-6 md:px-8 bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900 md:text-left mt-4 flex flex-col justify-center items-center h-full"
+                            >
+                                <h3
+                                    class="text-lg font-semibold text-gray-900 dark:text-white mb-4"
+                                >
+                                    GAS NATURAL FENOSA
+                                </h3>
+                                <p
+                                    class="text-xl text-gray-900 dark:text-gray-200 flex-grow flex-shrink"
+                                >
+                                    - Auditoría de calidad de instalaciones
+                                    internas y tareas de actualización<br />
+                                    - Auditorías de empresas contratistas<br />
+                                    - Soporte técnico y administrativo<br />
+                                    - Soporte administrativo de base de datos<br
+                                    />
+                                    - Lectura de registradores de presión y caudal
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="rounded-full flex flex-col h-[400px]">
+                            <div
+                                class="relative py-8 md:py-10 px-6 md:px-8 bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900 md:text-left mt-4 text-center flex flex-col justify-center items-center h-full"
+                            >
+                                <h3
+                                    class="text-lg font-semibold text-gray-900 dark:text-white mb-4"
+                                >
+                                    VENTA DE INSUMOS
+                                </h3>
+                                <p
+                                    class="text-xl text-gray-900 dark:text-gray-200 flex-grow flex-shrink"
+                                >
+                                    - Municipalidad de San Miguel<br />
+                                    - Municipalidad de Quilmes<br />
+                                    - Municipalidad de Berazategui<br />
+                                    - Municipalidad de Lanús<br />
+                                    - Dirección de Vialidad<br />
+                                    - Banco Central de la República Argentina<br
+                                    />
+                                    - Consejo de la Magistratura
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="rounded-full flex flex-col h-[400px]">
+                            <div
+                                class="relative py-8 md:py-10 px-6 md:px-8 bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900 md:text-left mt-4 text-center flex flex-col justify-center items-center h-full"
+                            >
+                                <h3
+                                    class="text-lg font-semibold text-gray-900 dark:text-white mb-4"
                                 >
                                     EDESUR
                                 </h3>
-                                <p class="my-4 text-xl">
+                                <p
+                                    class="text-xl text-gray-900 dark:text-gray-200 flex-grow flex-shrink"
+                                >
                                     - Corte y reposición de suministro<br />
                                     - Lectura T1/T2/T3 (reclamos y verificaciones)<br
                                     />
@@ -153,141 +244,80 @@ import { EXPERIENCE_MOCK_IMG } from "../utils/database/experience-mock-DB";
                                     />
                                     - Control de inventario
                                 </p>
-                            </blockquote>
-                        </figure>
-                        <figure
-                            class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700"
-                        >
-                            <blockquote
-                                class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400"
+                            </div>
+                        </div>
+
+                        <div class="rounded-full flex flex-col h-[400px]">
+                            <div
+                                class="relative py-8 md:py-10 px-6 md:px-8 bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900 md:text-left mt-4 text-center flex flex-col justify-center items-center h-full"
                             >
                                 <h3
-                                    class="text-lg font-semibold text-gray-900 dark:text-white"
-                                >
-                                    METROGAS
-                                </h3>
-                                <p class="my-4 text-xl">
-                                    - Lectura y distribución<br />
-                                    - Corte y rehabilitación<br />
-                                    - Rehabilitaciones de suministro, verificaciones,
-                                    instalación, sustitución, colocación y retiro
-                                    de medidores
-                                </p>
-                            </blockquote>
-                        </figure>
-                        <figure
-                            class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700"
-                        >
-                            <blockquote
-                                class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400"
-                            >
-                                <h3
-                                    class="text-lg font-semibold text-gray-900 dark:text-white"
+                                    class="text-lg font-semibold text-gray-900 dark:text-white mb-24"
                                 >
                                     GOBIERNO DE LA CIUDAD DE BUENOS AIRES
                                 </h3>
-                                <p class="my-4 text-xl">
+                                <p
+                                    class="text-xl text-gray-900 dark:text-gray-200 flex-grow flex-shrink"
+                                >
                                     - Servicio de reenergización de cámaras de
                                     seguridad en la vía pública
                                 </p>
-                            </blockquote>
-                        </figure>
-                        <figure
-                            class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700"
-                        >
-                            <blockquote
-                                class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400"
+                            </div>
+                        </div>
+
+                        <div class="rounded-full flex flex-col h-[400px]">
+                            <div
+                                class="relative py-8 md:py-10 px-6 md:px-8 bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900 md:text-left mt-4 text-center flex flex-col justify-center items-center h-full"
                             >
                                 <h3
-                                    class="text-lg font-semibold text-gray-900 dark:text-white"
+                                    class="text-lg font-semibold text-gray-900 dark:text-white mb-24"
                                 >
                                     AYSA
                                 </h3>
-                                <p class="my-4 text-xl">
+                                <p
+                                    class="text-xl text-gray-900 dark:text-gray-200 flex-grow flex-shrink"
+                                >
                                     - Lectura de medidores
                                 </p>
-                            </blockquote>
-                        </figure>
-                        <figure
-                            class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700"
-                        >
-                            <blockquote
-                                class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400"
+                            </div>
+                        </div>
+
+                        <div class="rounded-full flex flex-col h-[400px]">
+                            <div
+                                class="relative py-8 md:py-10 px-6 md:px-8 bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900 md:text-left mt-4 flex flex-col justify-center items-center h-full"
                             >
                                 <h3
-                                    class="text-lg font-semibold text-gray-900 dark:text-white"
-                                >
-                                    CAMUZZI GAS PAMPEANA S.A
-                                </h3>
-                                <p class="my-4 text-xl">
-                                    - Distribución de facturas<br />
-                                    - Avisos de deuda<br />
-                                    - Corte y rehabilitación<br />
-                                    - Lectura de medidores
-                                </p>
-                            </blockquote>
-                        </figure>
-                        <figure
-                            class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700"
-                        >
-                            <blockquote
-                                class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400"
-                            >
-                                <h3
-                                    class="text-lg font-semibold text-gray-900 dark:text-white"
-                                >
-                                    GAS NATURAL FENOSA
-                                </h3>
-                                <p class="my-4 text-xl">
-                                    - Auditoría de calidad de instalaciones
-                                    internas y tareas de actualización<br />
-                                    - Auditorías de empresas contratistas<br />
-                                    - Soporte técnico y administrativo<br />
-                                    - Soporte administrativo de base de datos<br
-                                    />
-                                    - Lectura de registradores de presión y caudal
-                                </p>
-                            </blockquote>
-                        </figure>
-                        <figure
-                            class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700"
-                        >
-                            <blockquote
-                                class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400"
-                            >
-                                <h3
-                                    class="text-lg font-semibold text-gray-900 dark:text-white"
+                                    class="text-lg font-semibold text-gray-900 dark:text-white mb-24"
                                 >
                                     MERCADOLIBRE
                                 </h3>
-                                <p class="my-4 text-xl">
+                                <p
+                                    class="text-xl text-gray-900 dark:text-gray-200 flex-grow flex-shrink"
+                                >
                                     - Logística para el servicio de última milla
                                 </p>
-                            </blockquote>
-                        </figure>
-                        <figure
-                            class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700 md:col-span-2"
-                        >
-                            <blockquote
-                                class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400"
+                            </div>
+                        </div>
+
+                        <div class="rounded-full flex flex-col h-[400px]">
+                            <div
+                                class="relative py-8 md:py-10 px-6 md:px-8 bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900 md:text-left mt-4 flex flex-col justify-center items-center h-full"
                             >
                                 <h3
-                                    class="text-lg font-semibold text-gray-900 dark:text-white"
+                                    class="text-lg font-semibold text-gray-900 dark:text-white mb-24"
                                 >
-                                    COMPRA VENTA DE INSUMOS
+                                    COOPERATIVA TELEFÓNICA DE TORTUGUITAS
                                 </h3>
-                                <p class="my-4 text-xl">
-                                    - Municipalidad de San Miguel<br />
-                                    - Municipalidad de Quilmes<br />
-                                    - Municipalidad de Berazategui<br />
-                                    - Municipalidad de Lanús<br />
-                                    - Dirección de Vialidad<br />
-                                    - Banco Central de la República Argentina<br
+                                <p
+                                    class="text-xl text-gray-900 dark:text-gray-200 flex-grow flex-shrink"
+                                >
+                                    - Distribución de piezas postales y
+                                    facturas.<br />
+                                    - Instalaciones domiciliarias a abonados.<br
                                     />
-                                    - Consejo de la Magistratura
                                 </p>
-                            </blockquote>
-                        </figure>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </section>
