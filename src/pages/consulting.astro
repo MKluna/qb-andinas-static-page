@@ -3,6 +3,7 @@ import Container from "../components/shared/Container.astro";
 import Title from "../components/shared/Title.astro";
 import Layout from "../layouts/Layout.astro";
 import { CONSULTING_IMG } from "../mock/public-img";
+import { CONSULTIN_TXT } from "../mock/public-txt";
 ---
 
 <Layout title="Consultoria">
@@ -44,7 +45,7 @@ import { CONSULTING_IMG } from "../mock/public-img";
                     id="nuestra-consultoria"
                 >
                     <div class="text-center max-w-3xl mx-auto mb-24">
-                        <Title>Consultoria</Title>
+                        <Title>{CONSULTIN_TXT.TITLE}</Title>
                     </div>
                     <div
                         class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12"
@@ -52,39 +53,16 @@ import { CONSULTING_IMG } from "../mock/public-img";
                         <div class="rounded-full">
                             <img
                                 class="h-auto max-w-full object-cover dark:flex md:mb-32 sm:mb-0"
-                                src={CONSULTING_IMG.DESARROLLO_HUMANO_URL}
-                                alt={CONSULTING_IMG.DESARROLLO_HUMANO_ALT}
+                                src={CONSULTING_IMG.SEGURIDAD_SALUD_URL}
+                                alt={CONSULTING_IMG.SEGURIDAD_SALUD_ALT}
                             />
                             <div
-                                class="relative py-8 md:py-10 px-6 md:px-8 bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-700 md:text-left mt-4 text-center min-h-[300px] flex justify-center items-center"
+                                class="relative py-8 md:py-10 px-6 md:px-8 bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-700 md:text-left mt-4 text-center min-h-[370px] flex justify-center items-center"
                             >
                                 <p
                                     class="text-xs md:text-sm lg:text-base text-gray-900 dark:text-white text-center"
                                 >
-                                    Inducción a la Seguridad, Prevención y Lucha
-                                    Contra Incendios, Riesgo Eléctrico, Trabajo
-                                    en Altura.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="rounded-full">
-                            <img
-                                class="h-auto max-w-full object-cover dark:flex md:mb-32 sm:mb-0"
-                                src={CONSULTING_IMG.CONTROL_CALIDAD_URL}
-                                alt={CONSULTING_IMG.CONTROL_CALIDAD_ALT}
-                            />
-                            <div
-                                class="relative py-8 md:py-10 px-6 md:px-8 bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-800 md:text-left mt-4 text-center min-h-[300px] flex justify-center items-center"
-                            >
-                                <p
-                                    class="text-xs md:text-sm lg:text-base text-gray-900 dark:text-white text-center"
-                                >
-                                    Sistema de Gestión: Implementación y
-                                    Certificación de ISO 9001 para Gestión de la
-                                    Calidad, ISO 14001 para Gestión Ambiental, y
-                                    OHSAS 18001 para Seguridad y Salud en el
-                                    Trabajo.
+                                    {CONSULTIN_TXT.SEGURIDAD_Y_SALUD}
                                 </p>
                             </div>
                         </div>
@@ -96,12 +74,16 @@ import { CONSULTING_IMG } from "../mock/public-img";
                                 alt={CONSULTING_IMG.SISTEMA_DE_GESTION_ALT}
                             />
                             <div
-                                class="relative py-8 md:py-10 px-6 md:px-8 bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900 md:text-left mt-4 text-center min-h-[300px] flex justify-center items-center"
+                                class="relative py-8 md:py-10 px-6 md:px-8 bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-800 md:text-left mt-4 text-center min-h-[370px] flex justify-center items-center"
                             >
                                 <p
                                     class="text-xs md:text-sm lg:text-base text-gray-900 dark:text-white text-center"
                                 >
-                                    Sistema de Gestión.
+                                    {CONSULTIN_TXT.SISTEMA_DE_GESTION.TITLE}<br
+                                    />
+                                    {CONSULTIN_TXT.SISTEMA_DE_GESTION.ITEM1}<br
+                                    />
+                                    {CONSULTIN_TXT.SISTEMA_DE_GESTION.ITEM2}
                                 </p>
                             </div>
                         </div>
@@ -109,17 +91,40 @@ import { CONSULTING_IMG } from "../mock/public-img";
                         <div class="rounded-full">
                             <img
                                 class="h-auto max-w-full object-cover dark:flex md:mb-32 sm:mb-0"
-                                src={CONSULTING_IMG.SEGURIDAD_SALUD_URL}
-                                alt={CONSULTING_IMG.SEGURIDAD_SALUD_ALT}
+                                src={CONSULTING_IMG.DESARROLLO_HUMANO_URL}
+                                alt={CONSULTING_IMG.DESARROLLO_HUMANO_ALT}
                             />
                             <div
-                                class="relative py-8 md:py-10 px-6 md:px-8 bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900 md:text-left mt-4 text-center min-h-[300px] flex justify-center items-center"
+                                class="relative py-8 md:py-10 px-6 md:px-8 bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900 md:text-left mt-4 text-center min-h-[370px] flex justify-center items-center"
                             >
                                 <p
                                     class="text-xs md:text-sm lg:text-base text-gray-900 dark:text-white text-center"
                                 >
-                                    Seguridad y Salud Ocupacional, Desarrollo
-                                    Humano
+                                    {CONSULTIN_TXT.DESARROLLO_HUMANO}
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="rounded-full">
+                            <img
+                                class="h-auto max-w-full object-cover dark:flex md:mb-32 sm:mb-0"
+                                src={CONSULTING_IMG.CONTROL_CALIDAD_URL}
+                                alt={CONSULTING_IMG.CONTROL_CALIDAD_URL}
+                            />
+                            <div
+                                class="relative py-8 md:py-10 px-6 md:px-8 bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900 md:text-left mt-4 text-center min-h-[370px] flex justify-center items-center"
+                            >
+                                <p
+                                    class="text-xs md:text-sm lg:text-base text-gray-900 dark:text-white text-center"
+                                >
+                                    {CONSULTIN_TXT.CONTROL_DE_CALIDAD.TITLE}<br
+                                    />
+                                    {CONSULTIN_TXT.CONTROL_DE_CALIDAD.ITEM1}<br
+                                    />
+                                    {CONSULTIN_TXT.CONTROL_DE_CALIDAD.ITEM2}<br
+                                    />
+                                    {CONSULTIN_TXT.CONTROL_DE_CALIDAD.ITEM3}<br
+                                    />
                                 </p>
                             </div>
                         </div>
