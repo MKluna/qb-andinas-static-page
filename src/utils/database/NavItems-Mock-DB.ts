@@ -10,21 +10,17 @@ export const MockNavItemDB = [
         text: "Empresa"
     },
     {
-        href: URL + "services",
+        href: URL + "#services",
         text: "Servicios"
     },
     {
-        href: URL + "consulting",
+        href: URL + "#consulting",
         text: "Consultoría"
     },
     {
-        href: URL + "experience",
+        href: URL + "#experience",
         text: "Experiencia"
     },
-    // {
-    //     href: URL + "jobs",
-    //     text: "Puestos"
-    // },
     {
         href: URL + "#contact",
         text: "Contacto"

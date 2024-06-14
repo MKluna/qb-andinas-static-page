@@ -1,21 +1,19 @@
 ---
 import Container from "../shared/Container.astro";
-import { MockHeroDB } from "../../utils/database/Hero-Mock-DB";
 import { COMPANY_IMG } from "../../mock/public-img";
+import { HERO_TXT } from "../../mock/public-txt";
 ---
 
 <section>
-    <Container className={"flex flex-col lg:flex-row gap-10 lg:gap-12"}>
+    <Container className="flex flex-col lg:flex-row gap-10 lg:gap-12">
         <div
             id="custom-controls-gallery"
             class="relative mx-auto h-64 w-full rounded-md sm:h-80 sm:rounded-lg md:h-96 md:rounded-xl xl:rounded-3xl lg:h-[28rem] xl:h-[34rem] overflow-hidden"
             data-carousel="slide"
+            data-carousel-interval="5000"
         >
             <div class="relative h-full overflow-hidden rounded-lg">
-                <div
-                    class="hidden duration-700 ease-in-out"
-                    data-carousel-item="active"
-                >
+                <div class="hidden duration-1000 ease-in-out" data-carousel-item="active">
                     <img
                         src={COMPANY_IMG.SLIDE_1}
                         alt={COMPANY_IMG.ALT_SLIDE_1}
@@ -26,24 +24,23 @@ import { COMPANY_IMG } from "../../mock/public-img";
                         decoding="async"
                     />
                     <div
-                        class="absolute inset-0 flex flex-col justify-center gap-y-6 overflow-hidden max-xl:bg-black/25 max-md:bg-black/30 max-sm:bg-black/30 xl:bg-gradient-to-r xl:from-black/60 xl:via-black/10 xl:to-black/0 items-center text-justify lg:text-left lg:py-7 xl:py-8 lg:items-start lg:max-w-none max-w-3xl mx-auto lg:mx-0 lg:flex-1 lg:w-1/2"
+                        class="absolute inset-0 flex flex-col justify-center gap-y-6 overflow-hidden max-xl:bg-black/25 max-md:bg-black/30 max-sm:bg-black/30 xl:bg-gradient-to-r xl:from-black/60 xl:via-black/10 xl:to-black/0 items-center text-center lg:text-center lg:py-7 xl:py-8 lg:items-center lg:max-w-none max-w-3xl mx-auto lg:mx-0 lg:flex-1 lg:w-full"
                     >
-                        <h1
-                            class="ml-4 text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold text-heading-1 animate__animated animate__fadeInDown"
-                        >
-                            <span
-                                class="text-transparent bg-clip-text bg-gradient-to-br from-indigo-50 to-indigo-50"
-                                >{MockHeroDB.principalColorText}</span
-                            >
+                        <h1 class="text-xl sm:text-2xl md:text-3xl xl:text-4xl font-bold text-heading-1 animate__animated animate__fadeInDown">
+                            <span class="text-transparent bg-clip-text bg-gradient-to-br from-indigo-50 to-indigo-50">
+                                {HERO_TXT.TITLE_PRINCIPAL_SLIDE.TITLE}
+                            </span>
                         </h1>
-                        <p
-                            class="ml-4 font-bold text-white text-left animate__animated animate__fadeInLeft"
-                        >
-                            {MockHeroDB.paragraphText}
-                        </p>
+                        <ul class="font-bold text-white text-center animate__animated animate__fadeInLeft text-base sm:text-lg md:text-xl xl:text-2xl">
+                            <li>{HERO_TXT.TITLE_PRINCIPAL_SLIDE.ITEM1}</li>
+                            <li>{HERO_TXT.TITLE_PRINCIPAL_SLIDE.ITEM2}</li>
+                            <li>{HERO_TXT.TITLE_PRINCIPAL_SLIDE.ITEM3}</li>
+                            <li>{HERO_TXT.TITLE_PRINCIPAL_SLIDE.ITEM4}</li>
+                            <li>{HERO_TXT.TITLE_PRINCIPAL_SLIDE.ITEM5}</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <div class="hidden duration-1000 ease-in-out" data-carousel-item>
                     <img
                         src={COMPANY_IMG.SLIDE_2}
                         alt={COMPANY_IMG.ALT_SLIDE_2}
@@ -54,15 +51,12 @@ import { COMPANY_IMG } from "../../mock/public-img";
                         decoding="async"
                     />
                     <div
-                        class="absolute inset-0 flex flex-col justify-center gap-y-6 overflow-hidden max-xl:bg-black/25 max-md:bg-black/30 max-sm:bg-black/30 xl:bg-gradient-to-r xl:from-black/60 xl:via-black/10 xl:to-black/0 items-center text-justify lg:text-left lg:py-7 xl:py-8 lg:items-start lg:max-w-none max-w-3xl mx-auto lg:mx-0 lg:flex-1 lg:w-1/2"
+                        class="absolute inset-0 flex flex-col justify-center gap-y-6 overflow-hidden max-xl:bg-black/25 max-md:bg-black/30 max-sm:bg-black/30 xl:bg-gradient-to-r xl:from-black/60 xl:via-black/10 xl:to-black/0 items-center text-center lg:text-center lg:py-7 xl:py-8 lg:items-center lg:max-w-none max-w-3xl mx-auto lg:mx-0 lg:flex-1 lg:w-full"
                     >
-                        <h1
-                            class="ml-4 text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold text-heading-1 animate__animated animate__fadeInDown"
-                        >
-                            <span
-                                class="text-transparent bg-clip-text bg-gradient-to-br from-indigo-50 to-indigo-50"
-                                >Compromiso que llega</span
-                            >
+                        <h1 class="text-xl sm:text-2xl md:text-3xl xl:text-4xl font-bold text-heading-1 animate__animated animate__fadeInDown">
+                            <span class="text-transparent bg-clip-text bg-gradient-to-br from-indigo-50 to-indigo-50">
+                                {HERO_TXT.TITLE_SECOND_SLIDE}
+                            </span>
                         </h1>
                     </div>
                 </div>

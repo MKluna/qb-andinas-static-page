@@ -108,11 +108,11 @@ const { title } = Astro.props;
       const setTheme = () => {
         const doc = document.documentElement;
         if (
-          localStorage.getItem("appTheme") === "dark" ||
-          (!("appTheme" in localStorage) &&
+          localStorage.getItem("appTheme") === "light" || // carga por defecto blanco | dark
+          (!("appTheme" in localStorage) && 
             window.matchMedia("(prefers-color-scheme: dark)").matches)
         ) {
-          doc.classList.add("dark");
+          doc.classList.add("light");  // forzar el blanco si lo tiene en cache | dark
         } else {
           doc.classList.remove("dark");
         }

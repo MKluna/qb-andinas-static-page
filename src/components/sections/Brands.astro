@@ -1,16 +1,17 @@
 ---
 import Container from "../shared/Container.astro";
 import Title from "../shared/Title.astro";
-import {MockBrandsDB} from "../../utils/database/Brands-Mock-DB"
+import { BRANDS_TXT } from "../../mock/public-txt";
+import { BRANDS_IMG } from "../../mock/public-img";
 ---
 
 <section>
-    <Container className="space-y-8">
+    <Container className="space-y-8 pt-12 lg:pt-12">
         <div class="text-center max-w-3xl mx-auto">
-            <Title>{MockBrandsDB.title}</Title>
+            <Title>{BRANDS_TXT.TITLE}</Title>
         </div>
         <div class="flex justify-center flex-wrap gap-4">
-            {MockBrandsDB.logos.map((logo, index) => (
+            {BRANDS_IMG.map((logo, index) => (
                 <div
                     :key={index}
                     class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group"
@@ -20,7 +21,7 @@ import {MockBrandsDB} from "../../utils/database/Brands-Mock-DB"
                         width={logo.width}
                         height={logo.height}
                         alt={logo.alt}
-                        class="h-14 sm:h-16 w-auto ease-linear duration-300 group-hover:!grayscale-0 group-hover:scale-105 md:grayscale group-hover:md:!grayscale-0 md:group-hover:!grayscale-0 group-hover:md:scale-105"
+                        class="h-14 sm:h-16 w-auto"
                     />
                 </div>
             ))}

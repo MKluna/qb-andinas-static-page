@@ -1,14 +1,13 @@
 ---
 import Container from "../shared/Container.astro";
 import Paragraph from "../shared/Paragraph.astro";
-import { MockCtaDB } from "../../utils/database/CTA-Mock-DB";
-import { MockSocialDB } from "../../utils/database/Social-Mock-DB";
+import { CTA_TXT, REDES_SOCIALES } from "../../mock/public-txt";
 ---
 
-<section id="cta" class="pb-20">
+<section>
   <Container>
     <div
-      class="w-full relative py-8 md:py-10 px-6 md:px-8 rounded-2xl bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900"
+      class="w-full relative py-8 md:py-10 px-6 md:px-8 rounded-2xl bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900 pt-12 lg:pt-12"
     >
       <div class="absolute right-0 top-0 h-full w-full flex justify-end">
         <div
@@ -46,14 +45,11 @@ import { MockSocialDB } from "../../utils/database/Social-Mock-DB";
           class="text-3xl/tight sm:text-4xl/tight md:text-5xl/tight
           font-bold text-heading-1 text-center"
         >
-          <span
-            class="text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 from-20% via-primary via-30% to-green-600"
-            >{MockCtaDB.principalColorText}</span
-          >
+          <span class="text-[#2E79BE]">{CTA_TXT.NUESTRA_EMPRESA.TITLE}</span>
         </h1>
         <Paragraph className={"pt-10 text-center md:text-justify"}>
           <span class="font-bold">Q.B. Andina S.A.</span>
-          {MockCtaDB.paragraph}
+          {CTA_TXT.NUESTRA_EMPRESA.DESCRIPTION}
         </Paragraph>
       </div>
       <hr
@@ -69,22 +65,20 @@ import { MockSocialDB } from "../../utils/database/Social-Mock-DB";
             <h1
               class="text-lg sm:text-xl md:text-lg xl:text-lg font-bold text-heading-1"
             >
-              Contáctanos
+              {CTA_TXT.CONTACTANOS.TITLE}
             </h1>
           </div>
           <div>
             <a
-              href={MockSocialDB.whatsapp}
+              href={REDES_SOCIALES.WHATSAPP}
               class="text-lg sm:text-xl md:text-lg xl:text-lg font-bold text-heading-1"
-              >11 5716-4184</a
-            >
+            >{CTA_TXT.CONTACTANOS.PHONE}</a>
           </div>
           <div>
             <a
-              href="mailto:comercial@qbandina.com.ar"
+              href={"mailto:" + CTA_TXT.CONTACTANOS.EMAIL}
               class="text-lg sm:text-xl md:text-lg xl:text-lg font-bold text-heading-1"
-              >comercial@qbandina.com.ar</a
-            >
+            >{CTA_TXT.CONTACTANOS.EMAIL}</a>
           </div>
         </div>
       </div>

@@ -5,9 +5,10 @@ import FormVentas from "../forms/FormVentas.astro";
 import FormMetrogas from "../forms/FormMetrogas.astro";
 import FormTrabaja from "../forms/FormTrabaja.astro";
 import FormReclamos from "../forms/FormReclamos.astro";
+import { CONTACT_TXT, CONTACT_URL } from "../../mock/public-txt";
 ---
 
-<section id="contact" class="pb-20 pt-32 lg:pt-36">
+<section id="contact" class="pb-20 pt-12 lg:pt-12">
     <Container
         className="flex flex-col midmd:flex-row gap-10 lg:gap-12 text-center"
     >
@@ -18,60 +19,68 @@ import FormReclamos from "../forms/FormReclamos.astro";
                 <h2
                     class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white"
                 >
-                    Contáctate con nosotros
+                    {CONTACT_TXT.TITLE}
                 </h2>
-                <p
-                    class="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl"
-                >
-                    ¿Tienes un problema técnico? ¿Necesitas más información
-                    sobre nuestro plan de negocio? Háganoslo saber.
-                </p>
-
                 <ul class="my-4 space-y-3">
                     <li>
-                        <FormMensaje />
+                        <!-- <FormMensaje /> -->
+                        <a
+                            href={CONTACT_URL.URL_FORM_MSJ}
+                            class="flex items-center p-3 text-base font-bold text-white bg-[#00AAD2] hover:bg-[#0077b6;] focus:ring-4 focus:outline-none focus:ring-blue-700 dark:focus:ring-blue-900 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center"
+                        >
+                            <span class="flex-1 ms-3 whitespace-nowrap"
+                                >Mensajeria</span
+                            >
+                        </a>
                     </li>
                     <li>
-                        <FormVentas />
+                        <!-- <FormVentas /> -->
+                        <a
+                            href={CONTACT_URL.URL_FORM_VENTAS}
+                            class="flex items-center p-3 text-base font-bold text-white bg-[#34537A] hover:bg-[#1f3149] focus:ring-4 focus:outline-none focus:ring-blue-700 dark:focus:ring-blue-900 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center"
+                        >
+                            <span class="flex-1 ms-3 whitespace-nowrap"
+                                >Ventas y Servicios</span
+                            >
+                        </a>
                     </li>
                     <li>
-                        <FormMetrogas />
+                        <!-- <FormMetrogas /> -->
+                        <a
+                            href={CONTACT_URL.URL_FORM_METRO}
+                            class="flex items-center p-3 text-base font-bold text-white bg-[#2A4B90] hover:bg-[#192d56] focus:ring-4 focus:outline-none focus:ring-blue-700 dark:focus:ring-blue-900 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center"
+                        >
+                            <span class="flex-1 ms-3 whitespace-nowrap"
+                                >Metrogas</span
+                            >
+                        </a>
                     </li>
                     <li>
-                        <FormTrabaja />
+                        <!-- <FormTrabaja /> -->
+                        <a
+                            href={CONTACT_URL.URL_FORM_TRABAJA}
+                            class="flex items-center p-3 text-base font-bold text-white bg-[#2A4B90] hover:bg-[#192d56] focus:ring-4 focus:outline-none focus:ring-blue-700 dark:focus:ring-blue-900 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center"
+                        >
+                            <span class="flex-1 ms-3 whitespace-nowrap"
+                                >Trabaja con nosotros</span
+                            >
+                        </a>
                     </li>
                     <li>
-                        <FormReclamos />
+                        <!-- <FormReclamos /> -->
+                        <a
+                            href={CONTACT_URL.URL_FORM_RECLAMOS}
+                            class="flex items-center p-3 text-base font-bold text-white bg-[#1A3E51] hover:bg-[#0f2530] focus:ring-4 focus:outline-none focus:ring-blue-700 dark:focus:ring-blue-900 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center"
+                        >
+                            <span class="flex-1 ms-3 whitespace-nowrap"
+                                >Reclamos y o Sugerencias</span
+                            >
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
     </Container>
-    <!-- <button id="showToastButton">Mostrar Toast</button> -->
-
-    <!-- <div
-        id="toast-bottom-left"
-        class="fixed flex items-center w-full max-w-xs p-4 space-x-4 text-gray-500 bg-white divide-x rtl:divide-x-reverse divide-gray-200 rounded-lg shadow bottom-5 left-5 dark:text-gray-400 dark:divide-gray-700 space-x dark:bg-gray-800 hidden"
-        role="alert"
-        style="z-index: 999"
-    >
-        <div
-            class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200"
-        >
-            <svg
-                class="w-5 h-5"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-            >
-                <path
-                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"
-                ></path>
-            </svg>
-        </div>
-        <div class="pl-4 ms-4 text-sm font-normal">Enviado Correctamente.</div>
-    </div> -->
 </section>
 
 <script>
@@ -82,7 +91,13 @@ import FormReclamos from "../forms/FormReclamos.astro";
             buttonCloseXId: string,
             modalId: string,
         ) {
-            console.log("Initializing modal with IDs:", buttonOpenId, buttonCloseId, buttonCloseXId, modalId);
+            console.log(
+                "Initializing modal with IDs:",
+                buttonOpenId,
+                buttonCloseId,
+                buttonCloseXId,
+                modalId,
+            );
 
             const buttonOpenModal = document.getElementById(
                 buttonOpenId,
@@ -172,21 +187,3 @@ import FormReclamos from "../forms/FormReclamos.astro";
         );
     });
 </script>
-
-<!-- <script>
-    const showToastButton = document.getElementById(
-        "showToastButton",
-    ) as HTMLElement;
-    const toast = document.getElementById("toast-bottom-left") as HTMLElement;
-
-    showToastButton.addEventListener("click", function () {
-        console.log("Showing toast...");
-        toast.classList.remove("hidden");
-
-        setTimeout(function () {
-            console.log("Hiding toast...");
-            toast.classList.add("hidden");
-        }, 3000);
-    });
-</script> -->
-
