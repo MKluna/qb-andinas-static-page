@@ -1,8 +1,35 @@
 ---
-import { EXPERIENCE_IMG } from "../../../mock/public-img";
+// import { EXPERIENCE_IMG } from "../../../mock/public-img";
 import { EXPERIENCE_TXT } from "../../../mock/public-txt";
 import Container from "../../shared/Container.astro";
 import Title from "../../shared/Title.astro";
+import img1 from '../../../../public/experience/img-1.webp';
+import img2 from '../../../../public/experience/img-2.webp';
+import img3 from '../../../../public/experience/img-3.webp';
+import img4 from '../../../../public/experience/img-4.webp';
+import img5 from '../../../../public/experience/img-5.webp';
+import img6 from '../../../../public/experience/img-6.webp';
+import img7 from '../../../../public/experience/img-7.webp';
+import img8 from '../../../../public/experience/img-8.webp';
+import img9 from '../../../../public/experience/img-9.webp';
+import img10 from '../../../../public/experience/img-10.webp';
+import img11 from '../../../../public/experience/img-11.webp';
+import img12 from '../../../../public/experience/img-12.webp';
+import { Image } from "astro:assets";
+const EXPERIENCE_IMG = [
+    { src: img1 },
+    { src: img2 },
+    { src: img3 },
+    { src: img4 },
+    { src: img5 },
+    { src: img6 },
+    { src: img7 },
+    { src: img8 },
+    { src: img9 },
+    { src: img10 },
+    { src: img11 },
+    { src: img12 },
+];
 ---
 
 <section id="experience">
@@ -22,11 +49,12 @@ import Title from "../../shared/Title.astro";
                         {
                             EXPERIENCE_IMG.map((itm) => (
                                 <div class="relative w-full h-80">
-                                    <img
+                                    <Image
                                         class="absolute inset-0 h-full w-full object-cover rounded-lg"
-                                        src={itm.url}
+                                        src={itm.src}
                                         alt="generic-alt"
                                         loading="lazy"
+                                        format="webp"
                                     />
                                 </div>
                             ))
