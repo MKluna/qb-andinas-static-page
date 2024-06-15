@@ -1,8 +1,12 @@
 ---
+import { Image } from "astro:assets";
+import { FOOTER_IMG } from "../../mock/public-img";
 import { REDES_SOCIALES } from "../../mock/public-txt";
 ---
 
-<footer class="relative bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900 pt-2 rounded-t-3xl">
+<footer
+    class="relative bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900 pt-2 rounded-t-3xl"
+>
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-2">
         <div class="md:flex md:justify-between text-center">
             <div
@@ -41,7 +45,6 @@ import { REDES_SOCIALES } from "../../mock/public-txt";
                         <i class="fi fi-brands-whatsapp text-4xl"></i>
                     </a>
                 </div>
-                
             </div>
             <div class="text-left md:text-left">
                 <div id="somospartesde">
@@ -50,57 +53,61 @@ import { REDES_SOCIALES } from "../../mock/public-txt";
                     >
                         Somos parte de
                     </h2>
-                    <ul class="flex items-center gap-4">
+                    <ul class="flex justify-center items-center gap-4">
                         <li>
-                            <img
-                                src="https://www.oca.com.ar/Content/images/logosfooter/aeca.png"
+                            <Image
+                                src={FOOTER_IMG[0].url}
+                                alt="footer-icon"
                                 width="120"
                                 height="120"
+                                loading="eager"
                             />
                         </li>
                         <li>
-                            <img
-                                src="https://www.oca.com.ar/Content/images/logosfooter/cpa.png"
-                                width="120"
-                                height="120"
-                            />
-                        </li>
-                        <li>
-                            <img
-                                src="https://www.oca.com.ar/Content/images/logosfooter/cace.png"
-                                width="120"
-                                height="120"
+                            <Image
+                                src={FOOTER_IMG[1].url}
+                                alt="footer-icon"
+                                width="180"
+                                height="180"
+                                class="lg:mb-5"
+                                loading="eager"
                             />
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="text-center md:text-left" id="certific">
-                <h2
-                    class="block antialiased tracking-normal font-sans text-xl font-semibold leading-snug text-inherit mb-2 !font-semibold !text-primary"
-                >
-                    Certificaciones
-                </h2>
-                <ul class="flex justify-center items-center gap-4">
-                    <li>
-                        <img
-                            src="https://www.oca.com.ar/Content/images/logosfooter/certificaciones.png"
-                            width="180"
-                            height="180"
-                        />
-                    </li>
-                </ul>
+            <div class="text-center md:text-left mb-8 md:mb-0">
+                <div id="certific">
+                    <h2
+                        class="block antialiased text-center tracking-normal font-sans text-xl font-semibold leading-snug text-inherit mb-2 !font-semibold !text-primary"
+                    >
+                        Certificaciones
+                    </h2>
+                    <ul class="flex justify-center items-center gap-4">
+                        <li>
+                            <Image
+                                src="https://www.oca.com.ar/Content/images/logosfooter/certificaciones.png"
+                                width="180"
+                                height="180"
+                                alt="footer-icon"
+                                loading="eager"
+                            />
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div id="casacentral">
-                <h4
-                    class="block antialiased tracking-normal font-sans text-xl font-semibold leading-snug text-inherit mb-2 !font-semibold !text-primary"
-                >
-                    Casa Central
-                </h4>
-                <p class="text-gray-500 dark:text-gray-400">
-                    Tronador 873 CABA<br />
-                    Tel. 4551-0020
-                </p>
+            <div>
+                <div id="casacentral">
+                    <h2
+                        class="block antialiased text-center tracking-normal font-sans text-xl font-semibold leading-snug text-inherit mb-2 !font-semibold !text-primary"
+                    >
+                        Casa Central
+                    </h2>
+                    <p class="text-gray-500 dark:text-gray-400">
+                        Tronador 873 CABA<br />
+                        Tel. 4551-0020
+                    </p>
+                </div>
             </div>
         </div>
         <div class="sm:flex sm:items-center sm:justify-between mt-4">
@@ -142,7 +149,6 @@ import { REDES_SOCIALES } from "../../mock/public-txt";
         </div>
     </div>
 </footer>
-
 
 <script>
     document.addEventListener("astro:page-load", () => {

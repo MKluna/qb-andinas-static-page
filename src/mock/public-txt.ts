@@ -32,7 +32,7 @@ export const HERO_TXT = {
 export const CTA_TXT = {
     "NUESTRA_EMPRESA": {
         "TITLE": "Nuestra Empresa",
-        "DESCRIPTION": "Q.B. Andina S.A. es una empresa que se dedica a brindar servicios esenciales y consultoría para empresas. Realizamos tareas de distribución postal, lectura de medidores y colocación, relevamiento, inspección y tendido de líneas de media y baja tensión, así como la energización de cámaras de seguridad, para empresas de servicios de luz, agua, gas, televisión y fibra óptica. Gracias a nuestros 40 años de trayectoria, tenemos el conocimiento, el equipo y la capacidad para satisfacer todo tipo de servicios para empresas."
+        "DESCRIPTION": "es una empresa que se dedica a brindar servicios esenciales y consultoría para empresas. Realizamos tareas de distribución postal, lectura de medidores y colocación, relevamiento, inspección y tendido de líneas de media y baja tensión, así como la energización de cámaras de seguridad, para empresas de servicios de luz, agua, gas, televisión y fibra óptica. Gracias a nuestros 40 años de trayectoria, tenemos el conocimiento, el equipo y la capacidad para satisfacer todo tipo de servicios para empresas."
     },
     "CONTACTANOS": {
         "TITLE": "Contáctanos",
@@ -114,7 +114,7 @@ export const CONTACT_URL = {
 }
 
 export const FEATURES_TXT = {
-    "TITLE": "OFRECEMOS UNA AMPLIA GAMA DE PRODUCTOS, TRABAJANDO CON LAS MEJORES MARCAS DEL MERCADO.",
+    "TITLE": "OFRECEMOS UNA AMPLIA GAMA DE PRODUCTOS TRABAJANDO CON LAS MEJORES MARCAS DEL MERCADO.",
     "ITM1": "INSUMOS DE LIMPIEZA",
     "ITM2": "INSUMOS DE ELECTRICIDAD",
     "ITM3": "INSUMOS ELÉCTRICOS",
@@ -216,16 +216,18 @@ export const EXPERIENCE_TXT = {
 }
 
 export const SERVICES_TXT = {
-    "ITM1": "Distribución, Paquetería.",
-    "ITM2": {
+    "LOGISTICA_TXT": {
+        "ITM1_1": "Distribución",
+        "ITM1_2": "Paquetería",
+    },
+    "LUZ_TXT": {
         "ITM2_1": "Tendido de líneas de media y baja tensión.",
-        "ITM2_2": "Planos de obras.",
         "ITM2_3": "Nuevos suministros.",
     },
-    "ITM3": {
+    "GAS_TXT": {
         "ITM3_1": "Planos de obra.",
         "ITM3_2": "Nuevos suministros.",
         "ITM3_3": "Morosidad.",
     },
-    "ITM4": "Lectura de medidores."
+    "AGUA_TXT": "Lectura de medidores."
 }

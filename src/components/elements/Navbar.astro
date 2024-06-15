@@ -6,6 +6,7 @@ import {
     MockNavImgLink,
     MockImgNavLink,
 } from "../../utils/database/NavItems-Mock-DB";
+import { Image } from "astro:assets";
 ---
 
 <header class="absolute inset-x-0 top-0 z-50 py-6 sticky" id="navbar">
@@ -20,19 +21,23 @@ import {
                     class="relative flex items-center gap-3"
                 >
                     <div class="flex flex-shrink-0 items-center">
-                        <img
+                        <Image
                             alt="Your Logo"
                             decoding="async"
                             src={MockImgNavLink[0].href}
-                            loading="lazy"
-                            class="h-12 md:h-16 w-auto dark:hidden"
+                            loading="eager"
+                            class="dark:hidden"
+                            width={240}
+                            height={240}
                         />
-                        <img
+                        <Image
                             alt="Your Transparent Logo"
                             decoding="async"
                             src={MockImgNavLink[1].href}
-                            loading="lazy"
-                            class="h-12 md:h-16 w-auto dark:flex hidden"
+                            loading="eager"
+                            class="dark:flex hidden"
+                            width={240}
+                            height={240}
                         />
                     </div>
                 </a>

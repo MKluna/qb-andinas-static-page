@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import { CONSULTING_IMG } from "../../../mock/public-img";
 import { CONSULTIN_TXT } from "../../../mock/public-txt";
 import Container from "../../shared/Container.astro";
@@ -40,17 +41,20 @@ import Title from "../../shared/Title.astro";
             </div>
             <div class="relative pt-20 lg:pt-20">
                 <div
-                    class="relative animate-fade-left animate-once animate-delay-[400ms] animate-ease-in animate-normal animate-fill-backwards mb-10"
+                    class="relative mb-10"
                 >
                     <div class="text-center max-w-3xl mx-auto mb-12">
                         <Title>{CONSULTIN_TXT.TITLE}</Title>
                     </div>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
                         <div class="flex flex-col items-center">
-                            <img
+                            <Image
                                 class="icon-size mb-4"
-                                src="https://cdn-icons-png.flaticon.com/512/4631/4631841.png"
+                                src={CONSULTING_IMG.SEGURIDAD_SALUD_URL}
                                 alt={CONSULTING_IMG.SEGURIDAD_SALUD_ALT}
+                                width={800}
+                                height={450}
+                                loading="eager"
                             />
                             <div
                                 class="relative py-4 md:py-6 px-4 md:px-6 bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-600 text-center flex justify-center items-center fixed-size"
@@ -64,10 +68,13 @@ import Title from "../../shared/Title.astro";
                         </div>
 
                         <div class="flex flex-col items-center">
-                            <img
+                            <Image
                                 class="icon-size mb-4"
-                                src="https://cdn-icons-png.flaticon.com/512/6304/6304089.png"
+                                src={CONSULTING_IMG.SISTEMA_DE_GESTION_URL}
                                 alt={CONSULTING_IMG.SISTEMA_DE_GESTION_ALT}
+                                width={800}
+                                height={450}
+                                loading="eager"
                             />
                             <div
                                 class="relative py-4 md:py-6 px-4 md:px-6 bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-700 text-center flex justify-center items-center fixed-size"
@@ -86,10 +93,13 @@ import Title from "../../shared/Title.astro";
                         </div>
 
                         <div class="flex flex-col items-center">
-                            <img
+                            <Image
                                 class="icon-size mb-4"
-                                src="https://cdn-icons-png.flaticon.com/512/6005/6005283.png"
+                                src={CONSULTING_IMG.DESARROLLO_HUMANO_URL}
                                 alt={CONSULTING_IMG.DESARROLLO_HUMANO_ALT}
+                                width={800}
+                                height={450}
+                                loading="eager"
                             />
                             <div
                                 class="relative py-4 md:py-6 px-4 md:px-6 bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-800 text-center flex justify-center items-center fixed-size"
@@ -103,10 +113,13 @@ import Title from "../../shared/Title.astro";
                         </div>
 
                         <div class="flex flex-col items-center">
-                            <img
+                            <Image
                                 class="icon-size mb-4"
-                                src="https://cdn-icons-png.flaticon.com/512/2954/2954179.png"
+                                src={CONSULTING_IMG.CONTROL_CALIDAD_URL}
                                 alt={CONSULTING_IMG.CONTROL_CALIDAD_ALT}
+                                width={800}
+                                height={450}
+                                loading="eager"
                             />
                             <div
                                 class="relative py-4 md:py-6 px-4 md:px-6 bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-900 text-center flex justify-center items-center fixed-size"

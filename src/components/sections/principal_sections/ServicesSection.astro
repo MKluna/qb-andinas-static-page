@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import { SERVICES_IMG } from "../../../mock/public-img";
 import { FEATURES_TXT, SERVICES_TXT } from "../../../mock/public-txt";
 import Container from "../../shared/Container.astro";
@@ -39,9 +40,7 @@ import Title from "../../shared/Title.astro";
                 </div>
             </div>
             <div class="relative pt-20 lg:pt-20">
-                <div
-                    class="relative animate-fade-left animate-once animate-delay-[400ms] animate-ease-in animate-normal animate-fill-backwards mb-2"
-                >
+                <div class="relative mb-2">
                     <div class="text-center max-w-3xl mx-auto mb-12">
                         <Title>Nuestros Servicios</Title>
                     </div>
@@ -49,40 +48,44 @@ import Title from "../../shared/Title.astro";
                         {
                             [
                                 {
-                                    url: "https://cdn-icons-png.flaticon.com/512/4715/4715294.png",
+                                    url: SERVICES_IMG.LOGISTICA_URL,
                                     alt: SERVICES_IMG.LOGISTICA_ALT,
-                                    text: SERVICES_TXT.ITM1,
+                                    text: [
+                                        SERVICES_TXT.LOGISTICA_TXT.ITM1_1,
+                                        SERVICES_TXT.LOGISTICA_TXT.ITM1_2,
+                                    ],
                                 },
                                 {
-                                    url: "https://cdn-icons-png.flaticon.com/512/3250/3250735.png",
+                                    url: SERVICES_IMG.LUZ_URL,
                                     alt: SERVICES_IMG.LUZ_ALT,
                                     text: [
-                                        SERVICES_TXT.ITM2.ITM2_1,
-                                        SERVICES_TXT.ITM2.ITM2_2,
-                                        SERVICES_TXT.ITM2.ITM2_3,
+                                        SERVICES_TXT.LUZ_TXT.ITM2_1,
+                                        SERVICES_TXT.LUZ_TXT.ITM2_3,
                                     ],
                                 },
                                 {
-                                    url: "https://cdn-icons-png.flaticon.com/512/2296/2296796.png",
+                                    url: SERVICES_IMG.GAS_URL,
                                     alt: SERVICES_IMG.GAS_ALT,
                                     text: [
-                                        SERVICES_TXT.ITM3.ITM3_1,
-                                        SERVICES_TXT.ITM3.ITM3_2,
-                                        SERVICES_TXT.ITM3.ITM3_3,
+                                        SERVICES_TXT.GAS_TXT.ITM3_1,
+                                        SERVICES_TXT.GAS_TXT.ITM3_2,
+                                        SERVICES_TXT.GAS_TXT.ITM3_3,
                                     ],
                                 },
                                 {
-                                    url: "https://cdn-icons-png.flaticon.com/512/2373/2373627.png",
+                                    url: SERVICES_IMG.AGUA_URL,
                                     alt: SERVICES_IMG.AGUA_ALT,
-                                    text: SERVICES_TXT.ITM4,
+                                    text: SERVICES_TXT.AGUA_TXT,
                                 },
                             ].map((service) => (
                                 <div class="flex flex-col items-center">
-                                    <img
+                                    <Image
                                         class="icon-size mb-4"
                                         src={service.url}
                                         alt={service.alt}
-                                        loading="lazy"
+                                        loading="eager"
+                                        width={800}
+                                        height={450}
                                     />
                                     <div class="relative py-4 md:py-6 px-4 md:px-6 bg-gradient-to-tr from-gray-100 to-gray-200 dark:from-gray-600 text-center flex justify-center items-center fixed-size">
                                         {typeof service.text === "string" ? (
@@ -114,9 +117,7 @@ import Title from "../../shared/Title.astro";
         </div>
         <div class="w-full relative py-8 md:py-10 px-6 md:px-8 rounded-2xl">
             <div class="relative">
-                <div
-                    class="relative animate-fade-left animate-once animate-delay-[400ms] animate-ease-in animate-normal animate-fill-backwards mb-10"
-                >
+                <div class="relative mb-10">
                     <div class="text-center max-w-3xl mx-auto mb-12">
                         <Title>Venta de insumos</Title>
                     </div>
@@ -155,10 +156,13 @@ import Title from "../../shared/Title.astro";
                             </div>
                         </div>
                         <div class="lg:w-1/2 flex items-center">
-                            <img
+                            <Image
                                 src={SERVICES_IMG.SERVICES_IMG_1}
                                 alt={SERVICES_IMG.ALT_SERVICES_IMG_1}
-                                class="w-full h-auto object-cover rounded-lg mx-auto lg:max-w-none lg:ml-auto lg:mr-0 sm:w-3/4 sm:mx-auto"
+                                width={800}
+                                height={450}
+                                class="object-cover rounded-lg mx-auto lg:max-w-none lg:ml-auto lg:mr-0 sm:w-3/4 sm:mx-auto"
+                                loading="eager"
                             />
                         </div>
                     </div>

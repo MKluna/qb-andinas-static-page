@@ -3,10 +3,11 @@ import Container from "../shared/Container.astro";
 import Title from "../shared/Title.astro";
 import { BRANDS_TXT } from "../../mock/public-txt";
 import { BRANDS_IMG } from "../../mock/public-img";
+import { Image } from "astro:assets";
 ---
 
 <section>
-    <Container className="space-y-8 pt-12 lg:pt-12">
+    <Container className="space-y-8 ">
         <div class="text-center max-w-3xl mx-auto">
             <Title>{BRANDS_TXT.TITLE}</Title>
         </div>
@@ -16,12 +17,13 @@ import { BRANDS_IMG } from "../../mock/public-img";
                     :key={index}
                     class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group"
                 >
-                    <img
+                    <Image
                         src={logo.src}
                         width={logo.width}
                         height={logo.height}
                         alt={logo.alt}
                         class="h-14 sm:h-16 w-auto"
+                        loading="lazy"
                     />
                 </div>
             ))}
