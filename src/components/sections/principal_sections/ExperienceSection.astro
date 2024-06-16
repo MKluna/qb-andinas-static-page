@@ -11,7 +11,7 @@ import Title from "../../shared/Title.astro";
         <div class="w-full relative py-8 md:py-10 px-6 md:px-8 rounded-2xl">
             <div class="relative pt-20 lg:pt-20">
                 <div class="relative mb-10">
-                    <div class="text-center max-w-3xl mx-auto mb-24">
+                    <div class="text-center max-w-3xl mx-auto mb-12">
                         <Title>Proyectos</Title>
                     </div>
                     <div
@@ -44,7 +44,7 @@ import Title from "../../shared/Title.astro";
                                 {
                                     EXPERIENCE_TXT.ITEM_LIST.ITEM3.map(
                                         (project, index) => (
-                                            <div>
+                                            <div class="animate-on-scroll">
                                                 <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
                                                     {/* 
                                             <svg
@@ -121,3 +121,21 @@ import Title from "../../shared/Title.astro";
         </div>
     </Container>
 </section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate__animated', 'animate__fadeInLeft', 'animate__slow');
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        document.querySelectorAll('.animate-on-scroll').forEach(element => {
+            observer.observe(element);
+        });
+    });
+</script>
+ 
