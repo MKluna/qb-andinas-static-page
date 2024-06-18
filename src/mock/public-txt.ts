@@ -114,12 +114,15 @@ export const CONTACT_URL = {
 }
 
 export const FEATURES_TXT = {
-    "TITLE": "OFRECEMOS UNA AMPLIA GAMA DE PRODUCTOS TRABAJANDO CON LAS MEJORES MARCAS DEL MERCADO.",
-    "ITM1": "INSUMOS DE LIMPIEZA",
-    "ITM2": "INSUMOS DE ELECTRICIDAD",
-    "ITM3": "INSUMOS ELÉCTRICOS",
-    "ITM4": "INSUMOS DE FERRETERÍA"
+    "TITLE": "Ofrecemos una amplia gama de productos trabajando con las mejores marcas del mercado.",
+    "ITEMS": [
+        "Insumos de limpieza",
+        "Insumos de electricidad",
+        "Insumos eléctricos",
+        "Insumos de ferretería"
+    ]
 }
+
 
 export const EXPERIENCE_TXT = {
     "ITEM_LIST": {

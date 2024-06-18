@@ -64,10 +64,10 @@ import Title from "../../shared/Title.astro";
                                                 <h3 class="mb-2 text-xl font-bold dark:text-white">
                                                     {project.TITLE}
                                                 </h3>
-                                                <ul class="max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
+                                                <ul class="max-w-md space-y-1 text-gray-900 list-disc list-inside dark:text-gray-900">
                                                     {project.DESCRIPTION.map(
                                                         (itm, i) => (
-                                                            <li>{itm}</li>
+                                                            <li class="text-xs md:text-sm lg:text-base text-gray-900 dark:text-white">{itm}</li>
                                                         ),
                                                     )}
                                                 </ul>
