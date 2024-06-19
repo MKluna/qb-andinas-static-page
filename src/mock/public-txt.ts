@@ -101,7 +101,7 @@ export const CONTACT_TXT = {
     },
     "TRABAJA_CON_NOSOTROS_TXT": {
         "MODAL_TITLE": "Trabaja con nosotros",
-        "ITEM_DESCRIPTION_LABEL": "Descripción",
+        "ITEM_DESCRIPTION_LABEL": "Descripcion del mensaje",
     }
 }
 
@@ -118,7 +118,6 @@ export const FEATURES_TXT = {
     "TITLE": "Ofrecemos una amplia gama de productos trabajando con las mejores marcas del mercado.",
     "ITEMS": [
         "Insumos de limpieza",
-        "Insumos de electricidad",
         "Insumos eléctricos",
         "Insumos de ferretería"
     ]

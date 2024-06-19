@@ -9,7 +9,7 @@ import {
 import { Image } from "astro:assets";
 ---
 
-<header class="absolute inset-x-0 top-0 z-50 py-6 sticky" id="navbar">
+<header class="absolute inset-x-0 top-0 z-50 py-2 sticky" id="navbar">
     <Container>
         <nav
             class="w-full flex justify-between gap-6 relative"
@@ -51,13 +51,33 @@ import { Image } from "astro:assets";
             </div>
             <div
                 data-navbar
-                class="my-3 flex h-0 overflow-hidden lg:!h-auto lg:scale-y-100 duration-300 ease-linear flex-col gap-y-6 gap-x-4 lg:flex-row w-full lg:justify-between lg:items-center absolute lg:relative top-full lg:top-0 bg-body lg:bg-transparent border-x border-x-box-border lg:border-x-0"
+                class="flex h-0 overflow-hidden lg:!h-auto lg:scale-y-100 duration-300 ease-linear flex-col gap-y-6 gap-x-4 lg:flex-row w-full lg:justify-between lg:items-center absolute lg:relative top-full lg:top-0 bg-body lg:bg-transparent border-x border-x-box-border lg:border-x-0"
             >
                 <ul
-                    class="border-t border-box-border lg:border-t-0 px-6 lg:px-0 pt-6 lg:pt-0 flex flex-col lg:flex-row gap-y-4 gap-x-3 text-lg text-heading-2 w-full lg:justify-center lg:items-center"
+                    class="border-t border-box-border lg:border-t-0 px-6 lg:px-0 pt-6 lg:pt-0 flex flex-col lg:flex-row gap-y-4 gap-x-12 text-lg text-heading-2 w-full lg:justify-center lg:items-center hidden lg:flex"
+                >
+                    {
+                        MockNavItemDB.slice(0, MockNavItemDB.length - 1).map(
+                            (item, index) => {
+                                return <Navitem {...item} />;
+                            },
+                        )
+                    }
+                </ul>
+                <ul
+                    class="border-t border-box-border lg:border-t-0 px-6 lg:px-0 pt-6 lg:pt-0 flex flex-col lg:flex-row gap-y-4 gap-x-12 text-lg text-heading-2 w-full lg:justify-center lg:items-center block lg:hidden"
                 >
                     {
                         MockNavItemDB.map((item) => {
+                            return <Navitem {...item} />;
+                        })
+                    }
+                </ul>
+                <ul
+                    class="flex justify-end h-full items-center border-t border-box-border lg:border-t-0 px-6 lg:px-0 pt-6 lg:pt-0 flex flex-col lg:flex-row gap-y-4 gap-x-12 text-lg text-heading-2 hidden lg:flex"
+                >
+                    {
+                        MockNavItemDB.slice(-1).map((item, index) => {
                             return <Navitem {...item} />;
                         })
                     }

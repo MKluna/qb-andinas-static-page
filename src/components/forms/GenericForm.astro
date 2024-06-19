@@ -1,0 +1,468 @@
+---
+import { CONTACT_TXT } from "../../mock/public-txt";
+import Container from "../shared/Container.astro";
+---
+
+<div class="py-6 lg:py-6 px-2 mx-auto max-w-screen-md">
+    <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-6">
+        <Container className={"flex flex-col lg:flex-row gap-32 lg:gap-32"}>
+            <form class="max-w-xl mx-auto w-full" id="unified-form">
+                <div class="relative z-0 w-full mb-5 group">
+                    <label
+                        for="reason"
+                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                        >Motivo de la consulta</label
+                    >
+                    <select
+                        id="reason"
+                        name="reason"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                        required
+                    >
+                        <option value="">Seleccione una opción</option>
+                        <option value="mensajeria">Mensajería</option>
+                        <option value="ventas">Ventas y Servicios</option>
+                        <option value="metro">Metrogas</option>
+                        <option value="trabajo">Trabaja Con Nosotros</option>
+                        <option value="reclamo">Reclamos y o Sugerencias</option
+                        >
+                    </select>
+                </div>
+                <div class="relative z-0 w-full mb-5 group">
+                    <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        placeholder=" "
+                        required
+                    />
+                    <label
+                        for="name"
+                        class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                        >{CONTACT_TXT.GENERIC_TEXT_FORM.NAME_LABEL}</label
+                    >
+                </div>
+                <div class="relative z-0 w-full mb-5 group">
+                    <input
+                        type="tel"
+                        name="phone"
+                        id="phone"
+                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        placeholder=" "
+                        required
+                    />
+                    <label
+                        for="phone"
+                        class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                        >{CONTACT_TXT.GENERIC_TEXT_FORM.PHONE_LABEL}</label
+                    >
+                </div>
+                <div class="relative z-0 w-full mb-5 group">
+                    <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        placeholder=" "
+                        required
+                    />
+                    <label
+                        for="email"
+                        class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                        >{CONTACT_TXT.GENERIC_TEXT_FORM.EMAIL_LABEL}</label
+                    >
+                </div>
+
+                <!-- Mensajeria -->
+                <div id="mensajeria-fields" class="hidden">
+                    <div class="relative z-0 w-full mb-5 group">
+                        <input
+                            type="text"
+                            name="company"
+                            id="company"
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" "
+                        />
+                        <label
+                            for="company"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                            >{
+                                CONTACT_TXT.GENERIC_TEXT_FORM.COMPANY_LABEL
+                            }</label
+                        >
+                    </div>
+                    <div class="grid md:grid-cols-2 md:gap-6">
+                        <div class="relative z-0 w-full mb-5 group mt-6">
+                            <input
+                                type="text"
+                                name="dropoff-address"
+                                id="dropoff-address"
+                                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                placeholder=" "
+                            />
+                            <label
+                                for="dropoff-address"
+                                class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                                >{
+                                    CONTACT_TXT.MENSAJERIA_FORM_TXT
+                                        .DROPOFF_ADDRESS_LABEL
+                                }</label
+                            >
+                        </div>
+                        <div class="relative z-0 w-full mb-5 group">
+                            <label
+                                for="dropoff-location"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                >{
+                                    CONTACT_TXT.MENSAJERIA_FORM_TXT
+                                        .DROPOFF_LOCATION_LABEL
+                                }</label
+                            >
+                            <select
+                                id="dropoff-location"
+                                name="dropoff-location"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            >
+                                <option value="option1">Opción 1</option>
+                                <option value="option2">Opción 2</option>
+                                <option value="option3">Opción 3</option>
+                                <option value="option4">Opción 4</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 md:gap-6">
+                        <div class="relative z-0 w-full mb-5 group mt-6">
+                            <input
+                                type="text"
+                                name="pickup-address"
+                                id="pickup-address"
+                                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                                placeholder=" "
+                            />
+                            <label
+                                for="pickup-address"
+                                class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                                >{
+                                    CONTACT_TXT.MENSAJERIA_FORM_TXT
+                                        .PICKUP_ADDRESS_LABEL
+                                }</label
+                            >
+                        </div>
+                        <div class="relative z-0 w-full mb-5 group">
+                            <label
+                                for="pickup-location"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                >{
+                                    CONTACT_TXT.MENSAJERIA_FORM_TXT
+                                        .PICKUP_LOCATION_LABEL
+                                }</label
+                            >
+                            <select
+                                id="pickup-location"
+                                name="pickup-location"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            >
+                                <option value="option1">Opción 1</option>
+                                <option value="option2">Opción 2</option>
+                                <option value="option3">Opción 3</option>
+                                <option value="option4">Opción 4</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="relative z-0 w-full mb-5 group">
+                        <textarea
+                            id="mensajeria-description"
+                            name="mensajeria-description"
+                            rows="4"
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" "></textarea>
+                        <label
+                            for="mensajeria-description"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                            >{
+                                CONTACT_TXT.MENSAJERIA_FORM_TXT
+                                    .ITEM_DESCRIPTION_LABEL
+                            }</label
+                        >
+                    </div>
+                </div>
+
+                <!-- Ventas -->
+                <div id="ventas-fields" class="hidden">
+                    <div class="relative z-0 w-full mb-5 group">
+                        <input
+                            type="text"
+                            name="company"
+                            id="company"
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" "
+                        />
+                        <label
+                            for="company"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                            >{
+                                CONTACT_TXT.GENERIC_TEXT_FORM.COMPANY_LABEL
+                            }</label
+                        >
+                    </div>
+                    <div class="relative z-0 w-full mb-5 group">
+                        <textarea
+                            id="ventas-description"
+                            name="ventas-description"
+                            rows="4"
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" "></textarea>
+                        <label
+                            for="ventas-description"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                            >{
+                                CONTACT_TXT.VENTAS_FORM_TXT
+                                    .ITEM_DESCRIPTION_LABEL
+                            }</label
+                        >
+                    </div>
+                </div>
+
+                <!-- Metro -->
+                <div id="metro-fields" class="hidden">
+                    <div class="relative z-0 w-full mb-5 group">
+                        <textarea
+                            name="metro-description"
+                            id="metro-description"
+                            rows="4"
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" "></textarea>
+                        <label
+                            for="metro-description"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                            >{
+                                CONTACT_TXT.METRO_GAS_FORM_TXT.ITEM_PLACEHOLDER
+                            }</label
+                        >
+                    </div>
+                </div>
+
+                <!-- Trabaja con Nosotros -->
+                <div id="trabajo-fields" class="hidden">
+                    <div class="relative z-0 w-full mb-5 group">
+                        <textarea
+                            id="trabaja-description"
+                            name="trabaja-description"
+                            rows="4"
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" "></textarea>
+                        <label
+                            for="trabaja-description"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                            >{
+                                CONTACT_TXT.TRABAJA_CON_NOSOTROS_TXT
+                                    .ITEM_DESCRIPTION_LABEL
+                            }</label
+                        >
+                    </div>
+                </div>
+
+                <!-- Reclamos -->
+                <div id="reclamo-fields" class="hidden">
+                    <div class="relative z-0 w-full mb-5 group">
+                        <textarea
+                            id="reclamo-description"
+                            name="reclamo-description"
+                            rows="4"
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" "></textarea>
+                        <label
+                            for="reclamo-description"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                            >{
+                                CONTACT_TXT.RECLAMOS_FORM_TXT
+                                    .ITEM_DESCRIPTION_PLACEHOLDER
+                            }</label
+                        >
+                    </div>
+                </div>
+
+                <button
+                    id="submitButton"
+                    type="submit"
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                    {CONTACT_TXT.GENERIC_TEXT_FORM.SUBMIT_BUTTON_TEXT}
+                </button>
+            </form>
+        </Container>
+    </div>
+</div>
+
+<div
+    id="successModal"
+    tabindex="-1"
+    aria-hidden="true"
+    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full h-full"
+>
+    <div
+        class="relative p-4 max-w-sm w-full md:max-w-md h-auto backdrop-blur-xl rounded-lg shadow sm:p-3"
+    >
+        <div class="success-animation">
+            <svg
+                class="checkmark"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 52 52"
+            >
+                <circle
+                    class="checkmark__circle"
+                    cx="26"
+                    cy="26"
+                    r="25"
+                    fill="none"></circle>
+                <path
+                    class="checkmark__check"
+                    fill="none"
+                    d="M14.1 27.2l7.1 7.2 16.7-16.8"></path>
+            </svg>
+            <p
+                id="successMessage"
+                class="mb-2 text-lg font-semibold text-gray-900 dark:text-white text-center mt-3"
+            >
+                Enviado Correctamente.
+            </p>
+        </div>
+    </div>
+</div>
+
+<script is:inline>
+    document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("unified-form");
+        const reasonSelect = document.getElementById("reason");
+        const successModal = document.getElementById("successModal");
+
+        const fieldGroups = {
+            mensajeria: document.getElementById("mensajeria-fields"),
+            ventas: document.getElementById("ventas-fields"),
+            metro: document.getElementById("metro-fields"),
+            trabajo: document.getElementById("trabajo-fields"),
+            reclamo: document.getElementById("reclamo-fields"),
+        };
+
+        function showRelevantFields() {
+            const selectedReason = reasonSelect.value;
+            for (const key in fieldGroups) {
+                fieldGroups[key].classList.toggle(
+                    "hidden",
+                    key !== selectedReason,
+                );
+            }
+        }
+
+        reasonSelect.addEventListener("change", showRelevantFields);
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            const formData = new FormData(form);
+
+            const selectedReason = reasonSelect.value;
+            if (selectedReason && fieldGroups[selectedReason]) {
+                for (const key in fieldGroups) {
+                    if (key !== selectedReason) {
+                        const fields = fieldGroups[key].querySelectorAll(
+                            "input, select, textarea",
+                        );
+                        fields.forEach((field) => formData.delete(field.name));
+                    }
+                }
+            }
+
+            function showSuccessModal() {
+                // Mostrar modal
+                successModal.classList.remove("hidden");
+
+                // Ocultar modal después de 5 segundos
+                setTimeout(function () {
+                    successModal.classList.add("hidden");
+                }, 5000); // 5000 milisegundos = 5 segundos
+            }
+
+            // Mostrar los valores del formulario en la consola
+            for (let [key, value] of formData.entries()) {
+                console.log(`${key}: ${value}`);
+            }
+
+            // Aquí puedes manejar el envío del formulario (AJAX o cualquier otro método)
+            // Ejemplo: sendFormData(formData);
+
+            // Limpiar el formulario después del envío
+            form.reset();
+
+            showSuccessModal();
+
+            // Opcional: Volver a ocultar todos los campos específicos
+            for (const key in fieldGroups) {
+                fieldGroups[key].classList.add("hidden");
+            }
+        });
+    });
+</script>
+
+<style>
+    .success-animation {
+        margin: 150px auto;
+    }
+
+    .checkmark {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        display: block;
+        stroke-width: 2;
+        stroke: #4bb71b;
+        stroke-miterlimit: 10;
+        box-shadow: inset 0px 0px 0px #4bb71b;
+        animation:
+            fill 0.4s ease-in-out 0.4s forwards,
+            scale 0.3s ease-in-out 0.9s both;
+        position: relative;
+        top: 5px;
+        right: 5px;
+        margin: 0 auto;
+    }
+    .checkmark__circle {
+        stroke-dasharray: 166;
+        stroke-dashoffset: 166;
+        stroke-width: 2;
+        stroke-miterlimit: 10;
+        stroke: #4bb71b;
+        fill: #fff;
+        animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+    }
+
+    .checkmark__check {
+        transform-origin: 50% 50%;
+        stroke-dasharray: 48;
+        stroke-dashoffset: 48;
+        animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+    }
+
+    @keyframes stroke {
+        100% {
+            stroke-dashoffset: 0;
+        }
+    }
+
+    @keyframes scale {
+        0%,
+        100% {
+            transform: none;
+        }
+
+        50% {
+            transform: scale3d(1.1, 1.1, 1);
+        }
+    }
+
+    @keyframes fill {
+        100% {
+            box-shadow: inset 0px 0px 0px 30px #4bb71b;
+        }
+    }
+</style>

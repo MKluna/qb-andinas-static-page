@@ -4,122 +4,99 @@ import { CONSULTING_IMG } from "../../../mock/public-img";
 import { CONSULTIN_TXT } from "../../../mock/public-txt";
 import Container from "../../shared/Container.astro";
 import Title from "../../shared/Title.astro";
+import CardItemsConsultin from "../../cards/CardItemsConsultin.astro";
+
+const IMPORTAR_ESTO_DESPUES = {
+    SEGURIDAD_Y_SALUD:
+        "La seguridad laboral es crucial en todo ámbito. Incluye prevención de incendios, riesgos eléctricos y medidas preventivas. Se enseña sobre trabajo en alturas, normativas y protección, asegurando ambientes seguros y minimizando riesgos.",
+    SISTEMA_DE_GESTION:
+        "Nos enfocamos en capacitación y asesoramiento especializado. Implementamos sistemas de gestión ISO 9001, ISO 14001 e ISO 45001 para calidad, ambiental y salud ocupacional. Realizamos auditorías internas para cumplimiento y mejora continua, asegurando estándares internacionales.",
+    DESARROLLO_HUMANO:
+        "Invertir en el desarrollo humano es esencial para el éxito sostenible de las empresas y el bienestar de sus empleados. Fomenta la autoconciencia, la autoestima y el crecimiento individual, beneficiando tanto a los empleados como a la empresa.",
+    CONTROL_DE_CALIDAD:
+        "Nos centramos en la eficiencia operativa. Especializados en elaborar instructivos claros y procedimientos detallados. Detectamos anomalías, analizamos causas y aplicamos acciones correctivas. Utilizamos diagramas de correlación y gravedad para gestión precisa de problemas.",
+};
 ---
 
 <section id="consulting">
-    <Container>
-        <div class="w-full relative py-8 md:py-10 px-6 md:px-8 rounded-2xl">
-            <div class="absolute right-0 top-0 h-full w-full flex justify-end">
-                <div
-                    class="w-28 h-28 overflow-hidden flex rounded-xl relative blur-2xl"
-                >
-                    <span
-                        class="absolute w-16 h-16 -top-1 -right-1 bg-green-500 rounded-md rotate-45"
-                    ></span>
-                    <span
-                        class="absolute w-16 h-16 -bottom-1 -right-1 bg-[#FCDC58] rounded-md rotate-45"
-                    ></span>
-                    <span
-                        class="absolute w-16 h-16 -bottom-1 -left-1 bg-primary rounded-md rotate-45"
-                    ></span>
+    <div class="w-full relative py-8 md:py-10 px-6 md:px-8 rounded-2xl">
+        <div class="relative">
+            <div class="relative mb-2 mt-12">
+                <div class="text-center max-w-3xl mx-auto mb-2">
+                    <Title>{CONSULTIN_TXT.TITLE}</Title>
                 </div>
-            </div>
-            <div class="relative pt-20 lg:pt-20">
-                <div class="relative mb-2">
-                    <div class="text-center max-w-3xl mx-auto mb-12">
-                        <Title>{CONSULTIN_TXT.TITLE}</Title>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
-                        {[
-                            {
-                                url: CONSULTING_IMG.SEGURIDAD_SALUD_URL,
-                                alt: CONSULTING_IMG.SEGURIDAD_SALUD_ALT,
-                                text: CONSULTIN_TXT.SEGURIDAD_Y_SALUD,
-                            },
-                            {
-                                url: CONSULTING_IMG.SISTEMA_DE_GESTION_URL,
-                                alt: CONSULTING_IMG.SISTEMA_DE_GESTION_ALT,
-                                text: [
-                                    CONSULTIN_TXT.SISTEMA_DE_GESTION.TITLE,
-                                    CONSULTIN_TXT.SISTEMA_DE_GESTION.ITEM1,
-                                    CONSULTIN_TXT.SISTEMA_DE_GESTION.ITEM2,
-                                ],
-                            },
-                            {
-                                url: CONSULTING_IMG.DESARROLLO_HUMANO_URL,
-                                alt: CONSULTING_IMG.DESARROLLO_HUMANO_ALT,
-                                text: [CONSULTIN_TXT.DESARROLLO_HUMANO],
-                            },
-                            {
-                                url: CONSULTING_IMG.CONTROL_CALIDAD_URL,
-                                alt: CONSULTING_IMG.CONTROL_CALIDAD_ALT,
-                                text: [
-                                    CONSULTIN_TXT.CONTROL_DE_CALIDAD.TITLE,
-                                    CONSULTIN_TXT.CONTROL_DE_CALIDAD.ITEM1,
-                                    CONSULTIN_TXT.CONTROL_DE_CALIDAD.ITEM2,
-                                    CONSULTIN_TXT.CONTROL_DE_CALIDAD.ITEM3,
-                                ],
-                            },
-                        ].map((service) => (
-                            <div  class="flex flex-col items-center">
-                                <Image
-                                    class="icon-size mb-4"
-                                    src={service.url}
+                <div
+                    class="w-full relative py-8 md:py-10 px-6 md:px-8 rounded-2xl"
+                >
+                    <div
+                        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12"
+                    >
+                        {
+                            [
+                                {
+                                    url: CONSULTING_IMG.SEGURIDAD_SALUD_URL,
+                                    alt: CONSULTING_IMG.SEGURIDAD_SALUD_ALT,
+                                    text: [
+                                        IMPORTAR_ESTO_DESPUES.SEGURIDAD_Y_SALUD,
+                                    ],
+                                },
+                                {
+                                    url: CONSULTING_IMG.SISTEMA_DE_GESTION_URL,
+                                    alt: CONSULTING_IMG.SISTEMA_DE_GESTION_ALT,
+                                    text: [
+                                        IMPORTAR_ESTO_DESPUES.SISTEMA_DE_GESTION,
+                                    ],
+                                },
+                                {
+                                    url: CONSULTING_IMG.DESARROLLO_HUMANO_URL,
+                                    alt: CONSULTING_IMG.DESARROLLO_HUMANO_ALT,
+                                    text: [
+                                        IMPORTAR_ESTO_DESPUES.DESARROLLO_HUMANO,
+                                    ],
+                                },
+                                {
+                                    url: CONSULTING_IMG.CONTROL_CALIDAD_URL,
+                                    alt: CONSULTING_IMG.CONTROL_CALIDAD_ALT,
+                                    text: [
+                                        IMPORTAR_ESTO_DESPUES.CONTROL_DE_CALIDAD,
+                                    ],
+                                },
+                            ].map((service, index) => (
+                                <CardItemsConsultin
+                                    url={service.url}
                                     alt={service.alt}
-                                    width={800}
-                                    height={450}
-                                    loading="eager"
+                                    text={service.text}
+                                    key={index}
                                 />
-                                <div class="relative py-4 md:py-6 px-4 md:px-6 card-items text-center flex justify-center items-center w-full md:w-1/2 lg:w-1/3 mx-auto">
-                                    <ul class="text-lg md:text-sm lg:text-base text-gray-900 dark:text-white">
-                                        {service.text.map((item) => (
-                                            <li >{item}</li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </div>
-                        ))}
+                            ))
+                        }
                     </div>
                 </div>
             </div>
         </div>
-    </Container>
+    </div>
 </section>
 
-<style>
-    .icon-size {
-        width: 130px;
-        height: 130px;
-    }
-    .fixed-size {
-        width: 100%;
-        max-width: 300px;
-        height: 300px;
-    }
-    .card-items {
-        padding: 5px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 250px; /* Aumenté el ancho a 250px */
-        height: 334px; /* Aumenté la altura a 334px */
-        background: rgb(255, 255, 255);
-        border-radius: 1rem;
-        box-shadow:
-            rgba(50, 50, 93, 0.25) 0px -6px 12px -2px,
-            rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-            rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-        transition: all ease-in-out 0.3s;
-    }
+<script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add(
+                        "animate__animated",
+                        "animate__fadeInUp",
+                        "animate__faster",
+                    );
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
 
-    .card-items:hover {
-        background-color: #fdfdfd;
-        box-shadow:
-            rgba(0, 0, 0, 0.09) 0px -2px 1px,
-            rgba(0, 0, 0, 0.09) 0px 2px 1px,
-            rgba(0, 0, 0, 0.09) 0px 4px 2px,
-            rgba(0, 0, 0, 0.09) 0px 8px 4px,
-            rgba(0, 0, 0, 0.09) 0px 16px 8px,
-            rgba(0, 0, 0, 0.09) 0px 32px 16px;
-    }
-</style>
+        document
+            .querySelectorAll(".animate-on-scroll-consulting")
+            .forEach((element, index) => {
+                element.style.animationDelay = `${index * 0.4}s`; // Ajusta el retraso de la animación
+                observer.observe(element);
+            });
+    });
+</script>
