@@ -85,7 +85,7 @@ const IMPORTAR_ESTO_DESPUES = {
                     entry.target.classList.add(
                         "animate__animated",
                         "animate__fadeInUp",
-                        "animate__faster",
+                        "animate__slower",
                     );
                     observer.unobserve(entry.target);
                 }
@@ -95,7 +95,7 @@ const IMPORTAR_ESTO_DESPUES = {
         document
             .querySelectorAll(".animate-on-scroll-consulting")
             .forEach((element, index) => {
-                element.style.animationDelay = `${index * 0.4}s`; // Ajusta el retraso de la animación
+                element.style.animationDelay = `${index * 0.1}s`;
                 observer.observe(element);
             });
     });
