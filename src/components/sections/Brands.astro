@@ -2,8 +2,26 @@
 import Container from "../shared/Container.astro";
 import Title from "../shared/Title.astro";
 import { BRANDS_TXT } from "../../mock/public-txt";
-import { BRANDS_IMG } from "../../mock/public-img";
 import { Image } from "astro:assets";
+
+import imgBrands1 from "../../assets/brand-1.png"
+import imgBrands2 from "../../assets/brand-2.png"
+import imgBrands3 from "../../assets/brand-3.png"
+import imgBrands4 from "../../assets/brand-4.png"
+import imgBrands5 from "../../assets/brand-5.png"
+import imgBrands6 from "../../assets/brand-6.png"
+import imgBrands7 from "../../assets/brand-7.png"
+
+const BRANDS_IMG = [
+    imgBrands1,
+    imgBrands2,
+    imgBrands3,
+    imgBrands4,
+    imgBrands5,
+    imgBrands6,
+    imgBrands7,
+]
+
 ---
 
 <section>
@@ -12,18 +30,21 @@ import { Image } from "astro:assets";
             <Title>{BRANDS_TXT.TITLE}</Title>
         </div>
         <div class="flex justify-center flex-wrap gap-4">
-            {BRANDS_IMG.map((logo, index) => (
+            {BRANDS_IMG.map((itm, index) => (
                 <div
                     :key={index}
                     class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group"
                 >
                     <Image
-                        src={logo.src}
-                        width={logo.width}
-                        height={logo.height}
-                        alt={logo.alt}
+                        src={itm}
+                        alt={`img-brand${index}`}
                         class="h-14 sm:h-16 w-auto"
-                        loading="lazy"
+                        widths={[100, 140, 175]}
+                        sizes={`(max-width: 120px) 100px, (max-width: 160px) 140px, 175px`}
+                        loading="eager"
+                        decoding="async"
+                        quality={"mid"}
+                        format="webp"
                     />
                 </div>
             ))}

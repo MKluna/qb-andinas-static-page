@@ -16,13 +16,6 @@ export const SERVICES_IMG = {
 };
 
 
-export const COMPANY_IMG = {
-    "SLIDE_1": `${URL + 'company/slide1.webp'}`,
-    "SLIDE_2": `${URL + 'company/slide2.webp'}`,
-    "ALT_SLIDE_1": "slide-company-1",
-    "ALT_SLIDE_2": "slide-company-2",
-}
-
 export const CONSULTING_IMG = {
     "CONTROL_CALIDAD_URL": `${URL}consulting/control_de_calidad.png`,
     "CONTROL_CALIDAD_ALT": "control-calidad",
@@ -76,15 +69,7 @@ export const EXPERIENCE_IMG = [
 ];
 
 
-export const BRANDS_IMG = [
-    { src: URL + "brands/brand-1.png", width: 500, height: 450, alt: "brand-1" },
-    { src: URL + "brands/brand-2.png", width: 500, height: 450, alt: "brand-2" },
-    { src: URL + "brands/brand-3.png", width: 500, height: 450, alt: "brand-3" },
-    { src: URL + "brands/brand-4.png", width: 500, height: 450, alt: "brand-4" },
-    { src: URL + "brands/brand-5.png", width: 500, height: 450, alt: "brand-5" },
-    { src: URL + "brands/brand-6.png", width: 500, height: 450, alt: "brand-6" },
-    { src: URL + "brands/brand-7.png", width: 500, height: 450, alt: "brand-7" },
-]
+
 
 export const FOOTER_IMG = [
     {

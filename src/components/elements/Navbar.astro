@@ -4,9 +4,10 @@ import Navitem from "../shared/Navitem.astro";
 import {
     MockNavItemDB,
     MockNavImgLink,
-    MockImgNavLink,
 } from "../../utils/database/NavItems-Mock-DB";
 import { Image } from "astro:assets";
+
+import navbarLogo from "../../assets/navbar-logo.png";
 ---
 
 <header class="absolute inset-x-0 top-0 z-50 py-2 sticky" id="navbar">
@@ -22,22 +23,15 @@ import { Image } from "astro:assets";
                 >
                     <div class="flex flex-shrink-0 items-center">
                         <Image
-                            alt="Your Logo"
-                            decoding="async"
-                            src={MockImgNavLink[0].href}
-                            loading="eager"
+                            src={navbarLogo}
+                            alt="navbar-logo"
                             class="dark:hidden"
-                            width={240}
-                            height={240}
-                        />
-                        <Image
-                            alt="Your Transparent Logo"
                             decoding="async"
-                            src={MockImgNavLink[1].href}
                             loading="eager"
-                            class="dark:flex hidden"
                             width={240}
                             height={240}
+                            quality={"mid"}
+                            format="webp"
                         />
                     </div>
                 </a>
