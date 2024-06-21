@@ -3,6 +3,9 @@ import Container from "../shared/Container.astro";
 import { COMPANY_IMG } from "../../mock/public-img";
 import { HERO_TXT } from "../../mock/public-txt";
 import { Image } from "astro:assets";
+
+import heroSlide1 from "../../assets/hero-slide-1.webp";
+import heroSlide2 from "../../assets/hero-slide-2.webp";
 ---
 
 <section id="inicio-hero">
@@ -14,25 +17,35 @@ import { Image } from "astro:assets";
             data-carousel-interval="5000"
         >
             <div class="relative h-full overflow-hidden rounded-lg">
-                <div class="hidden duration-1000 ease-in-out" data-carousel-item="active">
+                <div
+                    class="hidden duration-1000 ease-in-out"
+                    data-carousel-item="active"
+                >
                     <Image
-                        src={COMPANY_IMG.SLIDE_1}
-                        alt={COMPANY_IMG.ALT_SLIDE_1}
+                        src={heroSlide1}
+                        alt="hero-slide-1"
                         class="absolute block h-full w-full object-cover rounded-lg"
-                        width="1920"
-                        height="1280"
+                        widths={[240, 540, 720, 1080, 1600, 2400, 3200, 6000]}
+                        sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1080px) 720px, (max-width: 1440px) 1080px, (max-width: 1920px) 1600px, (max-width: 2560px) 2400px, (max-width: 3840px) 3200px, 6000px`}
                         loading="eager"
                         decoding="async"
+                        quality={"mid"}
                     />
                     <div
                         class="absolute inset-0 flex flex-col justify-center gap-y-6 overflow-hidden max-xl:bg-black/25 max-md:bg-black/30 max-sm:bg-black/30 xl:bg-gradient-to-r xl:from-black/60 xl:via-black/10 xl:to-black/0 items-center text-center lg:text-center lg:py-7 xl:py-8 lg:items-center lg:max-w-none max-w-3xl mx-auto lg:mx-0 lg:flex-1 lg:w-full"
                     >
-                        <h1 class="text-xl sm:text-2xl md:text-3xl xl:text-4xl font-bold text-heading-1 animate__animated animate__fadeInDown">
-                            <span class="text-transparent bg-clip-text bg-gradient-to-br from-indigo-50 to-indigo-50">
+                        <h1
+                            class="text-xl sm:text-2xl md:text-3xl xl:text-4xl font-bold text-heading-1 animate__animated animate__fadeInDown"
+                        >
+                            <span
+                                class="text-transparent bg-clip-text bg-gradient-to-br from-indigo-50 to-indigo-50"
+                            >
                                 {HERO_TXT.TITLE_PRINCIPAL_SLIDE.TITLE}
                             </span>
                         </h1>
-                        <ul class="font-bold text-white text-center animate__animated animate__fadeInLeft text-base sm:text-lg md:text-xl xl:text-2xl">
+                        <ul
+                            class="font-bold text-white text-center animate__animated animate__fadeInLeft text-base sm:text-lg md:text-xl xl:text-2xl"
+                        >
                             <li>{HERO_TXT.TITLE_PRINCIPAL_SLIDE.ITEM1}</li>
                             <li>{HERO_TXT.TITLE_PRINCIPAL_SLIDE.ITEM2}</li>
                             <li>{HERO_TXT.TITLE_PRINCIPAL_SLIDE.ITEM3}</li>
@@ -41,21 +54,29 @@ import { Image } from "astro:assets";
                         </ul>
                     </div>
                 </div>
-                <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+                <div
+                    class="hidden duration-1000 ease-in-out"
+                    data-carousel-item
+                >
                     <Image
-                        src={COMPANY_IMG.SLIDE_2}
-                        alt={COMPANY_IMG.ALT_SLIDE_2}
+                        src={heroSlide2}
+                        alt="hero-slide-2"
                         class="absolute block h-full w-full object-cover rounded-lg"
-                        width="1920"
-                        height="1280"
+                        widths={[240, 540, 720, 1080, 1600, 2400, 3200, 6000]}
+                        sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1080px) 720px, (max-width: 1440px) 1080px, (max-width: 1920px) 1600px, (max-width: 2560px) 2400px, (max-width: 3840px) 3200px, 6000px`}
                         loading="eager"
                         decoding="async"
+                        quality={"mid"}
                     />
                     <div
                         class="absolute inset-0 flex flex-col justify-center gap-y-6 overflow-hidden max-xl:bg-black/25 max-md:bg-black/30 max-sm:bg-black/30 xl:bg-gradient-to-r xl:from-black/60 xl:via-black/10 xl:to-black/0 items-center text-center lg:text-center lg:py-7 xl:py-8 lg:items-center lg:max-w-none max-w-3xl mx-auto lg:mx-0 lg:flex-1 lg:w-full"
                     >
-                        <h1 class="text-xl sm:text-2xl md:text-3xl xl:text-4xl font-bold text-heading-1 animate__animated animate__fadeInDown">
-                            <span class="text-transparent bg-clip-text bg-gradient-to-br from-indigo-50 to-indigo-50">
+                        <h1
+                            class="text-xl sm:text-2xl md:text-3xl xl:text-4xl font-bold text-heading-1 animate__animated animate__fadeInDown"
+                        >
+                            <span
+                                class="text-transparent bg-clip-text bg-gradient-to-br from-indigo-50 to-indigo-50"
+                            >
                                 {HERO_TXT.TITLE_SECOND_SLIDE}
                             </span>
                         </h1>
