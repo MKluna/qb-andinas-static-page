@@ -6,7 +6,7 @@ import Container from "../../shared/Container.astro";
 import Title from "../../shared/Title.astro";
 import CardItemsService from "../../cards/CardItemsService.astro";
 
-import myImage  from "../../../assets/servicios-img.webp";
+
 
 const IMPORTAR_ESTO_DESPUEST = {
     LOGISTICA_TXT:
@@ -18,6 +18,23 @@ const IMPORTAR_ESTO_DESPUEST = {
     AGUA_TXT:
         "Ofrecemos un servicio especializado de lectura de medidores de agua para una gestión precisa y eficiente del consumo. Garantizamos registros exactos y contribuimos a una facturación precisa.",
 };
+
+
+import aguaImage from "../../../assets/agua.png";
+import luzImage from "../../../assets/luz.png";
+import gasImage from "../../../assets/gas.png";
+import logisticaImage from "../../../assets/logistica.png";
+
+import serviciosImage  from "../../../assets/servicios-img.webp";
+
+
+const CARDS_DETAILS = [
+    {url: aguaImage, text: [IMPORTAR_ESTO_DESPUEST.AGUA_TXT]},
+    {url: luzImage, text: [IMPORTAR_ESTO_DESPUEST.LUZ_TXT]},
+    {url: gasImage, text: [IMPORTAR_ESTO_DESPUEST.GAS_TXT]},
+    {url: logisticaImage, text: [IMPORTAR_ESTO_DESPUEST.LOGISTICA_TXT]},
+]
+
 ---
 
 <section id="services">
@@ -34,33 +51,10 @@ const IMPORTAR_ESTO_DESPUEST = {
                         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12"
                     >
                         {
-                            [
-                                {
-                                    url: SERVICES_IMG.LOGISTICA_URL,
-                                    alt: SERVICES_IMG.LOGISTICA_ALT,
-                                    text: [
-                                        IMPORTAR_ESTO_DESPUEST.LOGISTICA_TXT,
-                                    ],
-                                },
-                                {
-                                    url: SERVICES_IMG.LUZ_URL,
-                                    alt: SERVICES_IMG.LUZ_ALT,
-                                    text: [IMPORTAR_ESTO_DESPUEST.LUZ_TXT],
-                                },
-                                {
-                                    url: SERVICES_IMG.GAS_URL,
-                                    alt: SERVICES_IMG.GAS_ALT,
-                                    text: [IMPORTAR_ESTO_DESPUEST.GAS_TXT],
-                                },
-                                {
-                                    url: SERVICES_IMG.AGUA_URL,
-                                    alt: SERVICES_IMG.AGUA_ALT,
-                                    text: [IMPORTAR_ESTO_DESPUEST.AGUA_TXT],
-                                },
-                            ].map((service, index) => (
+                            CARDS_DETAILS.map((service, index) => (
                                 <CardItemsService
                                     url={service.url}
-                                    alt={service.alt}
+                                    alt={`cards-details-${index}`}
                                     text={service.text}
                                     key={index}
                                 />
@@ -130,10 +124,10 @@ const IMPORTAR_ESTO_DESPUEST = {
                         <div class="lg:w-1/2 flex items-center">
                             <Image
                                 class="object-cover rounded-lg mx-auto lg:max-w-none lg:ml-auto lg:mr-0 sm:w-full sm:h-auto animate-on-scroll-image"
-                                src={myImage}
+                                src={serviciosImage}
                                 alt={SERVICES_IMG.ALT_SERVICES_IMG_1}
-                                widths={[240, 540, 720, myImage.width]}
-                                sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${myImage.width}px`}
+                                widths={[240, 540, 720, serviciosImage.width]}
+                                sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${serviciosImage.width}px`}
                                 loading="eager"
                                 format="avif"
                                 quality={"mid"}
@@ -163,7 +157,7 @@ const IMPORTAR_ESTO_DESPUEST = {
         });
 
         document
-            .querySelectorAll(".animate-on-scroll-section")
+            .querySelectorAll(".animate-on-scroll-service")
             .forEach((element, index) => {
                 element.style.animationDelay = `${index * 0.1}s`;
                 observer.observe(element);
