@@ -1,9 +1,36 @@
 ---
 import { Image } from "astro:assets";
-import { EXPERIENCE_IMG } from "../../../mock/public-img";
 import { EXPERIENCE_TXT } from "../../../mock/public-txt";
 import Container from "../../shared/Container.astro";
 import Title from "../../shared/Title.astro";
+
+import img_1 from "../../../assets/experience/img-1.webp";
+import img_2 from "../../../assets/experience/img-2.webp";
+import img_3 from "../../../assets/experience/img-3.webp";
+import img_4 from "../../../assets/experience/img-4.webp";
+import img_5 from "../../../assets/experience/img-5.webp";
+import img_6 from "../../../assets/experience/img-6.webp";
+import img_7 from "../../../assets/experience/img-7.webp";
+import img_8 from "../../../assets/experience/img-8.webp";
+import img_9 from "../../../assets/experience/img-9.webp";
+import img_10 from "../../../assets/experience/img-10.webp";
+import img_11 from "../../../assets/experience/img-11.webp";
+import img_12 from "../../../assets/experience/img-12.webp";
+
+const EXPERIENCE_IMG = [
+    img_1,
+    img_2,
+    img_3,
+    img_4,
+    img_5,
+    img_6,
+    img_7,
+    img_8,
+    img_9,
+    img_10,
+    img_11,
+    img_12,
+];
 ---
 
 <section id="experience">
@@ -18,15 +45,17 @@ import Title from "../../shared/Title.astro";
                         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-6"
                     >
                         {
-                            EXPERIENCE_IMG.map((itm) => (
+                            EXPERIENCE_IMG.map((itm, index) => (
                                 <div class="relative w-full h-80">
                                     <Image
+                                        src={itm}
+                                        alt={`experience-details-${index}`}
                                         class="absolute inset-0 h-full w-full object-cover rounded-lg"
-                                        src={itm.url}
-                                        alt="generic-alt"
+                                        widths={[128, 256, 384, 512]}
+                                        sizes={`(max-width: 128px) 128px, (max-width: 256px) 256px, (max-width: 384px) 384px, 512px`}
                                         loading="eager"
-                                        width={800}
-                                        height={450}
+                                        decoding="async"
+                                        quality={"mid"}
                                     />
                                 </div>
                             ))

@@ -1,7 +1,10 @@
 ---
 import { Image } from "astro:assets";
-import { FOOTER_IMG } from "../../mock/public-img";
 import { REDES_SOCIALES } from "../../mock/public-txt";
+
+import aeca_img from "../../assets/footer/footer-aeca-img.png";
+import apyme_img from "../../assets/footer/footer-apyme-img.png";
+import certi_img from "../../assets/footer/footer-certi-img.png";
 ---
 
 <footer
@@ -56,21 +59,27 @@ import { REDES_SOCIALES } from "../../mock/public-txt";
                     <ul class="flex justify-center items-center gap-4">
                         <li>
                             <Image
-                                src={FOOTER_IMG[0].url}
-                                alt="footer-icon"
+                                src={apyme_img}
+                                alt="apyme-icon"
                                 width="120"
                                 height="120"
                                 loading="eager"
+                                decoding="async"
+                                quality={"mid"}
+                                format="webp"
                             />
                         </li>
                         <li>
                             <Image
-                                src={FOOTER_IMG[1].url}
-                                alt="footer-icon"
+                                src={aeca_img}
+                                alt="aeca-icon"
+                                class="lg:mb-5"
                                 width="180"
                                 height="180"
-                                class="lg:mb-5"
                                 loading="eager"
+                                decoding="async"
+                                quality={"mid"}
+                                format="webp"
                             />
                         </li>
                     </ul>
@@ -86,11 +95,15 @@ import { REDES_SOCIALES } from "../../mock/public-txt";
                     <ul class="flex justify-center items-center gap-4">
                         <li>
                             <Image
-                                src="https://www.oca.com.ar/Content/images/logosfooter/certificaciones.png"
+                                src={certi_img}
+                                alt="certi-icon"
+                                class="lg:mb-5"
                                 width="180"
-                                height="180"
-                                alt="footer-icon"
+                                sizes="180"
                                 loading="eager"
+                                decoding="async"
+                                quality={"mid"}
+                                format="webp"
                             />
                         </li>
                     </ul>

@@ -1,8 +1,5 @@
 ---
-import { Image } from "astro:assets";
-import { CONSULTING_IMG } from "../../../mock/public-img";
 import { CONSULTIN_TXT } from "../../../mock/public-txt";
-import Container from "../../shared/Container.astro";
 import Title from "../../shared/Title.astro";
 import CardItemsConsultin from "../../cards/CardItemsConsultin.astro";
 
@@ -16,6 +13,19 @@ const IMPORTAR_ESTO_DESPUES = {
     CONTROL_DE_CALIDAD:
         "Nos centramos en la eficiencia operativa. Especializados en elaborar instructivos claros y procedimientos detallados. Detectamos anomalías, analizamos causas y aplicamos acciones correctivas. Utilizamos diagramas de correlación y gravedad para gestión precisa de problemas.",
 };
+
+import control_de_calidad_Image from "../../../assets/consultoria/control_de_calidad.png";
+import desarrollo_humano_Image from "../../../assets/consultoria/desarrollo_humano.png";
+import seguridad_y_salud_Image from "../../../assets/consultoria/seguridad_y_salud.png";
+import sistema_de_gestion_Image from "../../../assets/consultoria/sistema_de_gestion.png";
+
+const CARDS_DETAILS = [
+    {url: control_de_calidad_Image, text: [IMPORTAR_ESTO_DESPUES.CONTROL_DE_CALIDAD]},
+    {url: desarrollo_humano_Image, text: [IMPORTAR_ESTO_DESPUES.DESARROLLO_HUMANO]},
+    {url: seguridad_y_salud_Image, text: [IMPORTAR_ESTO_DESPUES.SEGURIDAD_Y_SALUD]},
+    {url: sistema_de_gestion_Image, text: [IMPORTAR_ESTO_DESPUES.SISTEMA_DE_GESTION]},
+]
+
 ---
 
 <section id="consulting">
@@ -32,39 +42,10 @@ const IMPORTAR_ESTO_DESPUES = {
                         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12"
                     >
                         {
-                            [
-                                {
-                                    url: CONSULTING_IMG.SEGURIDAD_SALUD_URL,
-                                    alt: CONSULTING_IMG.SEGURIDAD_SALUD_ALT,
-                                    text: [
-                                        IMPORTAR_ESTO_DESPUES.SEGURIDAD_Y_SALUD,
-                                    ],
-                                },
-                                {
-                                    url: CONSULTING_IMG.SISTEMA_DE_GESTION_URL,
-                                    alt: CONSULTING_IMG.SISTEMA_DE_GESTION_ALT,
-                                    text: [
-                                        IMPORTAR_ESTO_DESPUES.SISTEMA_DE_GESTION,
-                                    ],
-                                },
-                                {
-                                    url: CONSULTING_IMG.DESARROLLO_HUMANO_URL,
-                                    alt: CONSULTING_IMG.DESARROLLO_HUMANO_ALT,
-                                    text: [
-                                        IMPORTAR_ESTO_DESPUES.DESARROLLO_HUMANO,
-                                    ],
-                                },
-                                {
-                                    url: CONSULTING_IMG.CONTROL_CALIDAD_URL,
-                                    alt: CONSULTING_IMG.CONTROL_CALIDAD_ALT,
-                                    text: [
-                                        IMPORTAR_ESTO_DESPUES.CONTROL_DE_CALIDAD,
-                                    ],
-                                },
-                            ].map((service, index) => (
+                            CARDS_DETAILS.map((service, index) => (
                                 <CardItemsConsultin
                                     url={service.url}
-                                    alt={service.alt}
+                                    alt={`cards-details-${index}`}
                                     text={service.text}
                                     key={index}
                                 />

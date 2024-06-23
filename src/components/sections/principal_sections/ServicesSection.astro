@@ -1,6 +1,5 @@
 ---
 import { Image } from "astro:assets";
-import { SERVICES_IMG } from "../../../mock/public-img";
 import { FEATURES_TXT, SERVICES_TXT } from "../../../mock/public-txt";
 import Container from "../../shared/Container.astro";
 import Title from "../../shared/Title.astro";
@@ -20,12 +19,12 @@ const IMPORTAR_ESTO_DESPUEST = {
 };
 
 
-import aguaImage from "../../../assets/agua.png";
-import luzImage from "../../../assets/luz.png";
-import gasImage from "../../../assets/gas.png";
-import logisticaImage from "../../../assets/logistica.png";
+import aguaImage from "../../../assets/servicios/agua.png";
+import luzImage from "../../../assets/servicios/luz.png";
+import gasImage from "../../../assets/servicios/gas.png";
+import logisticaImage from "../../../assets/servicios/logistica.png";
 
-import serviciosImage  from "../../../assets/servicios-img.webp";
+import serviciosImage  from "../../../assets/servicios/servicios-img.webp";
 
 
 const CARDS_DETAILS = [
@@ -125,7 +124,7 @@ const CARDS_DETAILS = [
                             <Image
                                 class="object-cover rounded-lg mx-auto lg:max-w-none lg:ml-auto lg:mr-0 sm:w-full sm:h-auto animate-on-scroll-image"
                                 src={serviciosImage}
-                                alt={SERVICES_IMG.ALT_SERVICES_IMG_1}
+                                alt="serviciosImageAlt"
                                 widths={[240, 540, 720, serviciosImage.width]}
                                 sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${serviciosImage.width}px`}
                                 loading="eager"
