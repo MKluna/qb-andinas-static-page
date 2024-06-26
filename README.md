@@ -35,4 +35,3 @@ Q.B. Andinas - Landing Page
   - `Section.astro`: Una sección genérica.
   - `Features.astro`: La sección de características.
   - `Contact.astro`: La sección de contacto.
-  - `Jobs.astro`: Seccion donde se mostrara los trabajos disponibles
