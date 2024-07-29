@@ -110,66 +110,91 @@ const EXPERIENCE_IMG = [
                         </div>
                     </div>
                 </div>
-                <div class="text-center max-w-3xl mx-auto mb-12 mt-24">
-                    <div
-                        class="w-full p-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700"
-                    >
-                        <h1
-                            class="mb-2 text-3xl font-bold text-gray-900 dark:text-white"
-                        >
-                            Nuestros años en el mercado y proyectos nos
-                            respaldan.
-                        </h1>
-                        <blockquote
-                            class="text-xl italic font-semibold text-gray-900 dark:text-white text-center md:text-justify"
-                        >
-                            <svg
-                                class="w-8 h-8 text-gray-400 dark:text-gray-600 mb-4"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="currentColor"
-                                viewBox="0 0 18 14"
-                            >
-                                <path
-                                    d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z"
-                                ></path>
-                            </svg>
-                            <p>
-                                "Durante décadas, hemos trabajado en
-                                licitaciones para diversas entidades
-                                gubernamentales y empresas de servicios,
-                                incluyendo luz, agua, gas, televisión y fibra
-                                óptica. Gracias a nuestros 40 años de
-                                experiencia, contamos con el conocimiento, el
-                                equipo y la capacidad necesaria para satisfacer
-                                una amplia gama de necesidades de servicios
-                                empresariales."
-                            </p>
-                        </blockquote>
-                    </div>
-                </div>
             </div>
         </div>
+
+        <div class="text-center w-full mx-auto max-w-full px-5 rounded-lg">
+            <section
+                class="relative w-full sm:w-4/5 h-auto sm:h-64 md:h-80 lg:h-96 flex items-center justify-center m-auto mb-12 bg-fixed bg-center bg-cover custom-img"
+            >
+                <!-- Div con color celeste y efecto de desenfoque personalizado -->
+                <div class="blurred-background"></div>
+
+                <!-- Div con el texto -->
+                <div class="relative w-full p-4 text-center z-10">
+                    <h1
+                        class="mb-2 text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-100"
+                    >
+                        Nuestros años en el mercado y proyectos nos respaldan.
+                    </h1>
+                    <blockquote
+                        class="text-lg sm:text-xl md:text-2xl italic font-semibold text-gray-100 text-center md:text-justify"
+                    >
+                        <svg
+                            class="w-6 h-6 sm:w-8 sm:h-8 text-gray-100 mb-4"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor"
+                            viewBox="0 0 18 14"
+                        >
+                            <path
+                                d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z"
+                            ></path>
+                        </svg>
+                        <p>
+                            "Durante décadas, hemos trabajado en licitaciones
+                            para diversas entidades gubernamentales y empresas
+                            de servicios, incluyendo luz, agua, gas, televisión
+                            y fibra óptica. Gracias a nuestros 40 años de
+                            experiencia, contamos con el conocimiento, el equipo
+                            y la capacidad necesaria para satisfacer una amplia
+                            gama de necesidades de servicios empresariales."
+                        </p>
+                    </blockquote>
+                </div>
+            </section>
+        </div>
     </Container>
-</section>
 
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add(
-                        "animate__animated",
-                        "animate__fadeInLeft",
-                        "animate__slow",
-                    );
-                    observer.unobserve(entry.target);
-                }
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add(
+                            "animate__animated",
+                            "animate__fadeInLeft",
+                            "animate__slow",
+                        );
+                        observer.unobserve(entry.target);
+                    }
+                });
             });
-        });
 
-        document.querySelectorAll(".animate-on-scroll").forEach((element) => {
-            observer.observe(element);
+            document
+                .querySelectorAll(".animate-on-scroll")
+                .forEach((element) => {
+                    observer.observe(element);
+                });
         });
-    });
-</script>
+    </script>
+
+    <style>
+        .custom-img {
+            background-image: url("../../../assets/experience/img-6.webp");
+            background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+            background-position: center; /* Centra la imagen */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            border-radius: inherit;
+        }
+        .blurred-background {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(51, 142, 211, 0.5); /* Color celeste con opacidad */
+            backdrop-filter: blur(
+                2px
+            ); /* Ajusta la intensidad del desenfoque */
+            border-radius: inherit; /* Aplica el border-radius del contenedor */
+        }
+    </style>
+</section>

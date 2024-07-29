@@ -1,3 +1,4 @@
+src\components\sections\Brands.astro
 ---
 import Container from "../shared/Container.astro";
 import Title from "../shared/Title.astro";
@@ -11,6 +12,23 @@ import imgBrands4 from "../../assets/logos-empresas/brand-4.png"
 import imgBrands5 from "../../assets/logos-empresas/brand-5.png"
 import imgBrands6 from "../../assets/logos-empresas/brand-6.png"
 import imgBrands7 from "../../assets/logos-empresas/brand-7.png"
+import imgBrands8 from "../../assets/logos-empresas/brand-8.png"
+import imgBrands9 from "../../assets/logos-empresas/brand-9.png"
+import imgBrands10 from "../../assets/logos-empresas/brand-10.png"
+import imgBrands11 from "../../assets/logos-empresas/brand-11.png"
+import imgBrands12 from "../../assets/logos-empresas/brand-12.png"
+import imgBrands14 from "../../assets/logos-empresas/brand-14.png"
+import imgBrands15 from "../../assets/logos-empresas/brand-15.png"
+import imgBrands16 from "../../assets/logos-empresas/brand-16.png"
+import imgBrands17 from "../../assets/logos-empresas/brand-17.png"
+import imgBrands18 from "../../assets/logos-empresas/brand-18.png"
+import imgBrands19 from "../../assets/logos-empresas/brand-19.png"
+import imgBrands20 from "../../assets/logos-empresas/brand-20.png"
+import imgBrands21 from "../../assets/logos-empresas/brand-21.png"
+import imgBrands22 from "../../assets/logos-empresas/brand-22.png"
+import imgBrands23 from "../../assets/logos-empresas/brand-23.png"
+import imgBrands24 from "../../assets/logos-empresas/brand-24.png"
+import imgBrands25 from "../../assets/logos-empresas/brand-25.png"
 
 const BRANDS_IMG = [
     imgBrands1,
@@ -20,35 +38,129 @@ const BRANDS_IMG = [
     imgBrands5,
     imgBrands6,
     imgBrands7,
+    imgBrands8,
+    imgBrands9,
+    imgBrands10,
+    imgBrands11,
+    imgBrands12,
+    imgBrands14,
+    imgBrands15,
+    imgBrands16,
+    imgBrands17,
+    imgBrands18,
+    imgBrands19,
+    imgBrands20,
+    imgBrands21,
+    imgBrands22,
+    imgBrands23,
+    imgBrands24,
+    imgBrands25,
+    imgBrands1,
+    imgBrands2,
+    imgBrands3,
+    imgBrands4,
+    imgBrands5,
+    imgBrands6,
+    imgBrands7,
+    imgBrands8,
+    imgBrands9,
+    imgBrands10,
+    imgBrands11,
+    imgBrands12,
+    imgBrands14,
+    imgBrands15,
+    imgBrands16,
+    imgBrands17,
+    imgBrands18,
+    imgBrands19,
+    imgBrands20,
+    imgBrands21,
+    imgBrands22,
+    imgBrands23,
+    imgBrands24,
+    imgBrands25
 ]
+
+const BRANDS_IMG_DOUBLE = [...BRANDS_IMG, ...BRANDS_IMG];
 
 ---
 
 <section>
-    <Container className="space-y-8 ">
+    <Container className="space-y-8">
         <div class="text-center max-w-3xl mx-auto">
             <Title>{BRANDS_TXT.TITLE}</Title>
         </div>
-        <div class="flex justify-center flex-wrap gap-4">
-            {BRANDS_IMG.map((itm, index) => (
-                <div
-                    :key={index}
-                    class="p-4 sm:p-5 rounded-xl bg-body border border-box-border group"
-                >
-                    <Image
-                        src={itm}
-                        alt={`img-brand${index}`}
-                        class="h-14 sm:h-16 w-auto"
-                        widths={[100, 140, 175]}
-                        sizes={`(max-width: 120px) 100px, (max-width: 160px) 140px, 175px`}
-                        loading="eager"
-                        decoding="async"
-                        quality={"mid"}
-                        format="webp"
-                    />
-                </div>
-            ))}
+        <div class="slider">
+            <div class="slide-track gap-4">
+                {BRANDS_IMG_DOUBLE.map((itm, index) => (
+                    <div
+                        :key={index}
+                        class="slide p-4 sm:p-5 rounded-xl bg-body border border-box-border group "
+                    >
+                        <Image
+                            src={itm}
+                            alt={`img-brand${index}`}
+                            class="h-full w-full object-contain"
+                            widths={[100, 140, 175]}
+                            sizes={`(max-width: 120px) 100px, (max-width: 160px) 140px, 175px`}
+                            loading="eager"
+                            decoding="async"
+                            quality={"mid"}
+                            format="webp"
+                        />
+                    </div>
+                ))}
+            </div>
         </div>
-        
     </Container>
 </section>
+
+<style>
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-250px * 30));
+        }
+    }
+
+    .slider {
+        height: 200px;  
+        margin: auto;
+        overflow: hidden;
+        position: relative;
+        width: 1280px;  
+    }
+
+    .slider::before, .slider::after {
+        content: "";
+        height: 150px;  
+        position: absolute;
+        width: 200px;
+        z-index: 2;
+    }
+
+    .slider::after {
+        right: 0;
+        top: 0;
+        transform: rotateZ(180deg);
+    }
+
+    .slider::before {
+        left: 0;
+        top: 0;
+    }
+
+    .slider .slide-track {
+        animation: scroll 80s linear infinite;
+        display: flex;
+        width: calc(250px * 60);  
+    }
+
+    .slider .slide {
+        height: 150px;  
+        width: 250px;  
+        padding-left: 20px;
+    }
+</style>

@@ -1,0 +1,58 @@
+---
+import { REDES_SOCIALES } from "../../mock/public-txt";
+---
+
+<link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+/>
+<a
+    href={REDES_SOCIALES.WHATSAPP}
+    class="fixed bottom-20 right-5 rounded-full bg-[#25d366] p-2.5 text-sm font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-[#25d366] hover:shadow-lg focus:bg-[#25d366] focus:shadow-lg focus:outline-none focus:ring-0 active:bg-[#25d366] active:shadow-lg"
+    id="btn-whatsapp"
+    target="_blank"
+    aria-label="Contact us on WhatsApp"
+>
+    <i class="fa fa-whatsapp my-float animate-bounce text-center"></i>
+</a>
+
+<script>
+    const animateWhatsAppButton = () => {
+        const whatsappButton = document.getElementById(
+            "btn-whatsapp",
+        ) as HTMLElement;
+
+        document.addEventListener("scroll", () => {
+            if (window.scrollY > 200) {
+                whatsappButton.style.opacity = "1";
+                whatsappButton.classList.add(
+                    "animate-fade-left",
+                    "animate-once",
+                    "animate-ease-in",
+                );
+            } else {
+                whatsappButton.style.opacity = "0";
+                whatsappButton.classList.remove(
+                    "animate-fade-left",
+                    "animate-once",
+                    "animate-ease-in",
+                );
+            }
+        });
+    };
+
+    animateWhatsAppButton();
+    document.addEventListener("astro:after-swap", animateWhatsAppButton);
+</script>
+
+<style>
+    .my-float {
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+    }
+    #btn-whatsapp {
+        z-index: 999;
+        opacity: 0;
+    }
+</style>

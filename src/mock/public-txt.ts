@@ -46,7 +46,7 @@ export const REDES_SOCIALES = {
     "INSTAGRAM": "https://www.instagram.com/qbandina.oficial?igsh=MXNnY200MzhpNTZhbw==",
     "FACEBOOK": "https://www.facebook.com/qbandina.oficial/",
     "LINKEDIN": "https://ar.linkedin.com/company/qbandinaoficial",
-    "WHATSAPP": "https://wa.me/+5492213649585?text=¡Hola! Quiero hacer una consulta"
+    "WHATSAPP": "https://wa.me/+5491157164184?text=¡Hola! Quiero hacer una consulta" 
 }
 
 
@@ -109,7 +109,6 @@ export const CONTACT_TXT = {
 export const CONTACT_URL = {
     "URL_FORM_MSJ": `${URL}forms/formmensajes`,
     "URL_FORM_VENTAS": `${URL}forms/formventas`,
-    "URL_FORM_METRO": `${URL}forms/formmetrogas`,
     "URL_FORM_TRABAJA": `${URL}forms/formtrabajaconnostros`,
     "URL_FORM_RECLAMOS": `${URL}forms/formreclamos`,
 }
