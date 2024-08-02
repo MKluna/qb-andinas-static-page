@@ -66,40 +66,9 @@ const CARDS_DETAILS = [
     </div>
     <Container>
         <div class="w-full relative py-8 md:py-10 px-6 md:px-8 rounded-2xl">
-            <!-- <div class="absolute right-0 top-0 h-full w-full flex justify-end">
-                <div
-                    class="w-28 h-28 overflow-hidden flex rounded-xl relative blur-2xl"
-                >
-                    <span
-                        class="absolute w-16 h-16 -top-1 -right-1 bg-green-500 rounded-md rotate-45"
-                    ></span>
-                    <span
-                        class="absolute w-16 h-16 -bottom-1 -right-1 bg-[#FCDC58] rounded-md rotate-45"
-                    ></span>
-                    <span
-                        class="absolute w-16 h-16 -bottom-1 -left-1 bg-primary rounded-md rotate-45"
-                    ></span>
-                </div>
-            </div> -->
-            <!-- <div class="absolute left-0 bottom-0 h-full w-full flex items-end">
-                <div
-                    class="w-28 h-28 overflow-hidden flex rounded-xl relative blur-2xl"
-                >
-                    <span
-                        class="absolute w-16 h-16 -top-1 -right-1 bg-green-500 rounded-md rotate-45"
-                    ></span>
-                    <span
-                        class="absolute w-16 h-16 -bottom-1 -right-1 bg-[#FCDC58] rounded-md rotate-45"
-                    ></span>
-                    <span
-                        class="absolute w-16 h-16 -bottom-1 -left-1 bg-primary rounded-md rotate-45"
-                    ></span>
-                </div>
-            </div> -->
-
             <div class="relative">
                 <div class="relative mb-10">
-                    <div class="text-center max-w-3xl mx-auto mb-6 lg:mb-12">
+                    <div class="text-center max-w-3xl mx-auto mb-6 lg:mb-12 animate-on-scroll-image">
                         <Title>Venta de insumos</Title>
                     </div>
                     <div class="flex flex-col lg:flex-row gap-6 lg:gap-12 p-4 lg:p-12 rounded-lg mt-6 bg-gradient-to-tr from-gray-0 to-gray-100 bg-opacity-0">
@@ -183,6 +152,7 @@ const CARDS_DETAILS = [
         document
             .querySelectorAll(".animate-on-scroll-image")
             .forEach((element, index) => {
+                element.style.animationDelay = `${1}s`;
                 observer.observe(element);
             });
     });
