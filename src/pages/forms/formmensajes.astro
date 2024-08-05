@@ -2,6 +2,9 @@
 import Container from "../../components/shared/Container.astro";
 import Layout from "../../layouts/Layout.astro";
 import { CONTACT_TXT } from "../../mock/public-txt";
+const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
 ---
 
 <Layout title="Formulario de Mensajes">
@@ -184,31 +187,12 @@ import { CONTACT_TXT } from "../../mock/public-txt";
             </Container>
         </div>
     </main>
-</Layout>
-
-<script is:inline>
-    document
-        .getElementById("mensajes-form")
-        .addEventListener("submit", function (event) {
-            event.preventDefault();
-            const formData = new FormData(event.target);
-            const entregaSelect = document.getElementById("dropoff-location");
-            const retiroSelect = document.getElementById("pickup-location");
-            const data = {
-                name: formData.get("name"),
-                phone: formData.get("phone"),
-                company: formData.get("company"),
-                email: formData.get("email"),
-                dropoffAddress: formData.get("dropoff-address"),
-                dropoffLocation:
-                    entregaSelect.options[entregaSelect.selectedIndex].text,
-                pickupAddress: formData.get("pickup-address"),
-                pickupLocation:
-                    retiroSelect.options[retiroSelect.selectedIndex].text,
-                description: formData.get("description"),
-            };
-            console.log(data);
-            event.target.reset();
-            window.location.href = '/'
-        });
+    <script
+    type="module"
+    id="emailjs-script"
+    src="/src/pages/forms/scripts/formMensajeScript.js"
+    data-service-id={SERVICE_ID}
+    data-template-id={TEMPLATE_ID}
+    data-public-key={PUBLIC_KEY}>
 </script>
+</Layout>
