@@ -187,7 +187,9 @@ const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
             </Container>
         </div>
     </main>
-    <script
+</Layout>
+<script
+    is:inline
     type="module"
     id="emailjs-script"
     src=`${import.meta.env.BASE_URL}src/scripts/formMensajeScript.js`
@@ -195,4 +197,3 @@ const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
     data-template-id={TEMPLATE_ID}
     data-public-key={PUBLIC_KEY}>
 </script>
-</Layout>
