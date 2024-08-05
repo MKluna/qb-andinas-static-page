@@ -195,7 +195,7 @@ import { CONTACT_TXT } from "../../mock/public-txt";
     import emailjs from "@emailjs/browser";
     import Swal from "sweetalert2";
     const URL = import.meta.env.BASE_URL;
-    console.log(URL)
+    console.log(URL);
 
     document.addEventListener("astro:page-load", () => {
         document
@@ -257,7 +257,7 @@ import { CONTACT_TXT } from "../../mock/public-txt";
                                 },
                             }).then((result) => {
                                 window.location.reload();
-                                window.location.href = "/";
+                                window.location.href = URL;
                             });
                         },
                         (err) => {
