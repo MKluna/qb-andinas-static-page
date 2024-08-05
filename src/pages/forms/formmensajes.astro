@@ -187,11 +187,13 @@ import { CONTACT_TXT } from "../../mock/public-txt";
 </Layout>
 
 <script>
+    import {
+        PUBLIC_SERVICE_ID,
+        PUBLIC_TEMPLATE_ID,
+        PUBLIC_KEY,
+    } from "astro:env/client";
     import emailjs from "@emailjs/browser";
     import Swal from "sweetalert2";
-    const SERVICE_ID = import.meta.env.PUBLIC_SERVICE_ID;
-    const TEMPLATE_ID = import.meta.env.PUBLIC_TEMPLATE_ID;
-    const PUBLIC_KEY = import.meta.env.PUBLIC_PUBLIC_KEY;
 
     document.addEventListener("astro:page-load", () => {
         document
@@ -221,8 +223,8 @@ import { CONTACT_TXT } from "../../mock/public-txt";
 
                 emailjs
                     .send(
-                        SERVICE_ID,
-                        TEMPLATE_ID,
+                        PUBLIC_SERVICE_ID,
+                        PUBLIC_TEMPLATE_ID,
                         {
                             from_name: `Q.B Formulario de Contacto - Mensajeria`,
                             message: message,

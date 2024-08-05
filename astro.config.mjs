@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig, envField } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
 import dotenv from 'dotenv';
 dotenv.config();
@@ -17,5 +17,23 @@ export default defineConfig({
   site: BASE_URL,
   base: BASE_PATH,
   trailingSlash: "always",
-  integrations: [tailwind()]
+  integrations: [tailwind()],
+  experimental: {
+    env: {
+      schema:{
+        PUBLIC_SERVICE_ID: envField.string({
+          context: 'client',
+          access: 'public'
+        }),
+        PUBLIC_TEMPLATE_ID: envField.string({
+          context: 'client',
+          access: 'public'
+        }),
+        PUBLIC_KEY: envField.string({
+          context: 'client',
+          access: 'public'
+        })
+      }
+    }
+  }
 });
