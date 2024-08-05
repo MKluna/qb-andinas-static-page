@@ -16,6 +16,9 @@ concurrency:
 
 env:
   BUILD_PATH: "."
+  PUBLIC_SERVICE_ID: ${{ secrets.PUBLIC_SERVICE_ID }}
+  PUBLIC_TEMPLATE_ID: ${{ secrets.PUBLIC_TEMPLATE_ID }}
+  PUBLIC_KEY: ${{ secrets.PUBLIC_KEY }}
 
 jobs:
   build:
