@@ -14,6 +14,7 @@ let BASE_PATH = isBuild ? '/qb-andinas-static-page/' : '/';
 
 export default defineConfig({
   server: { port: SERVER_PORT },
+  output: "server",
   site: BASE_URL,
   base: BASE_PATH,
   trailingSlash: "always",
@@ -31,7 +32,19 @@ export default defineConfig({
         }),
         PUBLIC_KEY: envField.string({
           context: 'client',
-          access: 'public'
+          access: 'public',
+        }),
+        ID_PRD_SEVICE: envField.string({
+          context: 'server',
+          access: 'secret',
+        }),
+        ID_PRD_TEPLATE: envField.string({
+          context: 'server',
+          access: 'secret',
+        }),
+        ID_PRD_KEY: envField.string({
+          context: 'server',
+          access: 'secret',
         })
       }
     }
