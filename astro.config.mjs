@@ -1,5 +1,4 @@
 import { defineConfig, envField } from 'astro/config';
-import netlify from '@astrojs/netlify';
 import tailwind from "@astrojs/tailwind";
 import dotenv from 'dotenv';
 dotenv.config();
@@ -15,8 +14,7 @@ let BASE_PATH = isBuild ? '/qb-andinas-static-page/' : '/';
 
 export default defineConfig({
   server: { port: SERVER_PORT },
-  output: "server",
-  adapter: netlify(),
+  // output: "server",
   site: BASE_URL,
   base: BASE_PATH,
   trailingSlash: "always",
