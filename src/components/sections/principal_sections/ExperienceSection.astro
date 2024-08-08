@@ -155,51 +155,51 @@ const EXPERIENCE_IMG = [
             </section>
         </div>
     </Container>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add(
-                            "animate__animated",
-                            "animate__fadeInLeft",
-                            "animate__slow",
-                        );
-                        observer.unobserve(entry.target);
-                    }
-                });
-            });
-
-            document
-                .querySelectorAll(".animate-on-scroll")
-                .forEach((element) => {
-                    observer.observe(element);
-                });
-        });
-    </script>
-
-    <style>
-        .custom-img {
-            background-image: url("../../../assets/experience/img-4.webp");
-            background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
-            background-position: center; /* Centra la imagen */
-            background-repeat: no-repeat; /* Evita que la imagen se repita */
-            border-radius: inherit;
-        }
-        .blurred-background {
-            position: absolute;
-            inset: 0;
-            background-color: rgba(
-                51,
-                142,
-                211,
-                0.5
-            ); /* Color celeste con opacidad */
-            backdrop-filter: blur(
-                2px
-            ); /* Ajusta la intensidad del desenfoque */
-            border-radius: inherit; /* Aplica el border-radius del contenedor */
-        }
-    </style>
 </section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add(
+                        "animate__animated",
+                        "animate__fadeInLeft",
+                        "animate__slow",
+                    );
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        document
+            .querySelectorAll(".animate-on-scroll")
+            .forEach((element) => {
+                observer.observe(element);
+            });
+    });
+</script>
+
+<style>
+    .custom-img {
+        background-image: url("../../../assets/experience/img-4.webp");
+        background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+        background-position: center; /* Centra la imagen */
+        background-repeat: no-repeat; /* Evita que la imagen se repita */
+        border-radius: inherit;
+    }
+    .blurred-background {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(
+            51,
+            142,
+            211,
+            0.5
+        ); /* Color celeste con opacidad */
+        backdrop-filter: blur(
+            2px
+        ); /* Ajusta la intensidad del desenfoque */
+        border-radius: inherit; /* Aplica el border-radius del contenedor */
+    }
+</style>
