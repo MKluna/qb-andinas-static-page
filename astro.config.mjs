@@ -14,7 +14,6 @@ let BASE_PATH = isBuild ? '/qb-andinas-static-page/' : '/';
 
 export default defineConfig({
   server: { port: SERVER_PORT },
-  // output: "server",
   site: BASE_URL,
   base: BASE_PATH,
   trailingSlash: "always",

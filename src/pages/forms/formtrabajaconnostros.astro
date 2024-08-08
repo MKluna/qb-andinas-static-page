@@ -5,106 +5,306 @@ import { CONTACT_TXT } from "../../mock/public-txt";
 ---
 
 <Layout title="Formulario de Trabaja con Nostros">
-    <main class="flex flex-col gap-y-20 md:gap-y-32 overflow-hidden">
-        <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-2 mb-32">
-            <Container className={"flex flex-col lg:flex-row gap-32 lg:gap-32"}>
-                <form
-                    class="max-w-xl mx-auto w-full"
-                    id="trabajaconnostros-form"
-                >
-                    <h3
-                        class="text-lg font-semibold text-gray-900 dark:text-white mb-5 mt-2"
-                    >
-                        {CONTACT_TXT.TRABAJA_CON_NOSOTROS_TXT.MODAL_TITLE}
-                    </h3>
-                    <div class="relative z-0 w-full mb-5 group">
-                        <input
-                            type="text"
-                            name="name"
-                            id="name"
-                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                            placeholder=" "
-                            required
-                        />
-                        <label
-                            for="name"
-                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                            >{CONTACT_TXT.GENERIC_TEXT_FORM.NAME_LABEL}</label
-                        >
-                    </div>
-                    <div class="relative z-0 w-full mb-5 group">
-                        <input
-                            type="tel"
-                            name="phone"
-                            id="phone"
-                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                            placeholder=" "
-                            required
-                        />
-                        <label
-                            for="phone"
-                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                            >{CONTACT_TXT.GENERIC_TEXT_FORM.PHONE_LABEL}</label
-                        >
-                    </div>
-                    <div class="relative z-0 w-full mb-5 group">
-                        <input
-                            type="email"
-                            name="email"
-                            id="email"
-                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                            placeholder=" "
-                            required
-                        />
-                        <label
-                            for="email"
-                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                            >{CONTACT_TXT.GENERIC_TEXT_FORM.EMAIL_LABEL}</label
-                        >
-                    </div>
-                    <div class="relative z-0 w-full mb-5 group">
-                        <textarea
-                            name="description"
-                            id="description"
-                            rows="4"
-                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                            placeholder=" "
-                            required></textarea>
-                        <label
-                            for="description"
-                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                            >{
-                                CONTACT_TXT.TRABAJA_CON_NOSOTROS_TXT
-                                    .ITEM_DESCRIPTION_LABEL
-                            }</label
-                        >
-                    </div>
-                    <button
-                        type="submit"
-                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                    >
-                        {CONTACT_TXT.GENERIC_TEXT_FORM.SUBMIT_BUTTON_TEXT}
-                    </button>
-                </form>
-            </Container>
-        </div>
-    </main>
+  <main class="flex flex-col gap-y-20 md:gap-y-32 overflow-hidden">
+    <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-2 mb-32">
+      <Container className={"flex flex-col lg:flex-row gap-32 lg:gap-32"}>
+        <form class="max-w-xl mx-auto w-full" id="trabajaconnostros-form">
+          <h3
+            class="text-lg font-semibold text-gray-900 dark:text-white mb-5 mt-2"
+          >
+            {CONTACT_TXT.TRABAJA_CON_NOSOTROS_TXT.MODAL_TITLE}
+          </h3>
+          <div class="relative z-0 w-full mb-5 group">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              required
+            />
+            <label
+              for="name"
+              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              >{CONTACT_TXT.GENERIC_TEXT_FORM.NAME_LABEL}</label
+            >
+          </div>
+          <div class="relative z-0 w-full mb-5 group">
+            <input
+              type="tel"
+              name="phone"
+              id="phone"
+              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              required
+            />
+            <label
+              for="phone"
+              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              >{CONTACT_TXT.GENERIC_TEXT_FORM.PHONE_LABEL}</label
+            >
+          </div>
+          <div class="relative z-0 w-full mb-5 group">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              required
+            />
+            <label
+              for="email"
+              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              >{CONTACT_TXT.GENERIC_TEXT_FORM.EMAIL_LABEL}</label
+            >
+          </div>
+          <div class="relative z-0 w-full mb-5 group">
+            <textarea
+              name="description-trbj"
+              id="description-trbj"
+              rows="4"
+              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              required></textarea>
+            <label
+              for="description-trbj"
+              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-1 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              >{
+                CONTACT_TXT.TRABAJA_CON_NOSOTROS_TXT.ITEM_DESCRIPTION_LABEL
+              }</label
+            >
+          </div>
+          <div
+            class="g-recaptcha"
+            data-sitekey="6LdS1CAqAAAAAB1ACfpd8NL2RZUOYGeMiiVtJNdy"
+          >
+          </div>
+          <button
+            type="submit"
+            id="submit-button-trbj"
+            class="mt-5 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            <div class="loader text-center hidden"></div>
+            <span>{CONTACT_TXT.GENERIC_TEXT_FORM.SUBMIT_BUTTON_TEXT}</span>
+          </button>
+        </form>
+      </Container>
+    </div>
+  </main>
 </Layout>
 
-<!-- <script is:inline>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<script>
+  import emailjs from "@emailjs/browser";
+  import Swal from "sweetalert2";
+  import {
+    PUBLIC_SERVICE_ID,
+    PUBLIC_TEMPLATE_ID,
+    PUBLIC_KEY,
+  } from "astro:env/client";
+
+  const URL = import.meta.env.BASE_URL;
+
+  document.addEventListener("astro:page-load", () => {
     document
-        .getElementById("trabajaconnostros-form")
-        .addEventListener("submit", function (event) {
-            event.preventDefault();
-            const formData = new FormData(event.target);
-            const data = {
-                name: formData.get("name"),
-                phone: formData.get("phone"),
-                email: formData.get("email"),
-                description: formData.get("description"),
-            };
-            console.log(data);
-            event.target.reset();
-            window.location.href = '/'
-        });
-</script> -->
+      .getElementById("trabajaconnostros-form")
+      .addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const submitButton = document.getElementById("submit-button-trbj");
+        const loader = submitButton.querySelector(".loader");
+        const buttonText = submitButton.querySelector("span");
+
+        submitButton.disabled = true;
+        loader.classList.remove("hidden");
+        buttonText.classList.add("hidden");
+
+        const recaptchaResponse = grecaptcha.getResponse();
+
+        if (!recaptchaResponse) {
+          Swal.fire({
+            title: "Error",
+            text: "Por favor, verifica que no eres un robot.",
+            icon: "error",
+            showConfirmButton: false,
+            timer: 2500,
+          });
+          submitButton.disabled = false;
+          loader.classList.add("hidden");
+          buttonText.classList.remove("hidden");
+          return;
+        }
+
+        const formData = new FormData(event.target);
+        const textArea = document.getElementById("description-trbj").value;
+        const data = {
+          Nombre: formData.get("name"),
+          Telefono: formData.get("phone"),
+          Compania: formData.get("company"),
+          Email: formData.get("email"),
+          Detalles: textArea,
+        };
+        const message = formatMessage(data);
+
+        emailjs
+          .send(
+            PUBLIC_SERVICE_ID,
+            PUBLIC_TEMPLATE_ID,
+            {
+              from_name: "Q.B Formulario de Contacto - Trabajo",
+              message: message,
+              "g-recaptcha-response": recaptchaResponse,
+            },
+            { publicKey: PUBLIC_KEY }
+          )
+          .then(
+            () => {
+              let timerInterval;
+              Swal.fire({
+                title: "¡Enviado!",
+                text: "Tu mensaje ha sido enviado correctamente.",
+                icon: "success",
+                timer: 2000,
+                timerProgressBar: true,
+                didOpen: () => {
+                  Swal.showLoading();
+                  const timer = Swal.getPopup().querySelector("b");
+                  timerInterval = setInterval(() => {
+                    timer.textContent = `${Swal.getTimerLeft()}`;
+                  }, 100);
+                },
+                willClose: () => {
+                  clearInterval(timerInterval);
+                },
+              }).then(() => {
+                window.location.reload();
+                window.location.href = URL;
+              });
+            },
+            (err) => {
+              Swal.fire({
+                title: "Error",
+                text: JSON.stringify(err),
+                icon: "error",
+              });
+              submitButton.disabled = false;
+              loader.classList.add("hidden");
+              buttonText.classList.remove("hidden");
+            }
+          );
+      });
+  });
+
+  function formatMessage(data) {
+    return `
+      Nombre: ${data.Nombre}
+      Teléfono: ${data.Telefono}
+      Email: ${data.Email}
+      Detalles: ${data.Detalles}
+    `;
+  }
+</script>
+
+<style>
+  .loader {
+    width: 20px;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    border: 3px solid #ffffff;
+    animation:
+      l20-1 0.8s infinite linear alternate,
+      l20-2 1.6s infinite linear;
+  }
+
+  @keyframes l20-1 {
+    0% {
+      clip-path: polygon(50% 50%, 0 0, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%);
+    }
+    12.5% {
+      clip-path: polygon(
+        50% 50%,
+        0 0,
+        50% 0%,
+        100% 0%,
+        100% 0%,
+        100% 0%,
+        100% 0%
+      );
+    }
+    25% {
+      clip-path: polygon(
+        50% 50%,
+        0 0,
+        50% 0%,
+        100% 0%,
+        100% 100%,
+        100% 100%,
+        100% 100%
+      );
+    }
+    50% {
+      clip-path: polygon(
+        50% 50%,
+        0 0,
+        50% 0%,
+        100% 0%,
+        100% 100%,
+        50% 100%,
+        0% 100%
+      );
+    }
+    62.5% {
+      clip-path: polygon(
+        50% 50%,
+        100% 0,
+        100% 0%,
+        100% 0%,
+        100% 100%,
+        50% 100%,
+        0% 100%
+      );
+    }
+    75% {
+      clip-path: polygon(
+        50% 50%,
+        100% 100%,
+        100% 100%,
+        100% 100%,
+        100% 100%,
+        50% 100%,
+        0% 100%
+      );
+    }
+    100% {
+      clip-path: polygon(
+        50% 50%,
+        50% 100%,
+        50% 100%,
+        50% 100%,
+        50% 100%,
+        50% 100%,
+        0% 100%
+      );
+    }
+  }
+  @keyframes l20-2 {
+    0% {
+      transform: scaleY(1) rotate(0deg);
+    }
+    49.99% {
+      transform: scaleY(1) rotate(135deg);
+    }
+    50% {
+      transform: scaleY(-1) rotate(0deg);
+    }
+    100% {
+      transform: scaleY(-1) rotate(-135deg);
+    }
+  }
+
+  .hidden {
+    display: none;
+  }
+</style>
