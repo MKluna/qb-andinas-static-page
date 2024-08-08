@@ -44,6 +44,10 @@ export default defineConfig({
         ID_PRD_KEY: envField.string({
           context: 'server',
           access: 'secret',
+        }),
+        PUBLIC_RECAPTCHA_SITE_KEY: envField.string({
+          context: 'client',
+          access: 'public',
         })
       }
     }

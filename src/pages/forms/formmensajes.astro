@@ -2,6 +2,7 @@
 import Container from "../../components/shared/Container.astro";
 import Layout from "../../layouts/Layout.astro";
 import { CONTACT_TXT } from "../../mock/public-txt";
+import { PUBLIC_RECAPTCHA_SITE_KEY } from "astro:env/client";
 ---
 
 <Layout title="Formulario de Mensajes">
@@ -159,7 +160,7 @@ import { CONTACT_TXT } from "../../mock/public-txt";
           </div>
           <div
             class="g-recaptcha"
-            data-sitekey="6LdS1CAqAAAAAB1ACfpd8NL2RZUOYGeMiiVtJNdy"
+            data-sitekey={PUBLIC_RECAPTCHA_SITE_KEY}
           >
           </div>
           <button
