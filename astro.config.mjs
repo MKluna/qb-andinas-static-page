@@ -14,8 +14,9 @@ let BASE_PATH = isBuild ? '/qb-andinas-static-page/' : '/';
 
 export default defineConfig({
   server: { port: SERVER_PORT },
-  site: BASE_URL,
-  base: BASE_PATH,
+  // site: BASE_URL,
+  // base: BASE_PATH,
+  site: "http://www.qbandina.com.ar.cdn.hstgr.net/",
   trailingSlash: "always",
   integrations: [tailwind()],
   experimental: {
