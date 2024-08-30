@@ -33,7 +33,7 @@ export const HERO_TXT = {
 export const CTA_TXT = {
     "NUESTRA_EMPRESA": {
         "TITLE": "Nuestra Empresa",
-        "DESCRIPTION": "es una empresa que se dedica a brindar servicios esenciales y consultoría para empresas. Realizamos tareas de distribución postal, lectura de medidores y colocación, relevamiento, inspección y tendido de líneas de media y baja tensión, así como la energización de cámaras de seguridad, para empresas de servicios de luz, agua, gas, televisión y fibra óptica. Gracias a nuestros 40 años de trayectoria, tenemos el conocimiento, el equipo y la capacidad para satisfacer todo tipo de servicios para empresas."
+        "DESCRIPTION": "es una empresa dedicada a brindar servicios esenciales y consultoría para otras empresas. Nos especializamos en la distribución postal, la lectura y colocación de medidores, el relevamiento, la inspección y el tendido de líneas de media y baja tensión, así como en la energización de cámaras de seguridad. Atendemos a empresas de servicios de luz, agua, gas, televisión y fibra óptica. Con 40 años de trayectoria, contamos con el conocimiento, el equipo y la capacidad para satisfacer una amplia gama de necesidades empresariales."
     },
     "CONTACTANOS": {
         "TITLE": "Contáctanos",
@@ -114,7 +114,7 @@ export const CONTACT_URL = {
 }
 
 export const FEATURES_TXT = {
-    "TITLE": "Ofrecemos una amplia gama de productos trabajando con las mejores marcas del mercado.",
+    "TITLE": "Venta integral de insumos industriales, de oficina y tecnológicos, con productos de alta calidad y disponibilidad inmediata. Ofrecemos una amplia variedad a precios competitivos, asegurando que su empresa cuente con todo lo necesario para operar eficientemente.",
     "ITEMS": [
         "Insumos de limpieza",
         "Insumos eléctricos",

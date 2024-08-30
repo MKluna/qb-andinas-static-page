@@ -20,7 +20,7 @@ export default defineConfig({
   integrations: [tailwind()],
   experimental: {
     env: {
-      schema:{
+      schema: {
         PUBLIC_SERVICE_ID: envField.string({
           context: 'client',
           access: 'public'
@@ -29,25 +29,33 @@ export default defineConfig({
           context: 'client',
           access: 'public'
         }),
+        PUBLIC_TRABAJA_TEMPLATE_ID: envField.string({
+          context: 'client',
+          access: 'public'
+        }),
         PUBLIC_KEY: envField.string({
           context: 'client',
           access: 'public',
         }),
-        ID_PRD_SEVICE: envField.string({
-          context: 'server',
-          access: 'secret',
-        }),
-        ID_PRD_TEPLATE: envField.string({
-          context: 'server',
-          access: 'secret',
-        }),
-        ID_PRD_KEY: envField.string({
-          context: 'server',
-          access: 'secret',
-        }),
         PUBLIC_RECAPTCHA_SITE_KEY: envField.string({
           context: 'client',
           access: 'public',
+        }),
+        PUBLIC_NEW_SERVICE_ID: envField.string({
+          context: 'client',
+          access: 'public'
+        }),
+        PUBLIC_VENTAS_TEMPLATE_ID: envField.string({
+          context: 'client',
+          access: 'public'
+        }),
+        PUBLIC_RECLAMOS_TEMPLATE_ID: envField.string({
+          context: 'client',
+          access: 'public'
+        }),
+        PUBLIC_NEW_KEY: envField.string({
+          context: 'client',
+          access: 'public'
         })
       }
     }

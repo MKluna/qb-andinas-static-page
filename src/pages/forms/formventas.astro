@@ -128,9 +128,9 @@ import { PUBLIC_RECAPTCHA_SITE_KEY } from "astro:env/client";
   import emailjs from "@emailjs/browser";
   import Swal from "sweetalert2";
   import {
-    PUBLIC_SERVICE_ID,
-    PUBLIC_TEMPLATE_ID,
-    PUBLIC_KEY,
+    PUBLIC_NEW_SERVICE_ID,
+    PUBLIC_VENTAS_TEMPLATE_ID,
+    PUBLIC_NEW_KEY,
   } from "astro:env/client";
 
   const URL = import.meta.env.BASE_URL;
@@ -177,14 +177,14 @@ import { PUBLIC_RECAPTCHA_SITE_KEY } from "astro:env/client";
 
         emailjs
           .send(
-            PUBLIC_SERVICE_ID,
-            PUBLIC_TEMPLATE_ID,
+            PUBLIC_NEW_SERVICE_ID,
+            PUBLIC_VENTAS_TEMPLATE_ID,
             {
               from_name: "Q.B Formulario de Contacto - Ventas",
               message: message,
               "g-recaptcha-response": recaptchaResponse,
             },
-            { publicKey: PUBLIC_KEY }
+            { publicKey: PUBLIC_NEW_KEY }
           )
           .then(
             () => {
