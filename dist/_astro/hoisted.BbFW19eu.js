@@ -1,0 +1,11 @@
+import{S as o,e as E,P as L,a as I,b}from"./client.DyhkFPiM.js";import"./ViewTransitions.astro_astro_type_script_index_0_lang.CIokl8Hn.js";import"https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js";const x="/";document.addEventListener("astro:page-load",()=>{document.getElementById("mensajes-form").addEventListener("submit",function(e){e.preventDefault();const n=document.getElementById("submit-button-msj"),a=n.querySelector("#spinner"),r=n.querySelector("#button-text-mensajes"),u=r.textContent;n.disabled=!0,a.classList.remove("hidden"),r.textContent="Enviando...";const s=grecaptcha.getResponse();if(!s){o.fire({title:"Error",text:"Por favor, verifica que no eres un robot.",icon:"error",showConfirmButton:!1,timer:2500}),d();return}const t=new FormData(e.target),c=document.getElementById("dropoff-location"),l=document.getElementById("pickup-location"),g=document.getElementById("description").value,p={Nombre:t.get("name"),Telefono:t.get("phone"),Compania:t.get("company"),Email:t.get("email"),DomicilioEntrega:t.get("dropoff-address"),LocalidadEntrega:c.options[c.selectedIndex].text,DomicilioRetiro:t.get("pickup-address"),LocalidadRetiro:l.options[l.selectedIndex].text,Detalles:g},f=C(p);E.send(L,I,{from_name:"Q.B Formulario de Contacto - Mensajeria",message:f,"g-recaptcha-response":s},{publicKey:b}).then(()=>{let i;o.fire({title:"¡Enviado!",text:"Tu mensaje ha sido enviado correctamente.",icon:"success",timer:2e3,timerProgressBar:!0,didOpen:()=>{o.showLoading();const m=o.getPopup().querySelector("b");i=setInterval(()=>{m.textContent=`${o.getTimerLeft()}`},100)},willClose:()=>{clearInterval(i)}}).then(m=>{window.location.reload(),window.location.href=x})},i=>{o.fire({title:"Error",text:JSON.stringify(i),icon:"error"}),d()});function d(){n.disabled=!1,a.classList.add("hidden"),r.textContent=u}})});function C(e){return`
+        Nombre: ${e.Nombre}
+        Teléfono: ${e.Telefono}
+        Compañía: ${e.Compania}
+        Email: ${e.Email}
+        Domicilio de Entrega: ${e.DomicilioEntrega}
+        Localidad de Entrega: ${e.LocalidadEntrega}
+        Domicilio de Retiro: ${e.DomicilioRetiro}
+        Localidad de Retiro: ${e.LocalidadRetiro}
+        Detalles: ${e.Detalles}
+    `}
