@@ -127,6 +127,7 @@ import { PUBLIC_RECAPTCHA_SITE_KEY } from "astro:env/client";
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <script>
+  declare const grecaptcha: any;
   import emailjs from "@emailjs/browser";
   import Swal from "sweetalert2";
   import {
@@ -140,12 +141,12 @@ import { PUBLIC_RECAPTCHA_SITE_KEY } from "astro:env/client";
   document.addEventListener("astro:page-load", () => {
     document
       .getElementById("reclamos-form")
-      .addEventListener("submit", async function (event) {
+      ?.addEventListener("submit", async function (event) {
         event.preventDefault();
 
-        const submitButton = document.getElementById("submit-button-rclm");
-        const spinner = submitButton.querySelector("#spinner");
-        const buttonText = submitButton.querySelector("#button-text-reclamos");
+        const submitButton = document.getElementById("submit-button-rclm") as HTMLButtonElement;
+        const spinner = submitButton.querySelector("#spinner") as HTMLElement;
+        const buttonText = submitButton.querySelector("#button-text-reclamos") as HTMLElement;
         const originalText = buttonText.textContent;
 
         submitButton.disabled = true;
@@ -166,8 +167,8 @@ import { PUBLIC_RECAPTCHA_SITE_KEY } from "astro:env/client";
           return;
         }
 
-        const formData = new FormData(event.target);
-        const textArea = document.getElementById("description-reclamos").value;
+        const formData = new FormData(event.target as HTMLFormElement);
+        const textArea = (document.getElementById("description-reclamos") as HTMLTextAreaElement).value;
         const data = {
           Nombre: formData.get("name"),
           Telefono: formData.get("phone"),
@@ -190,7 +191,7 @@ import { PUBLIC_RECAPTCHA_SITE_KEY } from "astro:env/client";
           )
           .then(
             () => {
-              let timerInterval;
+              let timerInterval : any;
               Swal.fire({
                 title: "¡Enviado!",
                 text: "Tu mensaje ha sido enviado correctamente.",
@@ -199,7 +200,7 @@ import { PUBLIC_RECAPTCHA_SITE_KEY } from "astro:env/client";
                 timerProgressBar: true,
                 didOpen: () => {
                   Swal.showLoading();
-                  const timer = Swal.getPopup().querySelector("b");
+                  const timer : any = Swal.getPopup()?.querySelector("b");
                   timerInterval = setInterval(() => {
                     timer.textContent = `${Swal.getTimerLeft()}`;
                   }, 100);
@@ -229,7 +230,7 @@ import { PUBLIC_RECAPTCHA_SITE_KEY } from "astro:env/client";
       });
   });
 
-  function formatMessage(data) {
+  function formatMessage(data : any) {
     return `
       Nombre: ${data.Nombre}
       Teléfono: ${data.Telefono}

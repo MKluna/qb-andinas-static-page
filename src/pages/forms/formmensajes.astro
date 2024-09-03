@@ -192,6 +192,7 @@ import { PUBLIC_RECAPTCHA_SITE_KEY } from "astro:env/client";
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <script>
+  declare const grecaptcha: any;
   import {
     PUBLIC_SERVICE_ID,
     PUBLIC_TEMPLATE_ID,
@@ -204,12 +205,12 @@ import { PUBLIC_RECAPTCHA_SITE_KEY } from "astro:env/client";
   document.addEventListener("astro:page-load", () => {
     document
       .getElementById("mensajes-form")
-      .addEventListener("submit", function (event) {
+      ?.addEventListener("submit", function (event) {
         event.preventDefault();
 
-        const submitButton = document.getElementById("submit-button-msj");
-        const spinner = submitButton.querySelector("#spinner");
-        const buttonText = submitButton.querySelector("#button-text-mensajes");
+        const submitButton = document.getElementById("submit-button-msj") as HTMLButtonElement;
+        const spinner = submitButton.querySelector("#spinner") as HTMLElement;
+        const buttonText = submitButton.querySelector("#button-text-mensajes") as HTMLElement;
         const originalText = buttonText.textContent;
 
         submitButton.disabled = true;
@@ -230,10 +231,10 @@ import { PUBLIC_RECAPTCHA_SITE_KEY } from "astro:env/client";
           return;
         }
 
-        const formData = new FormData(event.target);
-        const entregaSelect = document.getElementById("dropoff-location");
-        const retiroSelect = document.getElementById("pickup-location");
-        const textArea = document.getElementById("description").value;
+        const formData = new FormData(event.target as HTMLFormElement);
+        const entregaSelect = document.getElementById("dropoff-location") as HTMLFormElement;
+        const retiroSelect = document.getElementById("pickup-location") as HTMLFormElement;
+        const textArea = (document.getElementById("description") as HTMLTextAreaElement).value;
         const data = {
           Nombre: formData.get("name"),
           Telefono: formData.get("phone"),
@@ -265,7 +266,7 @@ import { PUBLIC_RECAPTCHA_SITE_KEY } from "astro:env/client";
           )
           .then(
             () => {
-              let timerInterval;
+              let timerInterval : any;
               Swal.fire({
                 title: "¡Enviado!",
                 text: "Tu mensaje ha sido enviado correctamente.",
@@ -274,7 +275,7 @@ import { PUBLIC_RECAPTCHA_SITE_KEY } from "astro:env/client";
                 timerProgressBar: true,
                 didOpen: () => {
                   Swal.showLoading();
-                  const timer = Swal.getPopup().querySelector("b");
+                  const timer : any = Swal.getPopup()?.querySelector("b");
                   timerInterval = setInterval(() => {
                     timer.textContent = `${Swal.getTimerLeft()}`;
                   }, 100);
@@ -304,7 +305,7 @@ import { PUBLIC_RECAPTCHA_SITE_KEY } from "astro:env/client";
       });
   });
 
-  function formatMessage(data) {
+  function formatMessage(data : any) {
     return `
         Nombre: ${data.Nombre}
         Teléfono: ${data.Telefono}
