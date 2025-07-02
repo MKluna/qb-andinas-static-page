@@ -19,7 +19,7 @@ export const MockNavItemDB = [
     },
     {
         href: URL + "#experience",
-        text: "Experienciass"
+        text: "Experiencias"
     },
     {
         href: URL + "#contact",
