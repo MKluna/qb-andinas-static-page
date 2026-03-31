@@ -111,7 +111,7 @@ const CARDS_DETAILS = [
 
 <script is:inline>
     document.addEventListener("DOMContentLoaded", () => {
-        const observer = new IntersectionObserver((entries, observer) => {
+        const serviceObserver = new IntersectionObserver((entries, obs) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add(
@@ -119,7 +119,20 @@ const CARDS_DETAILS = [
                         "animate__fadeInUp",
                         "animate__slow",
                     );
-                    observer.unobserve(entry.target);
+                    obs.unobserve(entry.target);
+                }
+            });
+        });
+
+        const imageObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add(
+                        "animate__animated",
+                        "animate__fadeInRight",
+                        "animate__slow",
+                    );
+                    obs.unobserve(entry.target);
                 }
             });
         });
@@ -128,32 +141,14 @@ const CARDS_DETAILS = [
             .querySelectorAll(".animate-on-scroll-service")
             .forEach((element, index) => {
                 element.style.animationDelay = `${index * 0.1}s`;
-                observer.observe(element);
+                serviceObserver.observe(element);
             });
-    });
-</script>
-
-
-<script is:inline>
-    document.addEventListener("DOMContentLoaded", () => {
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add(
-                        "animate__animated",
-                        "animate__fadeInRight",
-                        "animate__slow",
-                    );
-                    observer.unobserve(entry.target);
-                }
-            });
-        });
 
         document
             .querySelectorAll(".animate-on-scroll-image")
-            .forEach((element, index) => {
-                element.style.animationDelay = `${1}s`;
-                observer.observe(element);
+            .forEach((element) => {
+                element.style.animationDelay = "1s";
+                imageObserver.observe(element);
             });
     });
 </script>

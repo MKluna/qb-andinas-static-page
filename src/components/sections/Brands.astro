@@ -69,6 +69,7 @@ const BRANDS_IMG = [
     imgBrands10,
     imgBrands11,
     imgBrands12,
+    imgBrands13,
     imgBrands14,
     imgBrands15,
     imgBrands16,
@@ -101,7 +102,7 @@ const BRANDS_IMG_DOUBLE = [...BRANDS_IMG, ...BRANDS_IMG];
                     >
                         <Image
                             src={itm}
-                            alt={`img-brand${index}`}
+                            alt={`Logo empresa cliente ${(index % 25) + 1}`}
                             class="h-full w-full object-contain"
                             widths={[100, 140, 175]}
                             sizes={`(max-width: 120px) 100px, (max-width: 160px) 140px, 175px`}
@@ -128,11 +129,12 @@ const BRANDS_IMG_DOUBLE = [...BRANDS_IMG, ...BRANDS_IMG];
     }
 
     .slider {
-        height: 200px;  
+        height: 200px;
         margin: auto;
         overflow: hidden;
         position: relative;
-        width: 1280px;  
+        width: 100%;
+        max-width: 1280px;
     }
 
     .slider::before, .slider::after {

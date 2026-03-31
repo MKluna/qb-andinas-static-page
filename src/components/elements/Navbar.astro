@@ -40,7 +40,7 @@ import navbarLogo from "../../assets/navbar-logo.png";
             <div
                 data-nav-overlay
                 aria-hidden="true"
-                class="fixed hidden inset-0 lg:!hidden1"
+                class="fixed hidden inset-0 lg:!hidden"
             >
             </div>
             <div
@@ -140,9 +140,16 @@ import navbarLogo from "../../assets/navbar-logo.png";
 </header>
 
 <script>
+    let scrollHandler: (() => void) | null = null;
+
     const scrollView = () => {
         const myNavBar = document.getElementById("navbar") as HTMLElement;
-        document.addEventListener("scroll", () => {
+
+        if (scrollHandler) {
+            document.removeEventListener("scroll", scrollHandler);
+        }
+
+        scrollHandler = () => {
             if (window.scrollY > 10) {
                 myNavBar.classList.add(
                     "bg-body",
@@ -163,8 +170,11 @@ import navbarLogo from "../../assets/navbar-logo.png";
                     myNavBar.classList.remove("animate__fadeOutUp");
                 }, 1);
             }
-        });
+        };
+
+        document.addEventListener("scroll", scrollHandler);
     };
+
     scrollView();
     document.addEventListener("astro:after-swap", scrollView);
 </script>

@@ -209,14 +209,13 @@ import { PUBLIC_RECAPTCHA_SITE_KEY } from "astro:env/client";
                   clearInterval(timerInterval);
                 },
               }).then(() => {
-                window.location.reload();
                 window.location.href = URL;
               });
             },
-            (err) => {
+            () => {
               Swal.fire({
                 title: "Error",
-                text: JSON.stringify(err),
+                text: "Hubo un error al enviar el formulario. Por favor, intente nuevamente.",
                 icon: "error",
               });
               resetButton();
